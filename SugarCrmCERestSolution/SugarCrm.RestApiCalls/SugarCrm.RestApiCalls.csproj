@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1E2B9AAF-E7A9-4B75-AEB4-887BCEAA6438}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SugarCrm.RestApiCalls</RootNamespace>
+    <AssemblyName>SugarCrm.RestApiCalls</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Inflector, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Inflector.1.0.0.0\lib\net40\Inflector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net4\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EntityBase.cs" />
+    <Compile Include="MethodCalls\Authentication.cs" />
+    <Compile Include="MethodCalls\InsertEntries.cs" />
+    <Compile Include="MethodCalls\InsertEntry.cs" />
+    <Compile Include="MethodCalls\DeleteEntry.cs" />
+    <Compile Include="MethodCalls\GetEntry.cs" />
+    <Compile Include="MethodCalls\GetEntryList.cs" />
+    <Compile Include="MethodCalls\GetPagedEntryList.cs" />
+    <Compile Include="MethodCalls\UpdateEntries.cs" />
+    <Compile Include="MethodCalls\UpdateEntry.cs" />
+    <Compile Include="MethodCalls\Util.cs" />
+    <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\AccountsAudit.cs" />
+    <Compile Include="Models\AccountsBugs.cs" />
+    <Compile Include="Models\AccountsCases.cs" />
+    <Compile Include="Models\AccountsContacts.cs" />
+    <Compile Include="Models\AccountsOpportunities.cs" />
+    <Compile Include="Models\AclActions.cs" />
+    <Compile Include="Models\AclRoles.cs" />
+    <Compile Include="Models\AclRolesActions.cs" />
+    <Compile Include="Models\AclRolesUsers.cs" />
+    <Compile Include="Models\AddressBook.cs" />
+    <Compile Include="Models\Bug.cs" />
+    <Compile Include="Models\BugsAudit.cs" />
+    <Compile Include="Models\Call.cs" />
+    <Compile Include="Models\CallsContacts.cs" />
+    <Compile Include="Models\CallsLeads.cs" />
+    <Compile Include="Models\CallsUsers.cs" />
+    <Compile Include="Models\Campaign.cs" />
+    <Compile Include="Models\CampaignLog.cs" />
+    <Compile Include="Models\CampaignsAudit.cs" />
+    <Compile Include="Models\CampaignTrkrs.cs" />
+    <Compile Include="Models\Case.cs" />
+    <Compile Include="Models\CasesAudit.cs" />
+    <Compile Include="Models\CasesBugs.cs" />
+    <Compile Include="Models\Config.cs" />
+    <Compile Include="Models\Contact.cs" />
+    <Compile Include="Models\ContactsAudit.cs" />
+    <Compile Include="Models\ContactsBugs.cs" />
+    <Compile Include="Models\ContactsCases.cs" />
+    <Compile Include="Models\ContactsUsers.cs" />
+    <Compile Include="Models\CronRemoveDocuments.cs" />
+    <Compile Include="Models\Currency.cs" />
+    <Compile Include="Models\CustomFields.cs" />
+    <Compile Include="Models\Document.cs" />
+    <Compile Include="Models\DocumentRevisions.cs" />
+    <Compile Include="Models\DocumentsAccounts.cs" />
+    <Compile Include="Models\DocumentsBugs.cs" />
+    <Compile Include="Models\DocumentsCases.cs" />
+    <Compile Include="Models\DocumentsContacts.cs" />
+    <Compile Include="Models\DocumentsOpportunities.cs" />
+    <Compile Include="Models\Eapm.cs" />
+    <Compile Include="Models\Email.cs" />
+    <Compile Include="Models\EmailAddrBeanRel.cs" />
+    <Compile Include="Models\EmailAddresses.cs" />
+    <Compile Include="Models\EmailCache.cs" />
+    <Compile Include="Models\Emailman.cs" />
+    <Compile Include="Models\EmailMarketing.cs" />
+    <Compile Include="Models\EmailMarketingProspectLists.cs" />
+    <Compile Include="Models\EmailsBeans.cs" />
+    <Compile Include="Models\EmailsEmailAddrRel.cs" />
+    <Compile Include="Models\EmailsText.cs" />
+    <Compile Include="Models\EmailTemplates.cs" />
+    <Compile Include="Models\FieldsMetaData.cs" />
+    <Compile Include="Models\Folder.cs" />
+    <Compile Include="Models\FoldersRel.cs" />
+    <Compile Include="Models\FoldersSubscriptions.cs" />
+    <Compile Include="Models\ImportMaps.cs" />
+    <Compile Include="Models\InboundEmail.cs" />
+    <Compile Include="Models\InboundEmailAutoreply.cs" />
+    <Compile Include="Models\InboundEmailCacheTs.cs" />
+    <Compile Include="Models\JobQueue.cs" />
+    <Compile Include="Models\Lead.cs" />
+    <Compile Include="Models\LeadsAudit.cs" />
+    <Compile Include="Models\LinkedDocuments.cs" />
+    <Compile Include="Models\Meeting.cs" />
+    <Compile Include="Models\MeetingsContacts.cs" />
+    <Compile Include="Models\MeetingsLeads.cs" />
+    <Compile Include="Models\MeetingsUsers.cs" />
+    <Compile Include="Models\Note.cs" />
+    <Compile Include="Models\OauthConsumer.cs" />
+    <Compile Include="Models\OauthNonce.cs" />
+    <Compile Include="Models\OauthTokens.cs" />
+    <Compile Include="Models\OpportunitiesAudit.cs" />
+    <Compile Include="Models\OpportunitiesContacts.cs" />
+    <Compile Include="Models\Opportunity.cs" />
+    <Compile Include="Models\OutboundEmail.cs" />
+    <Compile Include="Models\Project.cs" />
+    <Compile Include="Models\ProjectsAccounts.cs" />
+    <Compile Include="Models\ProjectsBugs.cs" />
+    <Compile Include="Models\ProjectsCases.cs" />
+    <Compile Include="Models\ProjectsContacts.cs" />
+    <Compile Include="Models\ProjectsOpportunities.cs" />
+    <Compile Include="Models\ProjectsProducts.cs" />
+    <Compile Include="Models\ProjectTask.cs" />
+    <Compile Include="Models\ProjectTaskAudit.cs" />
+    <Compile Include="Models\Prospect.cs" />
+    <Compile Include="Models\ProspectListCampaigns.cs" />
+    <Compile Include="Models\ProspectLists.cs" />
+    <Compile Include="Models\ProspectListsProspects.cs" />
+    <Compile Include="Models\Relationship.cs" />
+    <Compile Include="Models\Release.cs" />
+    <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\RolesModules.cs" />
+    <Compile Include="Models\RolesUsers.cs" />
+    <Compile Include="Models\SavedSearch.cs" />
+    <Compile Include="Models\Scheduler.cs" />
+    <Compile Include="Models\Sugarfeed.cs" />
+    <Compile Include="Models\Task.cs" />
+    <Compile Include="Models\Tracker.cs" />
+    <Compile Include="Models\UpgradeHistory.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserPreferences.cs" />
+    <Compile Include="Models\UsersFeeds.cs" />
+    <Compile Include="Models\UsersLastImport.cs" />
+    <Compile Include="Models\UsersPasswordLink.cs" />
+    <Compile Include="Models\UsersSignatures.cs" />
+    <Compile Include="Models\Vcal.cs" />
+    <Compile Include="Models\Version.cs" />
+    <Compile Include="ModulePropertyAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Requests\LoginRequest.cs" />
+    <Compile Include="Responses\BaseResponse.cs" />
+    <Compile Include="Responses\InsertEntriesResponse.cs" />
+    <Compile Include="Responses\InsertEntryResponse.cs" />
+    <Compile Include="Responses\DeleteEntryResponse.cs" />
+    <Compile Include="Responses\EntryListArray.cs" />
+    <Compile Include="Responses\ErrorResponse.cs" />
+    <Compile Include="Responses\LoginResponse.cs" />
+    <Compile Include="Responses\ReadEntryListResponse.cs" />
+    <Compile Include="Responses\ReadEntryResponse.cs" />
+    <Compile Include="Responses\UpdateEntriesResponse.cs" />
+    <Compile Include="Responses\UpdateEntryResponse.cs" />
+    <Compile Include="RestClientExtensions.cs" />
+    <Compile Include="SugarApiRestResponse.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\StyleCop.MSBuild.4.7.54.0\build\StyleCop.MSBuild.Targets" Condition="Exists('..\packages\StyleCop.MSBuild.4.7.54.0\build\StyleCop.MSBuild.Targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\StyleCop.MSBuild.4.7.54.0\build\StyleCop.MSBuild.Targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\StyleCop.MSBuild.4.7.54.0\build\StyleCop.MSBuild.Targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
