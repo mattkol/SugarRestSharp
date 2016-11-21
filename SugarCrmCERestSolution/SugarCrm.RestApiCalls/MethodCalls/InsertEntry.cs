@@ -14,6 +14,7 @@ namespace SugarCrm.RestApiCalls.MethodCalls
     using Newtonsoft.Json.Linq;
     using Responses;
     using RestSharp;
+    using SugarCrm.RestApiCalls.Helpers;
     
     /// <summary>
     /// Represents the InsertEntry class
@@ -57,7 +58,11 @@ namespace SugarCrm.RestApiCalls.MethodCalls
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
                     content = response.Content;
-                    insertEntryResponse = JsonConvert.DeserializeObject<InsertEntryResponse>(content);
+                    var settings = new JsonSerializerSettings();
+                    DeserializerExceptionsContractResolver resolver = DeserializerExceptionsContractResolver.Instance;
+                    resolver.JsonObjectToDeserialize = JObject.Parse(content);
+                    settings.ContractResolver = resolver;
+                    insertEntryResponse = JsonConvert.DeserializeObject<InsertEntryResponse>(content, settings);
                     insertEntryResponse.StatusCode = response.StatusCode;
                 }
                 else

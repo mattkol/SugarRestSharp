@@ -10,8 +10,10 @@ namespace SugarCrm.RestApiCalls.MethodCalls
     using System.Collections.Generic;
     using System.Net;
     using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
     using Responses;
     using RestSharp;
+    using SugarCrm.RestApiCalls.Helpers;
 
     /// <summary>
     /// Represents the DeleteEntry class
@@ -56,7 +58,11 @@ namespace SugarCrm.RestApiCalls.MethodCalls
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
                     content = response.Content;
-                    deleteEntryResponse = JsonConvert.DeserializeObject<DeleteEntryResponse>(content);
+                    var settings = new JsonSerializerSettings();
+                    DeserializerExceptionsContractResolver resolver = DeserializerExceptionsContractResolver.Instance;
+                    resolver.JsonObjectToDeserialize = JObject.Parse(content);
+                    settings.ContractResolver = resolver;
+                    deleteEntryResponse = JsonConvert.DeserializeObject<DeleteEntryResponse>(content, settings);
                     deleteEntryResponse.StatusCode = response.StatusCode;
                 }
                 else

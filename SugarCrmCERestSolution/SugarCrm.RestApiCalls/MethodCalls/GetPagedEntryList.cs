@@ -11,8 +11,10 @@ namespace SugarCrm.RestApiCalls.MethodCalls
     using System;
     using System.Net;
     using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
     using Responses;
     using RestSharp;
+    using SugarCrm.RestApiCalls.Helpers;
 
     /// <summary>
     /// Represents the GetPagedEntryList class
@@ -64,7 +66,11 @@ namespace SugarCrm.RestApiCalls.MethodCalls
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
                     content = response.Content;
-                    readEntryPagedResponse = JsonConvert.DeserializeObject<ReadEntryListResponse>(content);
+                    var settings = new JsonSerializerSettings();
+                    DeserializerExceptionsContractResolver resolver = DeserializerExceptionsContractResolver.Instance;
+                    resolver.JsonObjectToDeserialize = JObject.Parse(content);
+                    settings.ContractResolver = resolver;
+                    readEntryPagedResponse = JsonConvert.DeserializeObject<ReadEntryListResponse>(content, settings);
                     readEntryPagedResponse.StatusCode = response.StatusCode;
                 }
                 else

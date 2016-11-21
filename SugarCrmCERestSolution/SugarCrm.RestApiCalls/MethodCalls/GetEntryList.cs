@@ -10,8 +10,10 @@ namespace SugarCrm.RestApiCalls.MethodCalls
     using System.Collections.Generic;
     using System.Net;
     using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
     using Responses;
     using RestSharp;
+    using SugarCrm.RestApiCalls.Helpers;
 
     /// <summary>
     /// Represents the GetEntryList class
@@ -63,7 +65,11 @@ namespace SugarCrm.RestApiCalls.MethodCalls
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
                     content = response.Content;
-                    readEntryListResponse = JsonConvert.DeserializeObject<ReadEntryListResponse>(content);
+                    var settings = new JsonSerializerSettings();
+                    DeserializerExceptionsContractResolver resolver = DeserializerExceptionsContractResolver.Instance;
+                    resolver.JsonObjectToDeserialize = JObject.Parse(content);
+                    settings.ContractResolver = resolver;
+                    readEntryListResponse = JsonConvert.DeserializeObject<ReadEntryListResponse>(content, settings);
                     readEntryListResponse.StatusCode = response.StatusCode;
                 }
                 else

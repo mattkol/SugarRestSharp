@@ -14,6 +14,7 @@ namespace SugarCrm.RestApiCalls.MethodCalls
     using Newtonsoft.Json.Linq;
     using Responses;
     using RestSharp;
+    using SugarCrm.RestApiCalls.Helpers;
 
     /// <summary>
     /// Represents the UpdateEntries class
@@ -57,7 +58,11 @@ namespace SugarCrm.RestApiCalls.MethodCalls
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
                     content = response.Content;
-                    updateEntryResponse = JsonConvert.DeserializeObject<UpdateEntriesResponse>(content);
+                    var settings = new JsonSerializerSettings();
+                    DeserializerExceptionsContractResolver resolver = DeserializerExceptionsContractResolver.Instance;
+                    resolver.JsonObjectToDeserialize = JObject.Parse(content);
+                    settings.ContractResolver = resolver;
+                    updateEntryResponse = JsonConvert.DeserializeObject<UpdateEntriesResponse>(content, settings);
                     updateEntryResponse.StatusCode = response.StatusCode;
                 }
                 else
