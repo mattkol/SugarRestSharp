@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SugarCrm.PocoGen", "SugarCrm.PocoGen\SugarCrm.PocoGen.csproj", "{092CDD54-CDCC-4BD3-B395-195848DA10F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SugarCrm.PocoGen.Console", "SugarCrm.PocoGen.Console\SugarCrm.PocoGen.Console.csproj", "{EA4CB045-329D-46BA-A850-0EDC3AD69FF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SugarCrm.RestfulCRUD", "SugarCrm.RestfulCRUD\SugarCrm.RestfulCRUD.csproj", "{00A9B51E-156C-4673-884F-9BAA511E3A17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SugarCrm.RestApiCalls", "SugarCrm.RestApiCalls\SugarCrm.RestApiCalls.csproj", "{1E2B9AAF-E7A9-4B75-AEB4-887BCEAA6438}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SugarCrm.PocoGen.Tests", "SugarCrm.PocoGen.Tests\SugarCrm.PocoGen.Tests.csproj", "{56FD9B9C-62AE-421B-A2BD-9946D1BA8A39}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{092CDD54-CDCC-4BD3-B395-195848DA10F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{092CDD54-CDCC-4BD3-B395-195848DA10F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{092CDD54-CDCC-4BD3-B395-195848DA10F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{092CDD54-CDCC-4BD3-B395-195848DA10F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA4CB045-329D-46BA-A850-0EDC3AD69FF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA4CB045-329D-46BA-A850-0EDC3AD69FF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA4CB045-329D-46BA-A850-0EDC3AD69FF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA4CB045-329D-46BA-A850-0EDC3AD69FF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00A9B51E-156C-4673-884F-9BAA511E3A17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00A9B51E-156C-4673-884F-9BAA511E3A17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00A9B51E-156C-4673-884F-9BAA511E3A17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00A9B51E-156C-4673-884F-9BAA511E3A17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E2B9AAF-E7A9-4B75-AEB4-887BCEAA6438}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E2B9AAF-E7A9-4B75-AEB4-887BCEAA6438}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E2B9AAF-E7A9-4B75-AEB4-887BCEAA6438}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E2B9AAF-E7A9-4B75-AEB4-887BCEAA6438}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56FD9B9C-62AE-421B-A2BD-9946D1BA8A39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56FD9B9C-62AE-421B-A2BD-9946D1BA8A39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56FD9B9C-62AE-421B-A2BD-9946D1BA8A39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56FD9B9C-62AE-421B-A2BD-9946D1BA8A39}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -9,7 +9,7 @@
 namespace SugarCrm.PocoGen
 {
     /// <summary>
-    /// This class represents DbServerType class.
+    /// This enum class represents DbServerType class.
     /// </summary>
     public enum DbServerType
     {

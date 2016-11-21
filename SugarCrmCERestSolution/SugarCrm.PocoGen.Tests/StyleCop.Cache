@@ -1,13 +1,13 @@
 <stylecopresultscache>
   <version>12</version>
-  <project key="-1603604434">
+  <project key="1526839054">
     <configuration>DEBUG;TRACE</configuration>
   </project>
-  <sourcecode name="Program.cs" parser="StyleCop.CSharp.CsParser">
+  <sourcecode name="Class1.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2016-05-14 17:55:39.637</styleCop>
-      <settingsFile>2016-05-15 08:41:55.764</settingsFile>
-      <sourceFile>2016-05-14 17:39:23.048</sourceFile>
+      <settingsFile>2016-05-15 08:42:14.659</settingsFile>
+      <sourceFile>2016-05-14 14:24:49.492</sourceFile>
       <parser>2016-05-14 17:55:39.637</parser>
       <StyleCop.CSharp.DocumentationRules>2016-05-14 17:55:39.637</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1806178420</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -25,50 +25,39 @@
       <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
     </timestamps>
     <violations>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="FileMustHaveHeader" ruleCheckId="SA1633">
+        <context>The file has no header, the header Xml is invalid, or the header is not located at the top of the file.</context>
+        <line>1</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
+        <context>All using directives must be placed inside of the namespace.</context>
+        <line>1</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
+        <context>All using directives must be placed inside of the namespace.</context>
+        <line>2</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
+        <context>All using directives must be placed inside of the namespace.</context>
+        <line>3</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
+        <context>All using directives must be placed inside of the namespace.</context>
+        <line>4</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
+        <context>All using directives must be placed inside of the namespace.</context>
+        <line>5</line>
+        <warning>False</warning>
+      </violation>
       <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
         <context>The class must have a documentation header.</context>
-        <line>18</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.MaintainabilityRules" rule="AccessModifierMustBeDeclared" ruleCheckId="SA1400">
-        <context>The class must have an access modifier.</context>
-        <line>18</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The method must have a documentation header.</context>
-        <line>20</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.LayoutRules" rule="CurlyBracketsMustNotBeOmitted" ruleCheckId="SA1503">
-        <context>The body of the if statement must be wrapped in opening and closing curly brackets.</context>
-        <line>51</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ClosingCurlyBracketsMustNotBePrecededByBlankLine" ruleCheckId="SA1508">
-        <context>A closing curly bracket must not be preceded by a blank line.</context>
-        <line>59</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.MaintainabilityRules" rule="AccessModifierMustBeDeclared" ruleCheckId="SA1400">
-        <context>The method must have an access modifier.</context>
-        <line>20</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="CodeMustNotContainEmptyStatements" ruleCheckId="SA1106">
-        <context>The code contains an extra semicolon.</context>
-        <line>24</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
-        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>27</line>
-        <index>1149</index>
-        <endIndex>1186</endIndex>
-        <startLine>27</startLine>
-        <startColumn>23</startColumn>
-        <endLine>27</endLine>
-        <endColumn>60</endColumn>
+        <line>9</line>
         <warning>False</warning>
       </violation>
     </violations>
@@ -76,8 +65,8 @@
   <sourcecode name="AssemblyInfo.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2016-05-14 17:55:39.637</styleCop>
-      <settingsFile>2016-05-15 08:41:55.764</settingsFile>
-      <sourceFile>2016-05-15 17:58:07.549</sourceFile>
+      <settingsFile>2016-05-15 08:42:14.659</settingsFile>
+      <sourceFile>2016-05-15 18:01:04.886</sourceFile>
       <parser>2016-05-14 17:55:39.637</parser>
       <StyleCop.CSharp.DocumentationRules>2016-05-14 17:55:39.637</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1806178420</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -96,11 +85,11 @@
     </timestamps>
     <violations />
   </sourcecode>
-  <sourcecode name=".NETFramework,Version=v4.5.2.AssemblyAttributes.cs" parser="StyleCop.CSharp.CsParser">
+  <sourcecode name=".NETFramework,Version=v4.5.AssemblyAttributes.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2016-05-14 17:55:39.637</styleCop>
-      <settingsFile>2016-05-15 08:41:55.764</settingsFile>
-      <sourceFile>2016-11-12 14:50:38.219</sourceFile>
+      <settingsFile>2016-05-15 08:42:14.659</settingsFile>
+      <sourceFile>2016-11-12 07:39:07.512</sourceFile>
       <parser>2016-05-14 17:55:39.637</parser>
       <StyleCop.CSharp.DocumentationRules>2016-05-14 17:55:39.637</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1806178420</StyleCop.CSharp.DocumentationRules.FilesHashCode>
