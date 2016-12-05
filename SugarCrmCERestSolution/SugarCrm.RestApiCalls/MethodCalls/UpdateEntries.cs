@@ -30,9 +30,9 @@ namespace SugarCrm.RestApiCalls.MethodCalls
         /// <param name="entities">The entity objects collection to create</param>
         /// <param name="selectFields">Selected field list</param>
         /// <returns>UpdateEntriesResponse object</returns>
-        public static UpdateEntriesResponse Run(string sessionId, string url, string moduleName, List<object> entities, List<string> selectFields)
+        public static UpdateEntriesResponse Run(string sessionId, string url, string moduleName, List<JObject> entities, List<string> selectFields)
         {
-            var updateEntryResponse = new UpdateEntriesResponse();
+            var updateEntriesResponse = new UpdateEntriesResponse();
             var content = string.Empty;
 
             try
@@ -41,7 +41,7 @@ namespace SugarCrm.RestApiCalls.MethodCalls
                 {
                     session = sessionId,
                     module_name = moduleName,
-                    name_value_list = EntityToNameValueList(entities, selectFields)
+                    name_value_lists = EntityToNameValueList(entities, selectFields)
                 };
 
                 var client = new RestClient(url);
@@ -58,29 +58,25 @@ namespace SugarCrm.RestApiCalls.MethodCalls
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
                     content = response.Content;
-                    var settings = new JsonSerializerSettings();
-                    DeserializerExceptionsContractResolver resolver = DeserializerExceptionsContractResolver.Instance;
-                    resolver.JsonObjectToDeserialize = JObject.Parse(content);
-                    settings.ContractResolver = resolver;
-                    updateEntryResponse = JsonConvert.DeserializeObject<UpdateEntriesResponse>(content, settings);
-                    updateEntryResponse.StatusCode = response.StatusCode;
+                    updateEntriesResponse = JsonConverterHelper.Deserialize<UpdateEntriesResponse>(content);
+                    updateEntriesResponse.StatusCode = response.StatusCode;
                 }
                 else
                 {
-                    updateEntryResponse.StatusCode = response.StatusCode;
-                    updateEntryResponse.Error = ErrorResponse.Format(response);
+                    updateEntriesResponse.StatusCode = response.StatusCode;
+                    updateEntriesResponse.Error = ErrorResponse.Format(response);
                 }
 
-                updateEntryResponse.JsonRawRequest = sugarApiRestResponse.JsonRawRequest;
-                updateEntryResponse.JsonRawResponse = sugarApiRestResponse.JsonRawResponse;
+                updateEntriesResponse.JsonRawRequest = sugarApiRestResponse.JsonRawRequest;
+                updateEntriesResponse.JsonRawResponse = sugarApiRestResponse.JsonRawResponse;
             }
             catch (Exception exception)
             {
-                updateEntryResponse.StatusCode = HttpStatusCode.InternalServerError;
-                updateEntryResponse.Error = ErrorResponse.Format(exception, content);
+                updateEntriesResponse.StatusCode = HttpStatusCode.InternalServerError;
+                updateEntriesResponse.Error = ErrorResponse.Format(exception, content);
             }
 
-            return updateEntryResponse;
+            return updateEntriesResponse;
         }
 
         /// <summary>
@@ -89,17 +85,15 @@ namespace SugarCrm.RestApiCalls.MethodCalls
         /// <param name="entities">The entity objects collection to create</param>
         /// <param name="selectFields">Selected field list</param>
         /// <returns>List of name value as object</returns>
-        public static List<object> EntityToNameValueList(List<object> entities, List<string> selectFields)
+        public static List<object> EntityToNameValueList(List<JObject> entities, List<string> selectFields)
         {
             bool useSelectedFields = (selectFields != null) && (selectFields.Count > 0);
-            var namevalueList = new List<object>();
+            var entityObjectList = new List<object>();
 
             foreach (var entity in entities)
             {
-                var jobject = JObject.FromObject(entity);
-
-
-                var jproperties = jobject.Properties().ToList();
+                var entityObject = new List<object>();
+                var jproperties = entity.Properties().ToList();
                 foreach (JProperty jproperty in jproperties)
                 {
                     string name = jproperty.Name;
@@ -112,17 +106,17 @@ namespace SugarCrm.RestApiCalls.MethodCalls
                     }
 
                     object value = jproperty.Value;
-
                     var namevalueDic = new Dictionary<string, object>();
                     namevalueDic.Add("name", name);
                     namevalueDic.Add("value", value);
-                    var singleObject = new List<object>();
-                    singleObject.Add(namevalueDic);
-                    namevalueList.Add(singleObject);
+                    entityObject.Add(namevalueDic);
                 }
+
+                entityObjectList.Add(entityObject);
             }
 
-            return namevalueList;
+
+            return entityObjectList;
         }
     }
 }

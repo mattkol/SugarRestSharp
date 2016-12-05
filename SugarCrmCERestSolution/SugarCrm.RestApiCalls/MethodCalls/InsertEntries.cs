@@ -30,9 +30,9 @@ namespace SugarCrm.RestApiCalls.MethodCalls
         /// <param name="entities">The entity objects collection to create</param>
         /// <param name="selectFields">Selected field list</param>
         /// <returns>InsertEntriesResponse object</returns>
-        public static InsertEntriesResponse Run(string sessionId, string url, string moduleName, List<object> entities, List<string> selectFields)
+        public static InsertEntriesResponse Run(string sessionId, string url, string moduleName, List<JObject> entities, List<string> selectFields)
         {
-            var insertEntryResponse = new InsertEntriesResponse();
+            var insertEntriesResponse = new InsertEntriesResponse();
             var content = string.Empty;
 
             try
@@ -41,7 +41,7 @@ namespace SugarCrm.RestApiCalls.MethodCalls
                 {
                     session = sessionId,
                     module_name = moduleName,
-                    name_value_list = EntityToNameValueList(entities, selectFields)
+                    name_value_lists = EntityToNameValueList(entities, selectFields)
                 };
 
                 var client = new RestClient(url);
@@ -51,36 +51,32 @@ namespace SugarCrm.RestApiCalls.MethodCalls
                 request.AddParameter("input_type", "json");
                 request.AddParameter("response_type", "json");
                 request.AddParameter("rest_data", JsonConvert.SerializeObject(data));
-
+                string json1 = JsonConvert.SerializeObject(data);
                 var sugarApiRestResponse = client.ExecuteEx(request);
                 var response = sugarApiRestResponse.RestResponse;
 
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
                     content = response.Content;
-                    var settings = new JsonSerializerSettings();
-                    DeserializerExceptionsContractResolver resolver = DeserializerExceptionsContractResolver.Instance;
-                    resolver.JsonObjectToDeserialize = JObject.Parse(content);
-                    settings.ContractResolver = resolver;
-                    insertEntryResponse = JsonConvert.DeserializeObject<InsertEntriesResponse>(content, settings);
-                    insertEntryResponse.StatusCode = response.StatusCode;
+                    insertEntriesResponse = JsonConverterHelper.Deserialize<InsertEntriesResponse>(content);
+                    insertEntriesResponse.StatusCode = response.StatusCode;
                 }
                 else
                 {
-                    insertEntryResponse.StatusCode = response.StatusCode;
-                    insertEntryResponse.Error = ErrorResponse.Format(response);
+                    insertEntriesResponse.StatusCode = response.StatusCode;
+                    insertEntriesResponse.Error = ErrorResponse.Format(response);
                 }
 
-                insertEntryResponse.JsonRawRequest = sugarApiRestResponse.JsonRawRequest;
-                insertEntryResponse.JsonRawResponse = sugarApiRestResponse.JsonRawResponse;
+                insertEntriesResponse.JsonRawRequest = sugarApiRestResponse.JsonRawRequest;
+                insertEntriesResponse.JsonRawResponse = sugarApiRestResponse.JsonRawResponse;
             }
             catch (Exception exception)
             {
-                insertEntryResponse.StatusCode = HttpStatusCode.InternalServerError;
-                insertEntryResponse.Error = ErrorResponse.Format(exception, content);
+                insertEntriesResponse.StatusCode = HttpStatusCode.InternalServerError;
+                insertEntriesResponse.Error = ErrorResponse.Format(exception, content);
             }
 
-            return insertEntryResponse;
+            return insertEntriesResponse;
         }
 
         /// <summary>
@@ -89,17 +85,15 @@ namespace SugarCrm.RestApiCalls.MethodCalls
         /// <param name="entities">The entity objects collection to create</param>
         /// <param name="selectFields">Selected field list</param>
         /// <returns>List of name value as object</returns>
-        public static List<object> EntityToNameValueList(List<object> entities, List<string> selectFields)
+        public static List<object> EntityToNameValueList(List<JObject> entities, List<string> selectFields)
         {
             bool useSelectedFields = (selectFields != null) && (selectFields.Count > 0);
-            var namevalueList = new List<object>();
+            var entityObjectList = new List<object>();
 
             foreach (var entity in entities)
             {
-                var jobject = JObject.FromObject(entity);
-
-
-                var jproperties = jobject.Properties().ToList();
+                var entityObject = new List<object>();
+                var jproperties = entity.Properties().ToList();
                 foreach (JProperty jproperty in jproperties)
                 {
                     string name = jproperty.Name;
@@ -121,13 +115,14 @@ namespace SugarCrm.RestApiCalls.MethodCalls
                     var namevalueDic = new Dictionary<string, object>();
                     namevalueDic.Add("name", name);
                     namevalueDic.Add("value", value);
-                    var singleObject = new List<object>();
-                    singleObject.Add(namevalueDic);
-                    namevalueList.Add(singleObject);
+                    entityObject.Add(namevalueDic);
                 }
+
+                entityObjectList.Add(entityObject);
             }
 
-            return namevalueList;
+
+            return entityObjectList;
         }
     }
 }

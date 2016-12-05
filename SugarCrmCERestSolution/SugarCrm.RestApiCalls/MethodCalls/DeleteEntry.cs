@@ -50,19 +50,13 @@ namespace SugarCrm.RestApiCalls.MethodCalls
                 request.AddParameter("response_type", "json");
                 request.AddParameter("rest_data", JsonConvert.SerializeObject(data));
 
-                string json_data = JsonConvert.SerializeObject(data);
-
                 var sugarApiRestResponse = client.ExecuteEx(request);
                 var response = sugarApiRestResponse.RestResponse;
 
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
                     content = response.Content;
-                    var settings = new JsonSerializerSettings();
-                    DeserializerExceptionsContractResolver resolver = DeserializerExceptionsContractResolver.Instance;
-                    resolver.JsonObjectToDeserialize = JObject.Parse(content);
-                    settings.ContractResolver = resolver;
-                    deleteEntryResponse = JsonConvert.DeserializeObject<DeleteEntryResponse>(content, settings);
+                    deleteEntryResponse = JsonConverterHelper.Deserialize<DeleteEntryResponse>(content);
                     deleteEntryResponse.StatusCode = response.StatusCode;
                 }
                 else

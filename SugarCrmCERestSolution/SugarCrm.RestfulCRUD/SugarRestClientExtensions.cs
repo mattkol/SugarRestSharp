@@ -1,14 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using SugarCrm.RestApiCalls.MethodCalls;
-using SugarCrm.RestApiCalls.Requests;
-using SugarCrm.RestApiCalls.Responses;
+﻿// -----------------------------------------------------------------------
+// <copyright file="SugarRestClientExtensions.cs" company="SugarCrm + PocoGen + REST">
+// Copyright (c) SugarCrm + PocoGen + REST. All rights reserved. 
+// </copyright>
+// -----------------------------------------------------------------------
 
 namespace SugarCrm.RestfulCRUD
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Net;
+    using System.Text;
+    using SugarCrm.RestApiCalls.Helpers;
+    using SugarCrm.RestApiCalls.MethodCalls;
+    using SugarCrm.RestApiCalls.Requests;
+    using SugarCrm.RestApiCalls.Responses;
+    using Newtonsoft.Json.Linq;
+    using SugarCrm.RestApiCalls.Models;
+
     internal static class SugarRestClientExtensions
     {
         /// <summary>
@@ -267,7 +276,7 @@ namespace SugarCrm.RestfulCRUD
 
                 loginResponse = Authentication.Login(loginRequest);
 
-                var insertEntryResponse = InsertEntry.Run(loginResponse.SessionId, loginRequest.Url, request.ModuleName, request.Data, request.Options.SelectFields);
+                var insertEntryResponse = InsertEntry.Run(loginResponse.SessionId, loginRequest.Url, request.ModuleName, JObject.FromObject(request.Data[0]), request.Options.SelectFields);
 
                 if (insertEntryResponse != null)
                 {
@@ -338,7 +347,8 @@ namespace SugarCrm.RestfulCRUD
 
                 loginResponse = Authentication.Login(loginRequest);
 
-                var insertEntriesResponse = InsertEntries.Run(loginResponse.SessionId, loginRequest.Url, request.ModuleName, (List<object>)request.Data, request.Options.SelectFields);
+                List<JObject> objectList = JsonConverterHelper.Serialize(request.Data, typeof(Account));
+                var insertEntriesResponse = InsertEntries.Run(loginResponse.SessionId, loginRequest.Url, request.ModuleName, objectList, request.Options.SelectFields);
 
                 if (insertEntriesResponse != null)
                 {
@@ -409,7 +419,7 @@ namespace SugarCrm.RestfulCRUD
 
                 loginResponse = Authentication.Login(loginRequest);
 
-                var updateEntryResponse = UpdateEntry.Run(loginResponse.SessionId, loginRequest.Url, request.ModuleName, request.Data, request.Options.SelectFields);
+                var updateEntryResponse = UpdateEntry.Run(loginResponse.SessionId, loginRequest.Url, request.ModuleName, JObject.FromObject(request.Data[0]), request.Options.SelectFields);
 
                 if (updateEntryResponse != null)
                 {
@@ -480,7 +490,8 @@ namespace SugarCrm.RestfulCRUD
 
                 loginResponse = Authentication.Login(loginRequest);
 
-                var updateEntriesResponse = UpdateEntries.Run(loginResponse.SessionId, loginRequest.Url, request.ModuleName, (List<object>)request.Data, request.Options.SelectFields);
+                List<JObject> objectList = JsonConverterHelper.Serialize(request.Data, typeof(Account));
+                var updateEntriesResponse = UpdateEntries.Run(loginResponse.SessionId, loginRequest.Url, request.ModuleName, objectList, request.Options.SelectFields);
 
                 if (updateEntriesResponse != null)
                 {

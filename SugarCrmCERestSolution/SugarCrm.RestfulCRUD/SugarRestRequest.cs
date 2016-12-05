@@ -6,6 +6,9 @@
 
 namespace SugarCrm.RestfulCRUD
 {
+    using Newtonsoft.Json.Linq;
+    using SugarCrm.RestApiCalls;
+    using System.Collections.Generic;
     using System.Text;
 
     /// <summary>
@@ -55,7 +58,7 @@ namespace SugarCrm.RestfulCRUD
         /// <summary>
         /// Gets or sets entity or entities data
         /// </summary>
-        public object Data { get; set; }
+        public List<object> Data { get; set; }
 
         /// <summary>
         /// Gets or sets options object

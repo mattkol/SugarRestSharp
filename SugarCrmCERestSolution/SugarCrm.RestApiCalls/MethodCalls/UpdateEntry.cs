@@ -30,7 +30,7 @@ namespace SugarCrm.RestApiCalls.MethodCalls
         /// <param name="entity">The entity object to update</param>
         /// <param name="selectFields">Selected field list</param>
         /// <returns>ReadEntryResponse object</returns>
-        public static UpdateEntryResponse Run(string sessionId, string url, string moduleName, object entity, List<string> selectFields)
+        public static UpdateEntryResponse Run(string sessionId, string url, string moduleName, JObject entity, List<string> selectFields)
         {
             var updateEntryResponse = new UpdateEntryResponse();
             var content = string.Empty;
@@ -58,11 +58,7 @@ namespace SugarCrm.RestApiCalls.MethodCalls
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
                     content = response.Content;
-                    var settings = new JsonSerializerSettings();
-                    DeserializerExceptionsContractResolver resolver = DeserializerExceptionsContractResolver.Instance;
-                    resolver.JsonObjectToDeserialize = JObject.Parse(content);
-                    settings.ContractResolver = resolver;
-                    updateEntryResponse = JsonConvert.DeserializeObject<UpdateEntryResponse>(content, settings);
+                    updateEntryResponse = JsonConverterHelper.Deserialize<UpdateEntryResponse>(content);
                     updateEntryResponse.StatusCode = response.StatusCode;
                 }
                 else
@@ -89,13 +85,12 @@ namespace SugarCrm.RestApiCalls.MethodCalls
         /// <param name="entity">The entity object to create</param>
         /// <param name="selectFields">Selected field list</param>
         /// <returns>List of name value as object</returns>
-        public static List<object> EntityToNameValueList(object entity, List<string> selectFields)
+        public static List<object> EntityToNameValueList(JObject entity, List<string> selectFields)
         {
             var namevalueList = new List<object>();
-            var jobject = JObject.FromObject(entity);
 
             bool useSelectedFields = (selectFields != null) && (selectFields.Count > 0);
-            var jproperties = jobject.Properties().ToList();
+            var jproperties = entity.Properties().ToList();
             foreach (JProperty jproperty in jproperties)
             {
                 string name = jproperty.Name;

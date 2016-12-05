@@ -65,11 +65,7 @@ namespace SugarCrm.RestApiCalls.MethodCalls
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
                     content = response.Content;
-                    var settings = new JsonSerializerSettings();
-                    DeserializerExceptionsContractResolver resolver = DeserializerExceptionsContractResolver.Instance;
-                    resolver.JsonObjectToDeserialize = JObject.Parse(content);
-                    settings.ContractResolver = resolver;
-                    readEntryListResponse = JsonConvert.DeserializeObject<ReadEntryListResponse>(content, settings);
+                    readEntryListResponse = JsonConverterHelper.Deserialize<ReadEntryListResponse>(content);
                     readEntryListResponse.StatusCode = response.StatusCode;
                 }
                 else

@@ -29,13 +29,40 @@ namespace SugarCrm.RestApiCalls.Helpers
 
         public static DeserializerExceptionsContractResolver Instance { get { return instance; } }
 
-        public JObject JsonObjectToDeserialize { get; set; }
+        public JObject JsonObjectToDeserialize { private get; set; }
+
+        public string JsonToDeserialize { private get; set; }
+
+        private JObject JsonObject 
+        {
+            get
+            {
+                try
+                {
+                    if (JsonObjectToDeserialize != null)
+                    {
+                        return JsonObjectToDeserialize;
+                    }
+
+                    if (!string.IsNullOrEmpty(JsonToDeserialize))
+                    {
+                        return JObject.Parse(JsonToDeserialize);
+                    }
+                }
+                catch (Exception)
+                {
+                    return null;
+                }
+
+                return null;
+            }
+        }
 
         protected override JsonProperty CreateProperty(MemberInfo member, MemberSerialization memberSerialization)
         {
             JsonProperty property = base.CreateProperty(member, memberSerialization);
 
-            if (JsonObjectToDeserialize == null)
+            if (JsonObject == null)
             {
                 return property;
             }
@@ -48,10 +75,10 @@ namespace SugarCrm.RestApiCalls.Helpers
                     {
                         try
                         {
-                            IList<string> keys = JsonObjectToDeserialize.Properties().Select(p => p.Name).ToList();
+                            IList<string> keys = JsonObject.Properties().Select(p => p.Name).ToList();
                             if (keys.Any(n => n == property.PropertyName))
                             {
-                                JProperty jproperty = JsonObjectToDeserialize.Properties().SingleOrDefault(p => p.Name == property.PropertyName);
+                                JProperty jproperty = JsonObject.Properties().SingleOrDefault(p => p.Name == property.PropertyName);
                                 if (jproperty != null)
                                 {
                                     string dateValue = jproperty.Value.ToString();

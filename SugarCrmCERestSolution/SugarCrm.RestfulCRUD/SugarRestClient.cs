@@ -11,6 +11,7 @@ namespace SugarCrm.RestfulCRUD
 {
     using RestApiCalls;
     using RestApiCalls.MethodCalls;
+    using SugarCrm.RestApiCalls.Helpers;
 
     /// <summary>
     /// Represents SugarRestClient class
@@ -35,7 +36,7 @@ namespace SugarCrm.RestfulCRUD
 
             if (!string.IsNullOrEmpty(response.Content))
             {
-                response.Data = JsonConvert.DeserializeObject<TEntity>(response.Content);
+                response.Data = JsonConverterHelper.Deserialize<TEntity>(response.Content);
             }
 
             return response;
@@ -64,7 +65,7 @@ namespace SugarCrm.RestfulCRUD
 
             if (!string.IsNullOrEmpty(response.Content))
             {
-                response.Data = JsonConvert.DeserializeObject<List<TEntity>>(response.Content);
+                response.Data = JsonConverterHelper.Deserialize<List<TEntity>>(response.Content);
             }
 
             return response;
@@ -93,7 +94,7 @@ namespace SugarCrm.RestfulCRUD
 
             if (!string.IsNullOrEmpty(response.Content))
             {
-                response.Data = JsonConvert.DeserializeObject<List<TEntity>>(response.Content);
+                response.Data = JsonConverterHelper.Deserialize<List<TEntity>>(response.Content);
             }
 
             return response;

@@ -76,7 +76,7 @@
     <timestamps>
       <styleCop>2016-05-14 17:55:39.637</styleCop>
       <settingsFile>2016-05-15 09:08:00.721</settingsFile>
-      <sourceFile>2016-11-20 21:29:41.657</sourceFile>
+      <sourceFile>2016-12-04 08:31:56.465</sourceFile>
       <parser>2016-05-14 17:55:39.637</parser>
       <StyleCop.CSharp.DocumentationRules>2016-05-14 17:55:39.637</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1806178420</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -170,19 +170,171 @@
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The method must have a documentation header.</context>
+        <context>The property must have a documentation header.</context>
         <line>34</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The property must have a documentation header.</context>
+        <line>36</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
         <context>The call to JsonObjectToDeserialize must begin with the 'this.', 'base.', 'object.' or 'DeserializerExceptionsContractResolver.' or 'DefaultContractResolver.' prefix to indicate the intended method call. </context>
-        <line>38</line>
-        <index>1893</index>
-        <endIndex>1915</endIndex>
-        <startLine>38</startLine>
+        <line>44</line>
+        <index>1966</index>
+        <endIndex>1988</endIndex>
+        <startLine>44</startLine>
+        <startColumn>32</startColumn>
+        <endLine>44</endLine>
+        <endColumn>54</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
+        <context>The call to JsonObjectToDeserialize must begin with the 'this.', 'base.', 'object.' or 'DeserializerExceptionsContractResolver.' or 'DefaultContractResolver.' prefix to indicate the intended method call. </context>
+        <line>42</line>
+        <index>1878</index>
+        <endIndex>1900</endIndex>
+        <startLine>42</startLine>
+        <startColumn>25</startColumn>
+        <endLine>42</endLine>
+        <endColumn>47</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
+        <context>The call to JsonToDeserialize must begin with the 'this.', 'base.', 'object.' or 'DeserializerExceptionsContractResolver.' or 'DefaultContractResolver.' prefix to indicate the intended method call. </context>
+        <line>49</line>
+        <index>2152</index>
+        <endIndex>2168</endIndex>
+        <startLine>49</startLine>
+        <startColumn>46</startColumn>
+        <endLine>49</endLine>
+        <endColumn>62</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
+        <context>The call to JsonToDeserialize must begin with the 'this.', 'base.', 'object.' or 'DeserializerExceptionsContractResolver.' or 'DefaultContractResolver.' prefix to indicate the intended method call. </context>
+        <line>47</line>
+        <index>2063</index>
+        <endIndex>2079</endIndex>
+        <startLine>47</startLine>
+        <startColumn>47</startColumn>
+        <endLine>47</endLine>
+        <endColumn>63</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The method must have a documentation header.</context>
+        <line>61</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
+        <context>The call to JsonObject must begin with the 'this.', 'base.', 'object.' or 'DeserializerExceptionsContractResolver.' or 'DefaultContractResolver.' prefix to indicate the intended method call. </context>
+        <line>65</line>
+        <index>2614</index>
+        <endIndex>2623</endIndex>
+        <startLine>65</startLine>
         <startColumn>17</startColumn>
-        <endLine>38</endLine>
-        <endColumn>39</endColumn>
+        <endLine>65</endLine>
+        <endColumn>26</endColumn>
+        <warning>False</warning>
+      </violation>
+    </violations>
+  </sourcecode>
+  <sourcecode name="JsonConverterHelper.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2016-05-14 17:55:39.637</styleCop>
+      <settingsFile>2016-05-15 09:08:00.721</settingsFile>
+      <sourceFile>2016-12-04 19:01:52.399</sourceFile>
+      <parser>2016-05-14 17:55:39.637</parser>
+      <StyleCop.CSharp.DocumentationRules>2016-05-14 17:55:39.637</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1806178420</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2016-05-14 17:55:39.637</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2016-05-14 17:55:39.637</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2016-05-14 17:55:39.637</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2016-05-14 17:55:39.637</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2016-05-14 17:55:39.637</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2016-05-14 17:55:39.637</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="SystemUsingDirectivesMustBePlacedBeforeOtherUsingDirectives" ruleCheckId="SA1208">
+        <context>System using directives must be placed before all other using directives.</context>
+        <line>12</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBeOrderedAlphabeticallyByNamespace" ruleCheckId="SA1210">
+        <context>Using directives must be sorted alphabetically by the namespaces.</context>
+        <line>12</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="SystemUsingDirectivesMustBePlacedBeforeOtherUsingDirectives" ruleCheckId="SA1208">
+        <context>System using directives must be placed before all other using directives.</context>
+        <line>14</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The class must have a documentation header.</context>
+        <line>17</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The method must have a documentation header.</context>
+        <line>19</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The method must have a documentation header.</context>
+        <line>28</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The method must have a documentation header.</context>
+        <line>37</line>
+        <warning>False</warning>
+      </violation>
+    </violations>
+  </sourcecode>
+  <sourcecode name="JsonExtensions.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2016-05-14 17:55:39.637</styleCop>
+      <settingsFile>2016-05-15 09:08:00.721</settingsFile>
+      <sourceFile>2016-12-04 09:38:52.394</sourceFile>
+      <parser>2016-05-14 17:55:39.637</parser>
+      <StyleCop.CSharp.DocumentationRules>2016-05-14 17:55:39.637</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1806178420</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2016-05-14 17:55:39.637</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2016-05-14 17:55:39.637</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2016-05-14 17:55:39.637</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2016-05-14 17:55:39.637</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2016-05-14 17:55:39.637</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2016-05-14 17:55:39.637</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="SystemUsingDirectivesMustBePlacedBeforeOtherUsingDirectives" ruleCheckId="SA1208">
+        <context>System using directives must be placed before all other using directives.</context>
+        <line>10</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The class must have a documentation header.</context>
+        <line>15</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementParameterDocumentationMustMatchElementParameters" ruleCheckId="SA1612">
+        <context>The param tags in the documentation header must match the element's parameter list.</context>
+        <line>22</line>
         <warning>False</warning>
       </violation>
     </violations>
@@ -214,7 +366,7 @@
     <timestamps>
       <styleCop>2016-05-14 17:55:39.637</styleCop>
       <settingsFile>2016-05-15 09:08:00.721</settingsFile>
-      <sourceFile>2016-11-20 21:41:17.460</sourceFile>
+      <sourceFile>2016-12-04 18:22:22.526</sourceFile>
       <parser>2016-05-14 17:55:39.637</parser>
       <StyleCop.CSharp.DocumentationRules>2016-05-14 17:55:39.637</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1806178420</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -234,7 +386,7 @@
     <violations>
       <violation namespace="StyleCop.CSharp.LayoutRules" rule="CodeMustNotContainMultipleBlankLinesInARow" ruleCheckId="SA1507">
         <context>The code must not contain multiple blank lines in a row.</context>
-        <line>101</line>
+        <line>124</line>
         <warning>False</warning>
       </violation>
     </violations>
@@ -243,7 +395,7 @@
     <timestamps>
       <styleCop>2016-05-14 17:55:39.637</styleCop>
       <settingsFile>2016-05-15 09:08:00.721</settingsFile>
-      <sourceFile>2016-11-20 21:41:17.488</sourceFile>
+      <sourceFile>2016-12-04 09:22:31.856</sourceFile>
       <parser>2016-05-14 17:55:39.637</parser>
       <StyleCop.CSharp.DocumentationRules>2016-05-14 17:55:39.637</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1806178420</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -266,7 +418,7 @@
     <timestamps>
       <styleCop>2016-05-14 17:55:39.637</styleCop>
       <settingsFile>2016-05-15 09:08:00.721</settingsFile>
-      <sourceFile>2016-11-20 21:39:33.440</sourceFile>
+      <sourceFile>2016-12-04 17:27:25.843</sourceFile>
       <parser>2016-05-14 17:55:39.637</parser>
       <StyleCop.CSharp.DocumentationRules>2016-05-14 17:55:39.637</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1806178420</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -289,7 +441,7 @@
     <timestamps>
       <styleCop>2016-05-14 17:55:39.637</styleCop>
       <settingsFile>2016-05-15 09:08:00.721</settingsFile>
-      <sourceFile>2016-11-20 21:41:49.303</sourceFile>
+      <sourceFile>2016-12-04 08:30:16.024</sourceFile>
       <parser>2016-05-14 17:55:39.637</parser>
       <StyleCop.CSharp.DocumentationRules>2016-05-14 17:55:39.637</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1806178420</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -312,7 +464,7 @@
     <timestamps>
       <styleCop>2016-05-14 17:55:39.637</styleCop>
       <settingsFile>2016-05-15 09:08:00.721</settingsFile>
-      <sourceFile>2016-11-20 21:41:49.273</sourceFile>
+      <sourceFile>2016-12-04 08:30:16.005</sourceFile>
       <parser>2016-05-14 17:55:39.637</parser>
       <StyleCop.CSharp.DocumentationRules>2016-05-14 17:55:39.637</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1806178420</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -335,7 +487,7 @@
     <timestamps>
       <styleCop>2016-05-14 17:55:39.637</styleCop>
       <settingsFile>2016-05-15 09:08:00.721</settingsFile>
-      <sourceFile>2016-11-20 21:41:49.332</sourceFile>
+      <sourceFile>2016-12-04 08:30:16.037</sourceFile>
       <parser>2016-05-14 17:55:39.637</parser>
       <StyleCop.CSharp.DocumentationRules>2016-05-14 17:55:39.637</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1806178420</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -364,7 +516,7 @@
     <timestamps>
       <styleCop>2016-05-14 17:55:39.637</styleCop>
       <settingsFile>2016-05-15 09:08:00.721</settingsFile>
-      <sourceFile>2016-11-20 21:41:17.452</sourceFile>
+      <sourceFile>2016-12-04 22:11:02.764</sourceFile>
       <parser>2016-05-14 17:55:39.637</parser>
       <StyleCop.CSharp.DocumentationRules>2016-05-14 17:55:39.637</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1806178420</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -384,7 +536,7 @@
     <violations>
       <violation namespace="StyleCop.CSharp.LayoutRules" rule="CodeMustNotContainMultipleBlankLinesInARow" ruleCheckId="SA1507">
         <context>The code must not contain multiple blank lines in a row.</context>
-        <line>101</line>
+        <line>118</line>
         <warning>False</warning>
       </violation>
     </violations>
@@ -393,7 +545,7 @@
     <timestamps>
       <styleCop>2016-05-14 17:55:39.637</styleCop>
       <settingsFile>2016-05-15 09:08:00.721</settingsFile>
-      <sourceFile>2016-11-20 21:41:17.482</sourceFile>
+      <sourceFile>2016-12-04 09:11:21.452</sourceFile>
       <parser>2016-05-14 17:55:39.637</parser>
       <StyleCop.CSharp.DocumentationRules>2016-05-14 17:55:39.637</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1806178420</StyleCop.CSharp.DocumentationRules.FilesHashCode>

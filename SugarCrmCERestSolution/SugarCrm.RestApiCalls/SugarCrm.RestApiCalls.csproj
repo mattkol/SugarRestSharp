@@ -53,6 +53,8 @@
   <ItemGroup>
     <Compile Include="EntityBase.cs" />
     <Compile Include="Helpers\DeserializerExceptionsContractResolver.cs" />
+    <Compile Include="Helpers\JsonConverterHelper.cs" />
+    <Compile Include="Helpers\JsonExtensions.cs" />
     <Compile Include="MethodCalls\Authentication.cs" />
     <Compile Include="MethodCalls\InsertEntries.cs" />
     <Compile Include="MethodCalls\InsertEntry.cs" />
