@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SugarCrm.PocoGen", "SugarCrm.PocoGen\SugarCrm.PocoGen.csproj", "{092CDD54-CDCC-4BD3-B395-195848DA10F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SugarCrm.PocoGen.Console", "SugarCrm.PocoGen.Console\SugarCrm.PocoGen.Console.csproj", "{EA4CB045-329D-46BA-A850-0EDC3AD69FF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SugarRestSharp", "SugarRestSharp\SugarRestSharp.csproj", "{F0F513B8-998D-435E-92F0-42CA484D98AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SugarRestSharp.IntegrationTests", "SugarRestSharp.IntegrationTests\SugarRestSharp.IntegrationTests.csproj", "{B35BA57C-DC77-44AE-B145-F6DCB4B4CED1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{092CDD54-CDCC-4BD3-B395-195848DA10F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{092CDD54-CDCC-4BD3-B395-195848DA10F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{092CDD54-CDCC-4BD3-B395-195848DA10F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{092CDD54-CDCC-4BD3-B395-195848DA10F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA4CB045-329D-46BA-A850-0EDC3AD69FF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA4CB045-329D-46BA-A850-0EDC3AD69FF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA4CB045-329D-46BA-A850-0EDC3AD69FF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA4CB045-329D-46BA-A850-0EDC3AD69FF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0F513B8-998D-435E-92F0-42CA484D98AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0F513B8-998D-435E-92F0-42CA484D98AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0F513B8-998D-435E-92F0-42CA484D98AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0F513B8-998D-435E-92F0-42CA484D98AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B35BA57C-DC77-44AE-B145-F6DCB4B4CED1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B35BA57C-DC77-44AE-B145-F6DCB4B4CED1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B35BA57C-DC77-44AE-B145-F6DCB4B4CED1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B35BA57C-DC77-44AE-B145-F6DCB4B4CED1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
