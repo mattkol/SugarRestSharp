@@ -3,7 +3,7 @@ SugarRestSharp is a .NET C# SugarCRM CE 6.5 API client. It is a Restful CRUD cli
 
 SugarRestSharp implements following SugarCRM REST API method calls: **_oauth_access, get_entry, get_entry_list, set_entry, set_entries._**
 
-### Usage
+### Sample Usages
 ```cs
             string sugarCrmUrl = "http://191.101.224.189/sugar/service/v4_1/rest.php";
             string sugarCrmUsername = "will";
