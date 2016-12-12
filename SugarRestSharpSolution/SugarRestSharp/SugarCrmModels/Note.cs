@@ -65,6 +65,5 @@ namespace SugarRestSharp.Models
 
 		[JsonProperty(PropertyName = "deleted")]
 		public virtual sbyte? Deleted { get; set; }
-
 	}
 }

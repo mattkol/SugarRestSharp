@@ -162,23 +162,23 @@ namespace SugarRestSharp
 
                             break;
 
-                        case RequestType.Update:
-                            if (this.Data == null)
+                        case RequestType.LinkedReadById:
+                            if (string.IsNullOrEmpty(this.Id))
                             {
-                                builder.AppendLine(ErrorCodes.DataInvalid);
-                            }
-                            else
-                            {
-                                JObject jobject = JObject.FromObject(this.Data);
-                                JProperty jproperty = jobject.Properties().FirstOrDefault(x => x.Name == "id");
-                                if (string.IsNullOrEmpty(jproperty.Value.ToString()))
-                                {
-                                    builder.AppendLine(ErrorCodes.IdInvalid);
-                                }
-
-                               
+                                builder.AppendLine(ErrorCodes.IdInvalid);
                             }
 
+                            if ((Options.LinkedFields == null) || (Options.LinkedFields.Count ==0))
+                            {
+                                builder.AppendLine(ErrorCodes.LinkedFieldsInfoMissing);
+                            }
+                            break;
+
+                        case RequestType.LinkedBulkRead:
+                            if ((Options.LinkedFields == null) || (Options.LinkedFields.Count == 0))
+                            {
+                                builder.AppendLine(ErrorCodes.LinkedFieldsInfoMissing);
+                            }
                             break;
                     }
                 }

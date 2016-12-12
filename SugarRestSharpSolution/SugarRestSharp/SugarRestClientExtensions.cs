@@ -80,6 +80,69 @@ namespace SugarRestSharp
         }
 
         /// <summary>
+        /// Gets enity by id - returned data with linked modules data.
+        /// </summary>
+        /// <param name="client">SugarRestClient object</param>
+        /// <param name="request">The request object</param>
+        /// <param name="modelInfo">The entity model info.</param>
+        /// <returns>SugarRestResponse object</returns>
+        public static SugarRestResponse ExecuteLinkedGetById(this SugarRestClient client, SugarRestRequest request, ModelInfo modelInfo)
+        {
+            var sugarRestResponse = new SugarRestResponse();
+            var loginResponse = new LoginResponse();
+
+            try
+            {
+                var loginRequest = new LoginRequest
+                {
+                    Url = request.Url,
+                    Username = request.Username,
+                    Password = request.Password
+                };
+
+                loginResponse = Authentication.Login(loginRequest);
+
+                var selectFields = request.Options == null ? new List<string>() : request.Options.SelectFields;
+                var linkedFields = request.Options == null ? null : request.Options.LinkedFields;
+                selectFields = modelInfo.GetJsonPropertyNames(selectFields);
+                Dictionary<string, List<string>> linkedSelectFields = modelInfo.GetJsonLinkedInfo(linkedFields);
+                var readEntryResponse = GetLinkedEntry.Run(loginResponse.SessionId, request.Url, request.ModuleName, request.Id, selectFields, linkedSelectFields);
+
+                if (readEntryResponse != null)
+                {
+                    sugarRestResponse.JsonRawRequest = readEntryResponse.JsonRawRequest;
+                    sugarRestResponse.JsonRawResponse = readEntryResponse.JsonRawResponse;
+
+                    var jsonEnityList = readEntryResponse.Entity;
+                    if (jsonEnityList != null)
+                    {
+                        sugarRestResponse.JData = readEntryResponse.Entity.ToString();
+                        sugarRestResponse.StatusCode = readEntryResponse.StatusCode;
+                        sugarRestResponse.Data = null;
+                    }
+                    else
+                    {
+                        sugarRestResponse.Error = readEntryResponse.Error;
+                        sugarRestResponse.StatusCode = readEntryResponse.StatusCode;
+                    }
+                }
+
+                return sugarRestResponse;
+            }
+            catch (Exception exception)
+            {
+                sugarRestResponse.StatusCode = HttpStatusCode.InternalServerError;
+                sugarRestResponse.Error = ErrorResponse.Format(exception, string.Empty);
+            }
+            finally
+            {
+                Authentication.Logout(request.Url, loginResponse.SessionId);
+            }
+
+            return sugarRestResponse;
+        }
+
+        /// <summary>
         /// Gets all entities limited by MaxResultCount sets in request options
         /// </summary>
         /// <param name="client">SugarRestClient object</param>
@@ -115,6 +178,69 @@ namespace SugarRestSharp
                         sugarRestResponse.JData = readEntryListResponse.EntityList.ToString();
                         sugarRestResponse.StatusCode = readEntryListResponse.StatusCode;
                         sugarRestResponse.Data = sugarRestResponse.JData.ToObjects(modelInfo.Type);
+                    }
+                    else
+                    {
+                        sugarRestResponse.Error = readEntryListResponse.Error;
+                        sugarRestResponse.StatusCode = readEntryListResponse.StatusCode;
+                    }
+                }
+
+                return sugarRestResponse;
+            }
+            catch (Exception exception)
+            {
+                sugarRestResponse.StatusCode = HttpStatusCode.InternalServerError;
+                sugarRestResponse.Error = ErrorResponse.Format(exception, string.Empty);
+            }
+            finally
+            {
+                Authentication.Logout(request.Url, loginResponse.SessionId);
+            }
+
+            return sugarRestResponse;
+        }
+
+        /// <summary>
+        /// Gets all entities limited by MaxResultCount sets in request options
+        /// </summary>
+        /// <param name="client">SugarRestClient object</param>
+        /// <param name="request">The request object</param>
+        /// <param name="modelInfo">The entity model info.</param>
+        /// <returns>SugarRestResponse object</returns>
+        public static SugarRestResponse ExecuteLinkedGetAll(this SugarRestClient client, SugarRestRequest request, ModelInfo modelInfo)
+        {
+            var sugarRestResponse = new SugarRestResponse();
+            var loginResponse = new LoginResponse();
+
+            try
+            {
+                var loginRequest = new LoginRequest
+                {
+                    Url = request.Url,
+                    Username = request.Username,
+                    Password = request.Password
+                };
+
+                loginResponse = Authentication.Login(loginRequest);
+
+                var selectFields = request.Options == null ? new List<string>() : request.Options.SelectFields;
+                var linkedFields = request.Options == null ? null : request.Options.LinkedFields;
+                selectFields = modelInfo.GetJsonPropertyNames(selectFields);
+                Dictionary<string, List<string>> linkedSelectFields = modelInfo.GetJsonLinkedInfo(linkedFields);
+                var readEntryListResponse = GetLinkedEntryList.Run(loginResponse.SessionId, request.Url, request.ModuleName, selectFields, linkedSelectFields, request.Options.MaxResult);
+
+                if (readEntryListResponse != null)
+                {
+                    sugarRestResponse.JsonRawRequest = readEntryListResponse.JsonRawRequest;
+                    sugarRestResponse.JsonRawResponse = readEntryListResponse.JsonRawResponse;
+
+                    var jsonEnityList = readEntryListResponse.EntityList;
+                    if (jsonEnityList != null)
+                    {
+                        sugarRestResponse.JData = readEntryListResponse.EntityList.ToString();
+                        sugarRestResponse.StatusCode = readEntryListResponse.StatusCode;
+                        sugarRestResponse.Data = null;
                     }
                     else
                     {

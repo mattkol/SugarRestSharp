@@ -40,5 +40,10 @@ namespace SugarRestSharp
         /// Invalid enity or entities data error code
         /// </summary>
         public static string DataInvalid = "Entity or entities data object provided is not valid.";
+
+        /// <summary>
+        /// Invalid linked field information missing.
+        /// </summary>
+        public static string LinkedFieldsInfoMissing = "Entity or entities data object provided is not valid.";
     }
 }

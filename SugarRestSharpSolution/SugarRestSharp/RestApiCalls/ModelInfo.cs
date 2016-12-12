@@ -23,6 +23,12 @@ namespace SugarRestSharp
         public string ModelName { get; set; }
 
         /// <summary>
+        /// Gets or sets the SugarCRM json model name.
+        /// This maps to the tablename in model attibute.
+        /// </summary>
+        public string JsonModelName { get; set; }
+
+        /// <summary>
         /// Gets or sets model C# object type.
         /// </summary>
         public Type Type { get; set; }
@@ -42,7 +48,9 @@ namespace SugarRestSharp
                 if (classAttrs.Length == 1)
                 {
                     string modelName = ((ModulePropertyAttribute)classAttrs[0]).ModuleName;
+                    string jsonModelName = ((ModulePropertyAttribute)classAttrs[0]).TableName;
                     modelInfo.ModelName = modelName;
+                    modelInfo.JsonModelName = jsonModelName;
                     modelInfo.Type = type;
                     modelInfo.ModelProperties = new List<ModelProperty>();
 
@@ -83,10 +91,12 @@ namespace SugarRestSharp
                 if (classAttrs.Length == 1)
                 {
                     string attrModelName = ((ModulePropertyAttribute)classAttrs[0]).ModuleName;
+                    string attrJsonModelName = ((ModulePropertyAttribute)classAttrs[0]).TableName;
 
                     if (!string.IsNullOrEmpty(attrModelName) && (attrModelName.ToLower() == modelName.ToLower()))
                     {
                         modelInfo.ModelName = attrModelName;
+                        modelInfo.JsonModelName = attrJsonModelName;
                         modelInfo.Type = type;
                         modelInfo.ModelProperties = new List<ModelProperty>();
 

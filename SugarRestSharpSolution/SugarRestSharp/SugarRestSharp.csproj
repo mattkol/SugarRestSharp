@@ -60,6 +60,8 @@
     <Compile Include="RestApiCalls\Helpers\ModelnfoExtensions.cs" />
     <Compile Include="RestApiCalls\MethodCalls\Authentication.cs" />
     <Compile Include="RestApiCalls\MethodCalls\DeleteEntry.cs" />
+    <Compile Include="RestApiCalls\MethodCalls\GetLinkedEntry.cs" />
+    <Compile Include="RestApiCalls\MethodCalls\GetLinkedEntryList.cs" />
     <Compile Include="RestApiCalls\MethodCalls\GetEntry.cs" />
     <Compile Include="RestApiCalls\MethodCalls\GetEntryList.cs" />
     <Compile Include="RestApiCalls\MethodCalls\GetPagedEntryList.cs" />
@@ -79,9 +81,11 @@
     <Compile Include="RestApiCalls\Responses\ErrorResponse.cs" />
     <Compile Include="RestApiCalls\Responses\InsertEntriesResponse.cs" />
     <Compile Include="RestApiCalls\Responses\InsertEntryResponse.cs" />
+    <Compile Include="RestApiCalls\Responses\LinkedModuleData.cs" />
     <Compile Include="RestApiCalls\Responses\LoginResponse.cs" />
     <Compile Include="RestApiCalls\Responses\ReadEntryListResponse.cs" />
     <Compile Include="RestApiCalls\Responses\ReadEntryResponse.cs" />
+    <Compile Include="RestApiCalls\Responses\ReadLinkedEntryResponse.cs" />
     <Compile Include="RestApiCalls\Responses\UpdateEntriesResponse.cs" />
     <Compile Include="RestApiCalls\Responses\UpdateEntryResponse.cs" />
     <Compile Include="RestApiCalls\RestClientExtensions.cs" />

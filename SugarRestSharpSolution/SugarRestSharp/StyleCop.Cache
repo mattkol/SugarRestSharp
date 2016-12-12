@@ -1,5 +1,34 @@
 <stylecopresultscache>
   <version>12</version>
+  <sourcecode name="LinkedModuleDataItem.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2016-05-14 16:40:24.000</styleCop>
+      <settingsFile>2016-05-14 16:40:24.000</settingsFile>
+      <sourceFile>2016-12-11 15:37:35.083</sourceFile>
+      <parser>2016-05-14 16:40:24.000</parser>
+      <StyleCop.CSharp.DocumentationRules>2016-05-14 16:40:24.000</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1234054458</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2016-05-14 16:40:24.000</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2016-05-14 16:40:24.000</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2016-05-14 16:40:24.000</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2016-05-14 16:40:24.000</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2016-05-14 16:40:24.000</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2016-05-14 16:40:24.000</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="SystemUsingDirectivesMustBePlacedBeforeOtherUsingDirectives" ruleCheckId="SA1208">
+        <context>System using directives must be placed before all other using directives.</context>
+        <line>11</line>
+        <warning>False</warning>
+      </violation>
+    </violations>
+  </sourcecode>
   <project key="1441742203">
     <configuration>DEBUG;TRACE</configuration>
   </project>
@@ -7,7 +36,7 @@
     <timestamps>
       <styleCop>2016-05-14 16:40:24.000</styleCop>
       <settingsFile>2016-05-14 16:40:24.000</settingsFile>
-      <sourceFile>2016-12-08 19:34:43.421</sourceFile>
+      <sourceFile>2016-12-11 12:57:10.367</sourceFile>
       <parser>2016-05-14 16:40:24.000</parser>
       <StyleCop.CSharp.DocumentationRules>2016-05-14 16:40:24.000</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1234054458</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -60,13 +89,18 @@
         <line>42</line>
         <warning>False</warning>
       </violation>
+      <violation namespace="StyleCop.CSharp.MaintainabilityRules" rule="FieldsMustBePrivate" ruleCheckId="SA1401">
+        <context>Fields must be declared with private access. Use properties to expose fields.</context>
+        <line>47</line>
+        <warning>False</warning>
+      </violation>
     </violations>
   </sourcecode>
   <sourcecode name="Options.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2016-05-14 16:40:24.000</styleCop>
       <settingsFile>2016-05-14 16:40:24.000</settingsFile>
-      <sourceFile>2016-12-08 19:20:13.984</sourceFile>
+      <sourceFile>2016-12-11 09:40:16.082</sourceFile>
       <parser>2016-05-14 16:40:24.000</parser>
       <StyleCop.CSharp.DocumentationRules>2016-05-14 16:40:24.000</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1234054458</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -83,13 +117,25 @@
       <StyleCop.CSharp.SpacingRules>2016-05-14 16:40:24.000</StyleCop.CSharp.SpacingRules>
       <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
     </timestamps>
-    <violations />
+    <violations>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="OpeningCurlyBracketsMustBeSpacedCorrectly" ruleCheckId="SA1012">
+        <context>Invalid spacing around the opening curly bracket.</context>
+        <line>54</line>
+        <index>1771</index>
+        <endIndex>1771</endIndex>
+        <startLine>54</startLine>
+        <startColumn>61</startColumn>
+        <endLine>54</endLine>
+        <endColumn>61</endColumn>
+        <warning>False</warning>
+      </violation>
+    </violations>
   </sourcecode>
   <sourcecode name="RequestType.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2016-05-14 16:40:24.000</styleCop>
       <settingsFile>2016-05-14 16:40:24.000</settingsFile>
-      <sourceFile>2016-12-10 08:33:30.437</sourceFile>
+      <sourceFile>2016-12-11 09:59:33.575</sourceFile>
       <parser>2016-05-14 16:40:24.000</parser>
       <StyleCop.CSharp.DocumentationRules>2016-05-14 16:40:24.000</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1234054458</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -145,6 +191,16 @@
       <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
         <context>The documentation text within the summary tag contains incorrectly spelled words: Crm</context>
         <line>52</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the summary tag contains incorrectly spelled words: Crm</context>
+        <line>57</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the summary tag contains incorrectly spelled words: Crm</context>
+        <line>62</line>
         <warning>False</warning>
       </violation>
     </violations>
@@ -500,7 +556,7 @@
     <timestamps>
       <styleCop>2016-05-14 16:40:24.000</styleCop>
       <settingsFile>2016-05-14 16:40:24.000</settingsFile>
-      <sourceFile>2016-12-08 19:34:43.954</sourceFile>
+      <sourceFile>2016-12-11 18:21:03.532</sourceFile>
       <parser>2016-05-14 16:40:24.000</parser>
       <StyleCop.CSharp.DocumentationRules>2016-05-14 16:40:24.000</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1234054458</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -520,12 +576,39 @@
     <violations>
       <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
         <context>The documentation text within the summary tag contains incorrectly spelled words: Modelnfo</context>
-        <line>15</line>
+        <line>16</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
         <context>The method must have a documentation header.</context>
-        <line>17</line>
+        <line>18</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="OpeningParenthesisMustBeSpacedCorrectly" ruleCheckId="SA1008">
+        <context>Invalid spacing around the opening parenthesis.</context>
+        <line>28</line>
+        <index>1062</index>
+        <endIndex>1062</endIndex>
+        <startLine>28</startLine>
+        <startColumn>17</startColumn>
+        <endLine>28</endLine>
+        <endColumn>17</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The method must have a documentation header.</context>
+        <line>52</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="KeywordsMustBeSpacedCorrectly" ruleCheckId="SA1000">
+        <context>The spacing around the keyword 'if' is invalid.</context>
+        <line>65</line>
+        <index>2433</index>
+        <endIndex>2434</endIndex>
+        <startLine>65</startLine>
+        <startColumn>17</startColumn>
+        <endLine>65</endLine>
+        <endColumn>18</endColumn>
         <warning>False</warning>
       </violation>
     </violations>
@@ -603,6 +686,109 @@
       </violation>
     </violations>
   </sourcecode>
+  <sourcecode name="GetLinkedEntry.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2016-05-14 16:40:24.000</styleCop>
+      <settingsFile>2016-05-14 16:40:24.000</settingsFile>
+      <sourceFile>2016-12-11 15:25:20.953</sourceFile>
+      <parser>2016-05-14 16:40:24.000</parser>
+      <StyleCop.CSharp.DocumentationRules>2016-05-14 16:40:24.000</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1234054458</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2016-05-14 16:40:24.000</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2016-05-14 16:40:24.000</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2016-05-14 16:40:24.000</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2016-05-14 16:40:24.000</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2016-05-14 16:40:24.000</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2016-05-14 16:40:24.000</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBeOrderedAlphabeticallyByNamespace" ruleCheckId="SA1210">
+        <context>Using directives must be sorted alphabetically by the namespaces.</context>
+        <line>12</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBeOrderedAlphabeticallyByNamespace" ruleCheckId="SA1210">
+        <context>Using directives must be sorted alphabetically by the namespaces.</context>
+        <line>13</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBeOrderedAlphabeticallyByNamespace" ruleCheckId="SA1210">
+        <context>Using directives must be sorted alphabetically by the namespaces.</context>
+        <line>14</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the summary tag contains incorrectly spelled words: Crm</context>
+        <line>32</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the param tag contains incorrectly spelled words: Crm</context>
+        <line>32</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the param tag contains incorrectly spelled words: identier</context>
+        <line>32</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the summary tag contains incorrectly spelled words: json</context>
+        <line>90</line>
+        <warning>False</warning>
+      </violation>
+    </violations>
+  </sourcecode>
+  <sourcecode name="GetLinkedEntryList.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2016-05-14 16:40:24.000</styleCop>
+      <settingsFile>2016-05-14 16:40:24.000</settingsFile>
+      <sourceFile>2016-12-11 19:03:32.030</sourceFile>
+      <parser>2016-05-14 16:40:24.000</parser>
+      <StyleCop.CSharp.DocumentationRules>2016-05-14 16:40:24.000</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1234054458</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2016-05-14 16:40:24.000</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2016-05-14 16:40:24.000</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2016-05-14 16:40:24.000</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2016-05-14 16:40:24.000</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2016-05-14 16:40:24.000</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2016-05-14 16:40:24.000</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the summary tag contains incorrectly spelled words: Crm</context>
+        <line>32</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the param tag contains incorrectly spelled words: Crm</context>
+        <line>32</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the param tag contains incorrectly spelled words: Maxium</context>
+        <line>32</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the summary tag contains incorrectly spelled words: json</context>
+        <line>95</line>
+        <warning>False</warning>
+      </violation>
+    </violations>
+  </sourcecode>
   <sourcecode name="GetEntry.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2016-05-14 16:40:24.000</styleCop>
@@ -661,7 +847,7 @@
     <timestamps>
       <styleCop>2016-05-14 16:40:24.000</styleCop>
       <settingsFile>2016-05-14 16:40:24.000</settingsFile>
-      <sourceFile>2016-12-10 12:57:06.997</sourceFile>
+      <sourceFile>2016-12-11 10:16:55.842</sourceFile>
       <parser>2016-05-14 16:40:24.000</parser>
       <StyleCop.CSharp.DocumentationRules>2016-05-14 16:40:24.000</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1234054458</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -681,17 +867,17 @@
     <violations>
       <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
         <context>The documentation text within the summary tag contains incorrectly spelled words: Crm</context>
-        <line>32</line>
+        <line>31</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
         <context>The documentation text within the param tag contains incorrectly spelled words: Crm</context>
-        <line>32</line>
+        <line>31</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
         <context>The documentation text within the param tag contains incorrectly spelled words: Maxium</context>
-        <line>32</line>
+        <line>31</line>
         <warning>False</warning>
       </violation>
     </violations>
@@ -739,7 +925,7 @@
     <timestamps>
       <styleCop>2016-05-14 16:40:24.000</styleCop>
       <settingsFile>2016-05-14 16:40:24.000</settingsFile>
-      <sourceFile>2016-12-10 12:57:07.136</sourceFile>
+      <sourceFile>2016-12-11 14:32:56.540</sourceFile>
       <parser>2016-05-14 16:40:24.000</parser>
       <StyleCop.CSharp.DocumentationRules>2016-05-14 16:40:24.000</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1234054458</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -822,7 +1008,7 @@
     <timestamps>
       <styleCop>2016-05-14 16:40:24.000</styleCop>
       <settingsFile>2016-05-14 16:40:24.000</settingsFile>
-      <sourceFile>2016-12-10 12:57:07.115</sourceFile>
+      <sourceFile>2016-12-11 14:32:54.995</sourceFile>
       <parser>2016-05-14 16:40:24.000</parser>
       <StyleCop.CSharp.DocumentationRules>2016-05-14 16:40:24.000</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1234054458</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -944,7 +1130,7 @@
     <timestamps>
       <styleCop>2016-05-14 16:40:24.000</styleCop>
       <settingsFile>2016-05-14 16:40:24.000</settingsFile>
-      <sourceFile>2016-12-08 19:34:44.084</sourceFile>
+      <sourceFile>2016-12-11 12:36:41.834</sourceFile>
       <parser>2016-05-14 16:40:24.000</parser>
       <StyleCop.CSharp.DocumentationRules>2016-05-14 16:40:24.000</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1234054458</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -969,17 +1155,22 @@
       </violation>
       <violation namespace="StyleCop.CSharp.LayoutRules" rule="ClosingCurlyBracketsMustNotBePrecededByBlankLine" ruleCheckId="SA1508">
         <context>A closing curly bracket must not be preceded by a blank line.</context>
-        <line>119</line>
+        <line>129</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the summary tag contains incorrectly spelled words: json, tablename, attibute</context>
+        <line>29</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
         <context>The method must have a documentation header.</context>
-        <line>35</line>
+        <line>41</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
         <context>The method must have a documentation header.</context>
-        <line>72</line>
+        <line>80</line>
         <warning>False</warning>
       </violation>
     </violations>
@@ -1269,6 +1460,89 @@
     </timestamps>
     <violations />
   </sourcecode>
+  <sourcecode name="LinkedModuleData.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2016-05-14 16:40:24.000</styleCop>
+      <settingsFile>2016-05-14 16:40:24.000</settingsFile>
+      <sourceFile>2016-12-11 17:50:06.052</sourceFile>
+      <parser>2016-05-14 16:40:24.000</parser>
+      <StyleCop.CSharp.DocumentationRules>2016-05-14 16:40:24.000</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1234054458</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2016-05-14 16:40:24.000</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2016-05-14 16:40:24.000</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2016-05-14 16:40:24.000</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2016-05-14 16:40:24.000</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2016-05-14 16:40:24.000</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2016-05-14 16:40:24.000</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="SystemUsingDirectivesMustBePlacedBeforeOtherUsingDirectives" ruleCheckId="SA1208">
+        <context>System using directives must be placed before all other using directives.</context>
+        <line>11</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="OpeningCurlyBracketsMustNotBeFollowedByBlankLine" ruleCheckId="SA1505">
+        <context>An opening curly bracket must not be followed by a blank line.</context>
+        <line>18</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The property must have a documentation header.</context>
+        <line>32</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to Records must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>37</line>
+        <index>1168</index>
+        <endIndex>1174</endIndex>
+        <startLine>37</startLine>
+        <startColumn>21</startColumn>
+        <endLine>37</endLine>
+        <endColumn>27</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to Records must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>42</line>
+        <index>1316</index>
+        <endIndex>1322</endIndex>
+        <startLine>42</startLine>
+        <startColumn>42</startColumn>
+        <endLine>42</endLine>
+        <endColumn>48</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingParenthesisMustBeSpacedCorrectly" ruleCheckId="SA1009">
+        <context>Invalid spacing around the closing parenthesis.</context>
+        <line>48</line>
+        <index>1604</index>
+        <endIndex>1604</endIndex>
+        <startLine>48</startLine>
+        <startColumn>46</startColumn>
+        <endLine>48</endLine>
+        <endColumn>46</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="ClosingParenthesisMustBeSpacedCorrectly" ruleCheckId="SA1009">
+        <context>Invalid spacing around the closing parenthesis.</context>
+        <line>49</line>
+        <index>1672</index>
+        <endIndex>1672</endIndex>
+        <startLine>49</startLine>
+        <startColumn>48</startColumn>
+        <endLine>49</endLine>
+        <endColumn>48</endColumn>
+        <warning>False</warning>
+      </violation>
+    </violations>
+  </sourcecode>
   <sourcecode name="LoginResponse.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2016-05-14 16:40:24.000</styleCop>
@@ -1366,6 +1640,67 @@
       <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
         <context>The documentation text within the summary tag contains incorrectly spelled words: json</context>
         <line>53</line>
+        <warning>False</warning>
+      </violation>
+    </violations>
+  </sourcecode>
+  <sourcecode name="ReadLinkedEntryResponse.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2016-05-14 16:40:24.000</styleCop>
+      <settingsFile>2016-05-14 16:40:24.000</settingsFile>
+      <sourceFile>2016-12-11 17:41:37.496</sourceFile>
+      <parser>2016-05-14 16:40:24.000</parser>
+      <StyleCop.CSharp.DocumentationRules>2016-05-14 16:40:24.000</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1234054458</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2016-05-14 16:40:24.000</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2016-05-14 16:40:24.000</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2016-05-14 16:40:24.000</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2016-05-14 16:40:24.000</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2016-05-14 16:40:24.000</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2016-05-14 16:40:24.000</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the summary tag contains incorrectly spelled words: Crm, json</context>
+        <line>23</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
+        <context>The call to RelationshipList must begin with the 'this.', 'base.', 'object.' or 'ReadLinkedEntryResponse.' or 'BaseResponse.' prefix to indicate the intended method call. </context>
+        <line>39</line>
+        <index>1311</index>
+        <endIndex>1326</endIndex>
+        <startLine>39</startLine>
+        <startColumn>73</startColumn>
+        <endLine>39</endLine>
+        <endColumn>88</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="CodeMustNotContainMultipleWhitespaceInARow" ruleCheckId="SA1025">
+        <context>The code contains multiple spaces in a row. Only one space is needed.</context>
+        <line>37</line>
+        <index>1219</index>
+        <endIndex>1220</endIndex>
+        <startLine>37</startLine>
+        <startColumn>30</startColumn>
+        <endLine>37</endLine>
+        <endColumn>31</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the summary tag contains incorrectly spelled words: json</context>
+        <line>61</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the summary tag contains incorrectly spelled words: json</context>
+        <line>67</line>
         <warning>False</warning>
       </violation>
     </violations>
@@ -1563,7 +1898,7 @@
     <timestamps>
       <styleCop>2016-05-14 16:40:24.000</styleCop>
       <settingsFile>2016-05-14 16:40:24.000</settingsFile>
-      <sourceFile>2016-12-10 13:41:42.298</sourceFile>
+      <sourceFile>2016-12-11 13:50:21.275</sourceFile>
       <parser>2016-05-14 16:40:24.000</parser>
       <StyleCop.CSharp.DocumentationRules>2016-05-14 16:40:24.000</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1234054458</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -1593,7 +1928,7 @@
       </violation>
       <violation namespace="StyleCop.CSharp.LayoutRules" rule="CodeMustNotContainMultipleBlankLinesInARow" ruleCheckId="SA1507">
         <context>The code must not contain multiple blank lines in a row.</context>
-        <line>144</line>
+        <line>152</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
@@ -1742,41 +2077,51 @@
         <line>134</line>
         <warning>False</warning>
       </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ClosingCurlyBracketMustBeFollowedByBlankLine" ruleCheckId="SA1513">
+        <context>Statements or elements wrapped in curly brackets must be followed by a blank line.</context>
+        <line>138</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ClosingCurlyBracketMustBeFollowedByBlankLine" ruleCheckId="SA1513">
+        <context>Statements or elements wrapped in curly brackets must be followed by a blank line.</context>
+        <line>142</line>
+        <warning>False</warning>
+      </violation>
       <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
         <context>The method must have a documentation header.</context>
-        <line>145</line>
+        <line>153</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
         <context>The call to url must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
-        <line>154</line>
-        <index>5394</index>
-        <endIndex>5396</endIndex>
-        <startLine>154</startLine>
+        <line>162</line>
+        <index>5719</index>
+        <endIndex>5721</endIndex>
+        <startLine>162</startLine>
         <startColumn>63</startColumn>
-        <endLine>154</endLine>
+        <endLine>162</endLine>
         <endColumn>65</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
         <context>The call to username must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
-        <line>155</line>
-        <index>5486</index>
-        <endIndex>5493</endIndex>
-        <startLine>155</startLine>
+        <line>163</line>
+        <index>5811</index>
+        <endIndex>5818</endIndex>
+        <startLine>163</startLine>
         <startColumn>73</startColumn>
-        <endLine>155</endLine>
+        <endLine>163</endLine>
         <endColumn>80</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
         <context>The call to password must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
-        <line>156</line>
-        <index>5588</index>
-        <endIndex>5595</endIndex>
-        <startLine>156</startLine>
+        <line>164</line>
+        <index>5913</index>
+        <endIndex>5920</endIndex>
+        <startLine>164</startLine>
         <startColumn>73</startColumn>
-        <endLine>156</endLine>
+        <endLine>164</endLine>
         <endColumn>80</endColumn>
         <warning>False</warning>
       </violation>
@@ -1786,7 +2131,7 @@
     <timestamps>
       <styleCop>2016-05-14 16:40:24.000</styleCop>
       <settingsFile>2016-05-14 16:40:24.000</settingsFile>
-      <sourceFile>2016-12-10 18:32:00.263</sourceFile>
+      <sourceFile>2016-12-11 19:12:22.195</sourceFile>
       <parser>2016-05-14 16:40:24.000</parser>
       <StyleCop.CSharp.DocumentationRules>2016-05-14 16:40:24.000</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1234054458</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -1831,7 +2176,7 @@
       </violation>
       <violation namespace="StyleCop.CSharp.LayoutRules" rule="CodeMustNotContainMultipleBlankLinesInARow" ruleCheckId="SA1507">
         <context>The code must not contain multiple blank lines in a row.</context>
-        <line>199</line>
+        <line>325</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
@@ -1840,8 +2185,13 @@
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the summary tag contains incorrectly spelled words: enity</context>
+        <line>89</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
         <context>The documentation text within the summary tag contains incorrectly spelled words: poge</context>
-        <line>148</line>
+        <line>274</line>
         <warning>False</warning>
       </violation>
     </violations>
@@ -1850,7 +2200,7 @@
     <timestamps>
       <styleCop>2016-05-14 16:40:24.000</styleCop>
       <settingsFile>2016-05-14 16:40:24.000</settingsFile>
-      <sourceFile>2016-12-10 09:48:23.128</sourceFile>
+      <sourceFile>2016-12-11 12:57:59.109</sourceFile>
       <parser>2016-05-14 16:40:24.000</parser>
       <StyleCop.CSharp.DocumentationRules>2016-05-14 16:40:24.000</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1234054458</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -1928,14 +2278,14 @@
         <line>122</line>
         <warning>False</warning>
       </violation>
-      <violation namespace="StyleCop.CSharp.LayoutRules" rule="CodeMustNotContainMultipleBlankLinesInARow" ruleCheckId="SA1507">
-        <context>The code must not contain multiple blank lines in a row.</context>
-        <line>179</line>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ClosingCurlyBracketMustBeFollowedByBlankLine" ruleCheckId="SA1513">
+        <context>Statements or elements wrapped in curly brackets must be followed by a blank line.</context>
+        <line>174</line>
         <warning>False</warning>
       </violation>
-      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ClosingCurlyBracketsMustNotBePrecededByBlankLine" ruleCheckId="SA1508">
-        <context>A closing curly bracket must not be preceded by a blank line.</context>
-        <line>180</line>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ClosingCurlyBracketMustBeFollowedByBlankLine" ruleCheckId="SA1513">
+        <context>Statements or elements wrapped in curly brackets must be followed by a blank line.</context>
+        <line>181</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
@@ -1947,6 +2297,11 @@
         <startColumn>46</startColumn>
         <endLine>139</endLine>
         <endColumn>55</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SymbolsMustBeSpacedCorrectly" ruleCheckId="SA1003">
+        <context>The spacing around the symbol '==' is invalid.</context>
+        <line>171</line>
         <warning>False</warning>
       </violation>
     </violations>
@@ -3581,7 +3936,7 @@
     <timestamps>
       <styleCop>2016-05-14 16:40:24.000</styleCop>
       <settingsFile>2016-05-14 16:40:24.000</settingsFile>
-      <sourceFile>2016-12-08 19:12:29.455</sourceFile>
+      <sourceFile>2016-12-11 09:23:14.216</sourceFile>
       <parser>2016-05-14 16:40:24.000</parser>
       <StyleCop.CSharp.DocumentationRules>2016-05-14 16:40:24.000</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1234054458</StyleCop.CSharp.DocumentationRules.FilesHashCode>

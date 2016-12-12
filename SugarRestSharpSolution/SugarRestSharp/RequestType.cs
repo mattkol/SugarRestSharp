@@ -49,6 +49,16 @@ namespace SugarRestSharp
         /// <summary>
         /// SugarCrm delete method call.
         /// </summary>
-        Delete
+        Delete,
+
+        /// <summary>
+        /// SugarCrm get by id method call - this gets associated linked objects serialized into a known custom type.
+        /// </summary>
+        LinkedReadById,
+
+        /// <summary>
+        /// SugarCrm get all method call - this gets associated linked objects serialized into a known custom type.
+        /// </summary>
+        LinkedBulkRead
     }
 }

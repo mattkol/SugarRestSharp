@@ -136,6 +136,14 @@ namespace SugarRestSharp
                 {
                     return this.ExecuteDelete(request, modelInfo);
                 }
+                case RequestType.LinkedReadById:
+                {
+                    return this.ExecuteLinkedGetById(request, modelInfo);
+                }
+                case RequestType.LinkedBulkRead:
+                {
+                    return this.ExecuteLinkedGetAll(request, modelInfo);
+                }
             }
 
             throw new Exception("Request type is invalid!");

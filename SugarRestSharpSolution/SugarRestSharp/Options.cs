@@ -46,5 +46,11 @@ namespace SugarRestSharp
         /// Gets or sets selected module fields to return
         /// </summary>
         public List<string> SelectFields { get; set; }
+
+        /// <summary>
+        /// Gets or sets the linked modules fields. 
+        /// The selected fields (value) can be null or empty, but the module type or name (key) must be valid.
+        /// </summary>
+        public Dictionary<object, List<string>> LinkedFields{ get; set; }
     }
 }

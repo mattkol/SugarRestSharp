@@ -86,7 +86,7 @@ namespace SugarRestSharp.MethodCalls
         /// <param name="entities">The entity objects collection to create</param>
         /// <param name="selectFields">Selected field list</param>
         /// <returns>List of name value as object</returns>
-        public static List<object> EntityToNameValueList(JArray entities, List<string> selectFields)
+        private static List<object> EntityToNameValueList(JArray entities, List<string> selectFields)
         {
             bool useSelectedFields = (selectFields != null) && (selectFields.Count > 0);
             var entityObjectList = new List<object>();

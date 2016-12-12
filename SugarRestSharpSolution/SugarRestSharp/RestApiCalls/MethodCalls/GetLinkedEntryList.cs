@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="GetEntryList.cs" company="SugarCrm + PocoGen + REST">
+// <copyright file="GetLinkedEntryList.cs" company="SugarCrm + PocoGen + REST">
 // Copyright (c) SugarCrm + PocoGen + REST. All rights reserved. 
 // </copyright>
 // -----------------------------------------------------------------------
@@ -15,9 +15,9 @@ namespace SugarRestSharp.MethodCalls
     using RestSharp;
 
     /// <summary>
-    /// Represents the GetEntryList class
+    /// Represents the GetLinkedEntryList class
     /// </summary>
-    internal static class GetEntryList
+    internal static class GetLinkedEntryList
     {
         /// <summary>
         /// Gets entries [SugarCrm REST method - get_entry_list]
@@ -26,9 +26,10 @@ namespace SugarRestSharp.MethodCalls
         /// <param name="url">REST API Url</param>
         /// <param name="moduleName">SugarCrm module name</param>
         /// <param name="selectFields">Selected field list</param>
+        /// <param name="linkedSelectFields">Linked field info.</param>
         /// <param name="maxCountResult">Maxium number of entries to return</param>
         /// <returns>CreateEntryResponse object</returns>
-        public static ReadEntryListResponse Run(string sessionId, string url, string moduleName, List<string> selectFields, int maxCountResult)
+        public static ReadEntryListResponse Run(string sessionId, string url, string moduleName, List<string> selectFields, Dictionary<string, List<string>> linkedSelectFields, int maxCountResult)
         {
             var readEntryListResponse = new ReadEntryListResponse();
             var content = string.Empty;
@@ -43,7 +44,7 @@ namespace SugarRestSharp.MethodCalls
                     order_by = string.Empty,
                     offset = 0,
                     select_fields = selectFields,
-                    link_name_to_fields_array = string.Empty,
+                    link_name_to_fields_array = LinkedInfoToLinkedFieldsList(linkedSelectFields),
                     max_results = maxCountResult,
                     deleted = 0,
                     favorites = false
@@ -80,10 +81,30 @@ namespace SugarRestSharp.MethodCalls
             catch (Exception exception)
             {
                 readEntryListResponse.StatusCode = HttpStatusCode.InternalServerError;
-                readEntryListResponse.Error = ErrorResponse.Format(exception, content); 
+                readEntryListResponse.Error = ErrorResponse.Format(exception, content);
             }
 
             return readEntryListResponse;
+        }
+
+        /// <summary>
+        /// Format linked list info to json friendly dynamic object
+        /// </summary>
+        /// <param name="linkedSelectFields">Linked field info.</param>
+        /// <returns>List of linked name value as object.</returns>
+        private static List<object> LinkedInfoToLinkedFieldsList(Dictionary<string, List<string>> linkedSelectFields)
+        {
+            var linkedListInfo = new List<object>();
+            foreach (var item in linkedSelectFields)
+            {
+                var namevalueDic = new Dictionary<string, object>();
+                namevalueDic.Add("name", item.Key);
+                namevalueDic.Add("value", item.Value);
+
+                linkedListInfo.Add(namevalueDic);
+            }
+
+            return linkedListInfo;
         }
     }
 }
