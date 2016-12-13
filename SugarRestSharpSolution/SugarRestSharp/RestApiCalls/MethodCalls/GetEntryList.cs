@@ -27,7 +27,7 @@ namespace SugarRestSharp.MethodCalls
         /// <param name="moduleName">SugarCrm module name</param>
         /// <param name="selectFields">Selected field list</param>
         /// <param name="maxCountResult">Maxium number of entries to return</param>
-        /// <returns>CreateEntryResponse object</returns>
+        /// <returns>ReadEntryListResponse object</returns>
         public static ReadEntryListResponse Run(string sessionId, string url, string moduleName, List<string> selectFields, int maxCountResult)
         {
             var readEntryListResponse = new ReadEntryListResponse();

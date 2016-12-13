@@ -104,9 +104,12 @@ namespace SugarRestSharp.IntegrationTests
             Assert.NotNull(response);
             Assert.Equal(response.StatusCode, HttpStatusCode.OK);
 
-            List<Account> readAccounts = (List<Account>) (response.Data);
-            Assert.NotNull(readAccounts);
-            Assert.True(readAccounts.Count <= count);
+            // Deserialize json data to custom object
+            List<CustomAcccount1> customAccounts = JsonConvert.DeserializeObject<List<CustomAcccount1>>(response.JData);
+
+            Assert.NotNull(customAccounts);
+            Assert.True(customAccounts.Count <= count); 
+
             // -------------------End Account Link Contact-------------------
         }
 
@@ -122,9 +125,12 @@ namespace SugarRestSharp.IntegrationTests
             Assert.NotNull(response);
             Assert.Equal(response.StatusCode, HttpStatusCode.OK);
 
-            List<Account> readAccounts = (List<Account>) (response.Data);
-            Assert.NotNull(readAccounts);
-            Assert.True(readAccounts.Count <= count);
+            // Deserialize json data to custom object
+            List<CustomAcccount2> customAccounts = JsonConvert.DeserializeObject<List<CustomAcccount2>>(response.JData);
+
+            Assert.NotNull(customAccounts);
+            Assert.True(customAccounts.Count <= count);
+
             // -------------------End Account Link Contact-------------------
         }
     }

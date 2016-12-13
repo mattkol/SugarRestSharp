@@ -79,12 +79,17 @@
     <Compile Include="RestApiCalls\Responses\DeleteEntryResponse.cs" />
     <Compile Include="RestApiCalls\Responses\EntryListArray.cs" />
     <Compile Include="RestApiCalls\Responses\ErrorResponse.cs" />
+    <Compile Include="RestApiCalls\Responses\Extensions\LinkedEntryListExtensions.cs" />
     <Compile Include="RestApiCalls\Responses\InsertEntriesResponse.cs" />
     <Compile Include="RestApiCalls\Responses\InsertEntryResponse.cs" />
+    <Compile Include="RestApiCalls\Responses\LinkedListModule.cs" />
+    <Compile Include="RestApiCalls\Responses\LinkedListModuleData.cs" />
     <Compile Include="RestApiCalls\Responses\LinkedModuleData.cs" />
+    <Compile Include="RestApiCalls\Responses\LinkedRecordItem.cs" />
     <Compile Include="RestApiCalls\Responses\LoginResponse.cs" />
     <Compile Include="RestApiCalls\Responses\ReadEntryListResponse.cs" />
     <Compile Include="RestApiCalls\Responses\ReadEntryResponse.cs" />
+    <Compile Include="RestApiCalls\Responses\ReadLinkedEntryListResponse.cs" />
     <Compile Include="RestApiCalls\Responses\ReadLinkedEntryResponse.cs" />
     <Compile Include="RestApiCalls\Responses\UpdateEntriesResponse.cs" />
     <Compile Include="RestApiCalls\Responses\UpdateEntryResponse.cs" />

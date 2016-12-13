@@ -28,10 +28,10 @@ namespace SugarRestSharp.MethodCalls
         /// <param name="selectFields">Selected field list</param>
         /// <param name="linkedSelectFields">Linked field info.</param>
         /// <param name="maxCountResult">Maxium number of entries to return</param>
-        /// <returns>CreateEntryResponse object</returns>
-        public static ReadEntryListResponse Run(string sessionId, string url, string moduleName, List<string> selectFields, Dictionary<string, List<string>> linkedSelectFields, int maxCountResult)
+        /// <returns>ReadLinkedEntryListResponse object</returns>
+        public static ReadLinkedEntryListResponse Run(string sessionId, string url, string moduleName, List<string> selectFields, Dictionary<string, List<string>> linkedSelectFields, int maxCountResult)
         {
-            var readEntryListResponse = new ReadEntryListResponse();
+            var readLinkedEntryListResponse = new ReadLinkedEntryListResponse();
             var content = string.Empty;
 
             try
@@ -66,25 +66,25 @@ namespace SugarRestSharp.MethodCalls
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
                     content = response.Content;
-                    readEntryListResponse = JsonConverterHelper.Deserialize<ReadEntryListResponse>(content);
-                    readEntryListResponse.StatusCode = response.StatusCode;
+                    readLinkedEntryListResponse = JsonConverterHelper.Deserialize<ReadLinkedEntryListResponse>(content);
+                    readLinkedEntryListResponse.StatusCode = response.StatusCode;
                 }
                 else
                 {
-                    readEntryListResponse.StatusCode = response.StatusCode;
-                    readEntryListResponse.Error = ErrorResponse.Format(response);
+                    readLinkedEntryListResponse.StatusCode = response.StatusCode;
+                    readLinkedEntryListResponse.Error = ErrorResponse.Format(response);
                 }
 
-                readEntryListResponse.JsonRawRequest = sugarApiRestResponse.JsonRawRequest;
-                readEntryListResponse.JsonRawResponse = sugarApiRestResponse.JsonRawResponse;
+                readLinkedEntryListResponse.JsonRawRequest = sugarApiRestResponse.JsonRawRequest;
+                readLinkedEntryListResponse.JsonRawResponse = sugarApiRestResponse.JsonRawResponse;
             }
             catch (Exception exception)
             {
-                readEntryListResponse.StatusCode = HttpStatusCode.InternalServerError;
-                readEntryListResponse.Error = ErrorResponse.Format(exception, content);
+                readLinkedEntryListResponse.StatusCode = HttpStatusCode.InternalServerError;
+                readLinkedEntryListResponse.Error = ErrorResponse.Format(exception, content);
             }
 
-            return readEntryListResponse;
+            return readLinkedEntryListResponse;
         }
 
         /// <summary>
