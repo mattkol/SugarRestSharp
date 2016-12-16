@@ -9,6 +9,7 @@ namespace SugarRestSharp.IntegrationTests
     using Helpers;
     using Models;
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
     using System.Net;
@@ -29,7 +30,7 @@ namespace SugarRestSharp.IntegrationTests
             Assert.NotNull(response);
             Assert.Equal(response.StatusCode, HttpStatusCode.OK);
 
-            string insertId = response.Id;
+            string insertId = (response.Data == null) ? string.Empty : response.Data.ToString();
 
             Assert.NotNull(insertId);
             Assert.NotEmpty(insertId);
@@ -58,7 +59,7 @@ namespace SugarRestSharp.IntegrationTests
             Assert.NotNull(response);
             Assert.Equal(response.StatusCode, HttpStatusCode.OK);
 
-            string updateId = response.Id;
+            string updateId = (response.Data == null) ? string.Empty : response.Data.ToString();
 
             Assert.NotNull(updateId);
             Assert.NotEmpty(updateId);
@@ -86,7 +87,7 @@ namespace SugarRestSharp.IntegrationTests
             Assert.NotNull(response);
             Assert.Equal(response.StatusCode, HttpStatusCode.OK);
 
-            string deleteId = response.Id;
+            string deleteId = (response.Data == null) ? string.Empty : response.Data.ToString();
 
             Assert.NotNull(deleteId);
             Assert.NotEmpty(deleteId);
@@ -106,7 +107,7 @@ namespace SugarRestSharp.IntegrationTests
             Assert.NotNull(response);
             Assert.Equal(response.StatusCode, HttpStatusCode.OK);
 
-            List<string> insertIds = response.Ids;
+            List<string> insertIds = (response.Data == null) ? null : ((IList) response.Data).Cast<string>().ToList();
 
             Assert.NotNull(insertIds);
             Assert.Equal(insertContacts.Count, insertIds.Count);
@@ -148,7 +149,7 @@ namespace SugarRestSharp.IntegrationTests
             Assert.NotNull(response);
             Assert.Equal(response.StatusCode, HttpStatusCode.OK);
 
-            List<string> updateIds = response.Ids;
+            List<string> updateIds = (response.Data == null) ? null : ((IList) response.Data).Cast<string>().ToList();
 
             Assert.NotNull(updateIds);
             foreach (string id in updateIds)
@@ -202,7 +203,7 @@ namespace SugarRestSharp.IntegrationTests
             Assert.NotNull(response);
             Assert.Equal(response.StatusCode, HttpStatusCode.OK);
 
-            string insertId = response.Id;
+            string insertId = (response.Data == null) ? string.Empty : response.Data.ToString();
 
             Assert.NotNull(insertId);
             Assert.NotEmpty(insertId);
@@ -231,8 +232,8 @@ namespace SugarRestSharp.IntegrationTests
             Assert.NotNull(response);
             Assert.Equal(response.StatusCode, HttpStatusCode.OK);
 
-            string deleteId = response.Id;
-
+            string deleteId = (response.Data == null) ? string.Empty : response.Data.ToString();
+ 
             Assert.NotNull(deleteId);
             Assert.NotEmpty(deleteId);
             Assert.Equal(insertId, deleteId);
@@ -252,7 +253,7 @@ namespace SugarRestSharp.IntegrationTests
             Assert.NotNull(response);
             Assert.Equal(response.StatusCode, HttpStatusCode.OK);
 
-            string insertId = response.Id;
+            string insertId = (response.Data == null) ? string.Empty : response.Data.ToString();
 
             Assert.NotNull(insertId);
             Assert.NotEmpty(insertId);
@@ -281,7 +282,7 @@ namespace SugarRestSharp.IntegrationTests
             Assert.NotNull(response);
             Assert.Equal(response.StatusCode, HttpStatusCode.OK);
 
-            string deleteId = response.Id;
+            string deleteId = (response.Data == null) ? string.Empty : response.Data.ToString();
 
             Assert.NotNull(deleteId);
             Assert.NotEmpty(deleteId);

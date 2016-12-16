@@ -10,11 +10,10 @@ namespace SugarRestSharp.MethodCalls
 {
     using System;
     using System.Net;
+    using Helpers;
     using Newtonsoft.Json;
-    using Newtonsoft.Json.Linq;
     using Responses;
     using RestSharp;
-    using SugarRestSharp.Helpers;
 
     /// <summary>
     /// Represents the GetPagedEntryList class
@@ -28,10 +27,12 @@ namespace SugarRestSharp.MethodCalls
         /// <param name="url">REST API Url</param>
         /// <param name="moduleName">SugarCrm module name</param>
         /// <param name="selectFields">Selected field list</param>
+        /// <param name="linkedSelectFields">Linked field info.</param>
+        /// <param name="queryString">Formatted query string.</param>
         /// <param name="currentPage">The current page number</param>
         /// <param name="numberPerPage">The number of pages per page</param>
         /// <returns>CreateEntryResponse object</returns>
-        public static ReadEntryListResponse Run(string sessionId, string url, string moduleName, List<string> selectFields, int currentPage, int numberPerPage)
+        public static ReadEntryListResponse Run(string sessionId, string url, string moduleName, List<string> selectFields, string queryString, int currentPage, int numberPerPage)
         {
             var readEntryPagedResponse = new ReadEntryListResponse();
             var content = string.Empty;
@@ -42,7 +43,7 @@ namespace SugarRestSharp.MethodCalls
                 {
                     session = sessionId,
                     module_name = moduleName,
-                    query = string.Empty,
+                    query = queryString,
                     order_by = string.Empty,
                     offset = (currentPage - 1) * numberPerPage,
                     select_fields = selectFields,

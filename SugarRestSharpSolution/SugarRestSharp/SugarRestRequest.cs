@@ -8,8 +8,6 @@ namespace SugarRestSharp
 {
     using System;
     using System.Text;
-    using Newtonsoft.Json.Linq;
-    using System.Linq;
 
     /// <summary>
     /// Represents SugarRestRequest class
@@ -61,7 +59,7 @@ namespace SugarRestSharp
             this._validationMessage = string.Empty;
         }
         /// <summary>
-        /// Gets or sets REST API Url
+        /// Gets or sets SugarCRM REST API Url.
         /// </summary>
         public string Url { get; set; }
 
@@ -86,22 +84,17 @@ namespace SugarRestSharp
         public RequestType RequestType { get; set; }
 
         /// <summary>
-        /// Gets or sets entity identifier
+        /// Gets or sets request parameter - can be identifier, entity or entities data.
         /// </summary>
-        public string Id { get; set; }
+        public object Parameter { get; set; }
 
         /// <summary>
-        /// Gets or sets entity or entities data
-        /// </summary>
-        public object Data { get; set; }
-
-        /// <summary>
-        /// Gets or sets options object
+        /// Gets or sets options object.
         /// </summary>
         public Options Options { get; set; }
 
         /// <summary>
-        /// Gets the validation message
+        /// Gets the validation message.
         /// </summary>
         public string ValidationMessage 
         {
@@ -109,7 +102,7 @@ namespace SugarRestSharp
         }
 
         /// <summary>
-        /// Checks whether the request is valid
+        /// Checks whether the request is valid.
         /// </summary>
         /// <param name="type">Request type</param>
         /// <returns>True or false</returns>
@@ -145,7 +138,7 @@ namespace SugarRestSharp
                     {
                         case RequestType.ReadById:
                         case RequestType.Delete:
-                            if (string.IsNullOrEmpty(this.Id))
+                            if (this.Parameter == null)
                             {
                                 builder.AppendLine(ErrorCodes.IdInvalid);
                             }
@@ -155,7 +148,7 @@ namespace SugarRestSharp
                         case RequestType.Create:
                         case RequestType.BulkCreate:
                         case RequestType.BulkUpdate:
-                            if (this.Data == null)
+                            if (this.Parameter == null)
                             {
                                 builder.AppendLine(ErrorCodes.DataInvalid);
                             }
@@ -163,19 +156,19 @@ namespace SugarRestSharp
                             break;
 
                         case RequestType.LinkedReadById:
-                            if (string.IsNullOrEmpty(this.Id))
+                            if (this.Parameter == null)
                             {
                                 builder.AppendLine(ErrorCodes.IdInvalid);
                             }
 
-                            if ((Options.LinkedFields == null) || (Options.LinkedFields.Count ==0))
+                            if ((Options.LinkedModules == null) || (Options.LinkedModules.Count ==0))
                             {
                                 builder.AppendLine(ErrorCodes.LinkedFieldsInfoMissing);
                             }
                             break;
 
                         case RequestType.LinkedBulkRead:
-                            if ((Options.LinkedFields == null) || (Options.LinkedFields.Count == 0))
+                            if ((Options.LinkedModules == null) || (Options.LinkedModules.Count == 0))
                             {
                                 builder.AppendLine(ErrorCodes.LinkedFieldsInfoMissing);
                             }

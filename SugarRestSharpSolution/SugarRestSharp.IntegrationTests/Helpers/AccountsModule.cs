@@ -16,7 +16,7 @@ namespace SugarRestSharp.IntegrationTests.Helpers
         public static SugarRestResponse CreateAccount(SugarRestClient client, Account account)
         {
             var request = new SugarRestRequest("Accounts", RequestType.Create);
-            request.Data = account;
+            request.Parameter = account;
 
             request.Options.SelectFields = GetSelectedField();
 
@@ -26,7 +26,7 @@ namespace SugarRestSharp.IntegrationTests.Helpers
         public static SugarRestResponse CreateAccountByType(SugarRestClient client, Account account)
         {
             var request = new SugarRestRequest(RequestType.Create);
-            request.Data = account;
+            request.Parameter = account;
 
             request.Options.SelectFields = GetSelectedField();
 
@@ -36,7 +36,7 @@ namespace SugarRestSharp.IntegrationTests.Helpers
         public static async Task<SugarRestResponse> CreateAccountAsync(SugarRestClient client, Account account)
         {
             var request = new SugarRestRequest(RequestType.Create);
-            request.Data = account;
+            request.Parameter = account;
 
             request.Options.SelectFields = GetSelectedField();
 
@@ -47,7 +47,7 @@ namespace SugarRestSharp.IntegrationTests.Helpers
         public static SugarRestResponse BulkCreateAccount(SugarRestClient client, List<Account> accounts)
         {
             var request = new SugarRestRequest("Accounts", RequestType.BulkCreate);
-            request.Data = accounts;
+            request.Parameter = accounts;
             request.Options.SelectFields = GetSelectedField();
             return client.Execute(request);
         }
@@ -55,7 +55,7 @@ namespace SugarRestSharp.IntegrationTests.Helpers
         public static SugarRestResponse ReadAccount(SugarRestClient client, string accountId)
         {
             var request = new SugarRestRequest("Accounts", RequestType.ReadById);
-            request.Id = accountId;
+            request.Parameter = accountId;
 
             request.Options.SelectFields = GetSelectedField();
             request.Options.SelectFields.Add(nameof(Account.Id));
@@ -66,7 +66,7 @@ namespace SugarRestSharp.IntegrationTests.Helpers
         public static SugarRestResponse ReadAccountByType(SugarRestClient client, string accountId)
         {
             var request = new SugarRestRequest(RequestType.ReadById);
-            request.Id = accountId;
+            request.Parameter = accountId;
 
             request.Options.SelectFields = GetSelectedField();
             request.Options.SelectFields.Add(nameof(Account.Id));
@@ -77,7 +77,7 @@ namespace SugarRestSharp.IntegrationTests.Helpers
         public static async Task<SugarRestResponse> ReadAccountAsync(SugarRestClient client, string accountId)
         {
             var request = new SugarRestRequest(RequestType.ReadById);
-            request.Id = accountId;
+            request.Parameter = accountId;
 
             request.Options.SelectFields = GetSelectedField();
             request.Options.SelectFields.Add(nameof(Account.Id));
@@ -121,7 +121,7 @@ namespace SugarRestSharp.IntegrationTests.Helpers
 
             foreach (var id in accountIds)
             {
-                request.Id = id;
+                request.Parameter = id;
                 SugarRestResponse response = client.Execute(request);
 
                 accounts.Add((Account)response.Data);
@@ -140,7 +140,7 @@ namespace SugarRestSharp.IntegrationTests.Helpers
             account.Name = "Update SugarRestSharp Acccount " + uniqueNumber;
 
             var request = new SugarRestRequest("Accounts", RequestType.Update);
-            request.Data = account;
+            request.Parameter = account;
 
             request.Options.SelectFields = new List<string>();
             request.Options.SelectFields.Add(nameof(Account.Name));
@@ -156,7 +156,7 @@ namespace SugarRestSharp.IntegrationTests.Helpers
             }
 
             var request = new SugarRestRequest("Accounts", RequestType.BulkUpdate);
-            request.Data = accounts;
+            request.Parameter = accounts;
 
             request.Options.SelectFields = new List<string>();
             request.Options.SelectFields.Add(nameof(Account.Name));
@@ -167,7 +167,7 @@ namespace SugarRestSharp.IntegrationTests.Helpers
         public static SugarRestResponse DeleteAccount(SugarRestClient client, string accountId)
         {
             var request = new SugarRestRequest("Accounts", RequestType.Delete);
-            request.Id = accountId;
+            request.Parameter = accountId;
 
             return client.Execute(request);
         }
@@ -175,7 +175,7 @@ namespace SugarRestSharp.IntegrationTests.Helpers
         public static SugarRestResponse DeleteAccountByType(SugarRestClient client, string accountId)
         {
             var request = new SugarRestRequest(RequestType.Delete);
-            request.Id = accountId;
+            request.Parameter = accountId;
 
             return client.Execute<Account>(request);
         }
@@ -183,7 +183,7 @@ namespace SugarRestSharp.IntegrationTests.Helpers
         public static async Task<SugarRestResponse> DeleteAccountAsync(SugarRestClient client, string accountId)
         {
             var request = new SugarRestRequest("Accounts", RequestType.Delete);
-            request.Id = accountId;
+            request.Parameter = accountId;
 
             return await client.ExecuteAsync(request);
         }
@@ -195,9 +195,10 @@ namespace SugarRestSharp.IntegrationTests.Helpers
             List<string> listId = new List<string>();
             foreach (var id in accountIds)
             {
-                request.Id = id;
+                request.Parameter = id;
                 SugarRestResponse response = client.Execute(request);
-                listId.Add(response.Id);
+                string identifier = (response.Data == null) ? string.Empty : response.Data.ToString();
+                listId.Add(identifier);
             }
 
             return listId;

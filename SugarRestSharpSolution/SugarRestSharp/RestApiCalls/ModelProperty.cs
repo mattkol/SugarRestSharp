@@ -27,5 +27,29 @@ namespace SugarRestSharp
         /// Gets or sets property C# object type.
         /// </summary>
         public Type Type { get; set; }
+
+        public bool IsNumeric
+        {
+            get
+            {
+                if (Type == null)
+                {
+                    return false;
+                }
+
+                string typeName = Type.Name.ToLower();
+                switch (typeName)
+                {
+                    case "int32":
+                    case "sbyte":
+                        return true;
+                    case "string":
+                    case "datetime":
+                        return false;
+                }
+
+                return false;
+            }
+        }
     }
 }

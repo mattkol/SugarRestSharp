@@ -51,13 +51,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ErrorCodes.cs" />
+    <Compile Include="QueryOperator.cs" />
     <Compile Include="Options.cs" />
+    <Compile Include="QueryPredicate.cs" />
     <Compile Include="RequestType.cs" />
     <Compile Include="RestApiCalls\EntityBase.cs" />
     <Compile Include="RestApiCalls\Helpers\DeserializerExceptionsContractResolver.cs" />
     <Compile Include="RestApiCalls\Helpers\JsonConverterHelper.cs" />
     <Compile Include="RestApiCalls\Helpers\JsonExtensions.cs" />
     <Compile Include="RestApiCalls\Helpers\ModelnfoExtensions.cs" />
+    <Compile Include="RestApiCalls\Helpers\QueryBuilder.cs" />
     <Compile Include="RestApiCalls\MethodCalls\Authentication.cs" />
     <Compile Include="RestApiCalls\MethodCalls\DeleteEntry.cs" />
     <Compile Include="RestApiCalls\MethodCalls\GetLinkedEntry.cs" />
@@ -75,6 +78,7 @@
     <Compile Include="RestApiCalls\ModulePropertyAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RestApiCalls\Requests\LoginRequest.cs" />
+    <Compile Include="RestApiCalls\Requests\JsonPredicate.cs" />
     <Compile Include="RestApiCalls\Responses\BaseResponse.cs" />
     <Compile Include="RestApiCalls\Responses\DeleteEntryResponse.cs" />
     <Compile Include="RestApiCalls\Responses\EntryListArray.cs" />

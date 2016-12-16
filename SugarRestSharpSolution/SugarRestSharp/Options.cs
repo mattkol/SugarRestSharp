@@ -48,9 +48,22 @@ namespace SugarRestSharp
         public List<string> SelectFields { get; set; }
 
         /// <summary>
-        /// Gets or sets the linked modules fields. 
-        /// The selected fields (value) can be null or empty, but the module type or name (key) must be valid.
+        /// Gets or sets the linked modules. 
+        /// The "dictionary key" is the module name (e.g - Accounts, Leads etc) or .NET C# object type (e.g - typeof(Account), typeof(Lead)).
+        /// The "dictionary value" is the list of select fields.
+        /// The select fields (value) can be null or empty, but the module type or name (key) must be valid.
         /// </summary>
-        public Dictionary<object, List<string>> LinkedFields{ get; set; }
+        public Dictionary<object, List<string>> LinkedModules { get; set; }
+
+        /// <summary>
+        /// Gets or sets the query.
+        /// If this value is set, the QueryPredicates value is ignored.
+        /// </summary>
+        public string Query { get; set; }
+
+        /// <summary>
+        /// Gets or sets the query parameters.
+        /// </summary>
+        public List<QueryPredicate> QueryPredicates { get; set; }
     }
 }

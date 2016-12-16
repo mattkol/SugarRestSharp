@@ -16,7 +16,6 @@ namespace SugarRestSharp.Responses
     /// </summary>
     internal class LinkedModuleData
     {
-
         /// <summary>
         /// Gets or sets the linked module name.
         /// </summary>

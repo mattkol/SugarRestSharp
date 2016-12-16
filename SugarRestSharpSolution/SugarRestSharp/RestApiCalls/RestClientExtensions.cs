@@ -1,12 +1,16 @@
-﻿using System;
-using System.Diagnostics;
-using System.Linq;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using RestSharp;
+﻿// -----------------------------------------------------------------------
+// <copyright file="RestClientExtensions.cs" company="SugarCrm + PocoGen + REST">
+// Copyright (c) SugarCrm + PocoGen + REST. All rights reserved. 
+// </copyright>
+// -----------------------------------------------------------------------
 
 namespace SugarRestSharp
 {
+    using System;
+    using System.Linq;
+    using Newtonsoft.Json;
+    using RestSharp;
+
     internal static class RestClientExtensions
     {
         /// <summary>

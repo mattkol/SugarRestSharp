@@ -8,7 +8,6 @@ namespace SugarRestSharp
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
     using System.Net;
     using Newtonsoft.Json.Linq;
     using Responses;
@@ -16,6 +15,9 @@ namespace SugarRestSharp
     using Requests;
     using Helpers;
 
+    /// <summary>
+    /// 
+    /// </summary>
     internal static class SugarRestClientExtensions
     {
         /// <summary>
@@ -43,7 +45,7 @@ namespace SugarRestSharp
 
                 var selectFields = request.Options == null ? new List<string>() : request.Options.SelectFields;
                 selectFields = modelInfo.GetJsonPropertyNames(selectFields);
-                var readEntryResponse = GetEntry.Run(loginResponse.SessionId, request.Url, request.ModuleName, request.Id, selectFields);
+                var readEntryResponse = GetEntry.Run(loginResponse.SessionId, request.Url, request.ModuleName, request.Parameter.ToString(), selectFields);
 
                 if (readEntryResponse != null)
                 {
@@ -103,10 +105,10 @@ namespace SugarRestSharp
                 loginResponse = Authentication.Login(loginRequest);
 
                 var selectFields = request.Options == null ? new List<string>() : request.Options.SelectFields;
-                var linkedFields = request.Options == null ? null : request.Options.LinkedFields;
+                var linkedFields = request.Options == null ? null : request.Options.LinkedModules;
                 selectFields = modelInfo.GetJsonPropertyNames(selectFields);
                 Dictionary<string, List<string>> linkedSelectFields = modelInfo.GetJsonLinkedInfo(linkedFields);
-                var readEntryResponse = GetLinkedEntry.Run(loginResponse.SessionId, request.Url, request.ModuleName, request.Id, selectFields, linkedSelectFields);
+                var readEntryResponse = GetLinkedEntry.Run(loginResponse.SessionId, request.Url, request.ModuleName, request.Parameter.ToString(), selectFields, linkedSelectFields);
 
                 if (readEntryResponse != null)
                 {
@@ -165,7 +167,9 @@ namespace SugarRestSharp
 
                 loginResponse = Authentication.Login(loginRequest);
                 var selectFields = modelInfo.GetJsonPropertyNames(request.Options.SelectFields);
-                var readEntryListResponse = GetEntryList.Run(loginResponse.SessionId, request.Url, request.ModuleName, selectFields, request.Options.MaxResult);
+                string query = modelInfo.GetQuery(request.Options.QueryPredicates, request.Options.Query);
+
+                var readEntryListResponse = GetEntryList.Run(loginResponse.SessionId, request.Url, request.ModuleName, selectFields, query, request.Options.MaxResult);
 
                 if (readEntryListResponse != null)
                 {
@@ -225,10 +229,12 @@ namespace SugarRestSharp
                 loginResponse = Authentication.Login(loginRequest);
 
                 var selectFields = request.Options == null ? new List<string>() : request.Options.SelectFields;
-                var linkedFields = request.Options == null ? null : request.Options.LinkedFields;
+                var linkedFields = request.Options == null ? null : request.Options.LinkedModules;
                 selectFields = modelInfo.GetJsonPropertyNames(selectFields);
                 Dictionary<string, List<string>> linkedSelectFields = modelInfo.GetJsonLinkedInfo(linkedFields);
-                var readEntryListResponse = GetLinkedEntryList.Run(loginResponse.SessionId, request.Url, request.ModuleName, selectFields, linkedSelectFields, request.Options.MaxResult);
+                string query = modelInfo.GetQuery(request.Options.QueryPredicates, request.Options.Query);
+
+                var readEntryListResponse = GetLinkedEntryList.Run(loginResponse.SessionId, request.Url, request.ModuleName, selectFields, linkedSelectFields, query, request.Options.MaxResult);
 
                 if (readEntryListResponse != null)
                 {
@@ -286,7 +292,9 @@ namespace SugarRestSharp
 
                 loginResponse = Authentication.Login(loginRequest);
                 var selectFields = modelInfo.GetJsonPropertyNames(request.Options.SelectFields);
-                var readEntryListResponse = GetPagedEntryList.Run(loginResponse.SessionId, loginRequest.Url, request.ModuleName, selectFields, request.Options.CurrentPage, request.Options.NumberPerPage);
+                string query = modelInfo.GetQuery(request.Options.QueryPredicates, request.Options.Query);
+
+                var readEntryListResponse = GetPagedEntryList.Run(loginResponse.SessionId, loginRequest.Url, request.ModuleName, selectFields, query, request.Options.CurrentPage, request.Options.NumberPerPage);
 
                 if (readEntryListResponse != null)
                 {
@@ -322,7 +330,6 @@ namespace SugarRestSharp
             return sugarRestResponse;
         }
 
-
         /// <summary>
         /// Insert entity
         /// </summary>
@@ -346,7 +353,7 @@ namespace SugarRestSharp
 
                 loginResponse = Authentication.Login(loginRequest);
 
-                JObject jobject = JsonConverterHelper.Serialize(request.Data, modelInfo.Type);
+                JObject jobject = JsonConverterHelper.Serialize(request.Parameter, modelInfo.Type);
                 var selectFields = modelInfo.GetJsonPropertyNames(request.Options.SelectFields);
                 var insertEntryResponse = InsertEntry.Run(loginResponse.SessionId, loginRequest.Url, request.ModuleName, jobject, selectFields);
 
@@ -357,7 +364,8 @@ namespace SugarRestSharp
 
                     if (!string.IsNullOrEmpty(insertEntryResponse.Id))
                     {
-                        sugarRestResponse.Id = insertEntryResponse.Id;
+                        sugarRestResponse.Data = insertEntryResponse.Id;
+                        sugarRestResponse.JData = (insertEntryResponse.Id == null) ? null : JToken.FromObject(insertEntryResponse.Id).ToString();
                         sugarRestResponse.StatusCode = insertEntryResponse.StatusCode;
                     }
                     else
@@ -405,7 +413,7 @@ namespace SugarRestSharp
 
                 loginResponse = Authentication.Login(loginRequest);
 
-                JArray objectList = JsonConverterHelper.SerializeList(request.Data, modelInfo.Type);
+                JArray objectList = JsonConverterHelper.SerializeList(request.Parameter, modelInfo.Type);
                 var selectFields = modelInfo.GetJsonPropertyNames(request.Options.SelectFields);
                 var insertEntriesResponse = InsertEntries.Run(loginResponse.SessionId, loginRequest.Url, request.ModuleName, objectList, selectFields);
 
@@ -416,7 +424,8 @@ namespace SugarRestSharp
 
                     if ((insertEntriesResponse.Ids != null) && (insertEntriesResponse.Ids.Count > 0))
                     {
-                        sugarRestResponse.Ids = insertEntriesResponse.Ids;
+                        sugarRestResponse.Data = insertEntriesResponse.Ids;
+                        sugarRestResponse.JData = (insertEntriesResponse.Ids == null) ? null : JArray.FromObject(insertEntriesResponse.Ids).ToString();
                         sugarRestResponse.StatusCode = insertEntriesResponse.StatusCode;
                     }
                     else
@@ -464,7 +473,7 @@ namespace SugarRestSharp
 
                 loginResponse = Authentication.Login(loginRequest);
 
-                JObject jobject = JsonConverterHelper.Serialize(request.Data, modelInfo.Type);
+                JObject jobject = JsonConverterHelper.Serialize(request.Parameter, modelInfo.Type);
                 var selectFields = modelInfo.GetJsonPropertyNames(request.Options.SelectFields);
                 var updateEntryResponse = UpdateEntry.Run(loginResponse.SessionId, loginRequest.Url, request.ModuleName, jobject, selectFields);
 
@@ -475,7 +484,8 @@ namespace SugarRestSharp
 
                     if (!string.IsNullOrEmpty(updateEntryResponse.Id))
                     {
-                        sugarRestResponse.Id = updateEntryResponse.Id;
+                        sugarRestResponse.Data = updateEntryResponse.Id;
+                        sugarRestResponse.JData = (updateEntryResponse.Id == null) ? null : JToken.FromObject(updateEntryResponse.Id).ToString();
                         sugarRestResponse.StatusCode = updateEntryResponse.StatusCode;
                     }
                     else
@@ -523,7 +533,7 @@ namespace SugarRestSharp
 
                 loginResponse = Authentication.Login(loginRequest);
 
-                JArray objectList = JsonConverterHelper.SerializeList(request.Data, modelInfo.Type);
+                JArray objectList = JsonConverterHelper.SerializeList(request.Parameter, modelInfo.Type);
                 var selectFields = modelInfo.GetJsonPropertyNames(request.Options.SelectFields);
                 var updateEntriesResponse = UpdateEntries.Run(loginResponse.SessionId, loginRequest.Url, request.ModuleName, objectList, selectFields);
 
@@ -534,7 +544,8 @@ namespace SugarRestSharp
 
                     if ((updateEntriesResponse.Ids != null) && (updateEntriesResponse.Ids.Count > 0))
                     {
-                        sugarRestResponse.Ids = updateEntriesResponse.Ids;
+                        sugarRestResponse.Data = updateEntriesResponse.Ids;
+                        sugarRestResponse.JData = (updateEntriesResponse.Ids == null) ? null : JArray.FromObject(updateEntriesResponse.Ids).ToString();
                         sugarRestResponse.StatusCode = updateEntriesResponse.StatusCode;
                     }
                     else
@@ -582,7 +593,7 @@ namespace SugarRestSharp
 
                 loginResponse = Authentication.Login(loginRequest);
 
-                var deleteEntryResponse = DeleteEntry.Run(loginResponse.SessionId, loginRequest.Url, request.ModuleName, request.Id);
+                var deleteEntryResponse = DeleteEntry.Run(loginResponse.SessionId, loginRequest.Url, request.ModuleName, request.Parameter.ToString());
 
                 if (deleteEntryResponse != null)
                 {
@@ -591,7 +602,8 @@ namespace SugarRestSharp
 
                     if (!string.IsNullOrEmpty(deleteEntryResponse.Id))
                     {
-                        sugarRestResponse.Id = deleteEntryResponse.Id;
+                        sugarRestResponse.Data = deleteEntryResponse.Id;
+                        sugarRestResponse.JData = (deleteEntryResponse.Id == null) ? null : JToken.FromObject(deleteEntryResponse.Id).ToString();
                         sugarRestResponse.StatusCode = deleteEntryResponse.StatusCode;
                     }
                     else

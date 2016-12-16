@@ -20,15 +20,28 @@ namespace SugarRestSharp
         private string username;
         private string password;
 
+        /// <summary>
+        /// Initializes a new instance of the SugarRestClient class.
+        /// </summary>
         public SugarRestClient()
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the SugarRestClient class.
+        /// </summary>
+        /// <param name="url">SugarCRM REST API url.</param>
         public SugarRestClient(string url)
         {
             this.url = url;
         }
 
+        /// <summary>
+        /// Initializes a new instance of the SugarRestClient class.
+        /// </summary>
+        /// <param name="url">SugarCRM REST API Url.</param>
+        /// <param name="username">SugarCRM REST API Username.</param>
+        /// <param name="password">SugarCRM REST API Password.</param>
         public SugarRestClient(string url, string username, string password)
         {
             this.url = url;
@@ -39,8 +52,8 @@ namespace SugarRestSharp
         /// <summary>
         /// Execute client.
         /// </summary>
-        /// <param name="request">The request object</param>
-        /// <returns>SugarRestResponse object</returns>
+        /// <param name="request">The request object.</param>
+        /// <returns>SugarRestResponse object.</returns>
         public SugarRestResponse Execute(SugarRestRequest request)
         {
             SugarRestResponse response = new SugarRestResponse();
@@ -58,7 +71,7 @@ namespace SugarRestSharp
         /// </summary>
         /// <param name="request">The request object</param>
         /// <typeparam name="TEntity">Entity type of EntityBase type</typeparam>
-        /// <returns>SugarRestResponse object</returns>
+        /// <returns>SugarRestResponse object.</returns>
         public SugarRestResponse Execute<TEntity>(SugarRestRequest request) where TEntity : EntityBase 
         {
             ModelInfo modelInfo = ModelInfo.ReadByType(typeof(TEntity));
@@ -73,6 +86,11 @@ namespace SugarRestSharp
             return InternalExceute(request, modelInfo);
         }
 
+        /// <summary>
+        /// Execute request asynchronously using SugarCRM module name.
+        /// </summary>
+        /// <param name="request">The request object.</param>
+        /// <returns>SugarRestResponse object.</returns>
         public async Task<SugarRestResponse> ExecuteAsync(SugarRestRequest request)
         {
             SugarRestResponse response = new SugarRestResponse();
@@ -86,6 +104,12 @@ namespace SugarRestSharp
         }
 
 
+        /// <summary>
+        /// Execute request asynchronously using the C# SugarCRM model type.
+        /// </summary>
+        /// <typeparam name="TEntity"></typeparam>
+        /// <param name="request">The request object.</param>
+        /// <returns>SugarRestResponse object.</returns>
         public async Task<SugarRestResponse> ExecuteAsync<TEntity>(SugarRestRequest request) where TEntity : EntityBase 
         {
             ModelInfo modelInfo = ModelInfo.ReadByType(typeof(TEntity));
@@ -100,6 +124,12 @@ namespace SugarRestSharp
             return await Task.Run(() => { return InternalExceute(request, modelInfo); });
         }
 
+        /// <summary>
+        /// Excuet request.
+        /// </summary>
+        /// <param name="request">The request object.</param>
+        /// <param name="modelInfo">The model info for the referenced SugarCRM module.</param>
+        /// <returns>SugarRestResponse object.</returns>
         private SugarRestResponse InternalExceute(SugarRestRequest request, ModelInfo modelInfo)
         {
             switch (request.RequestType)
@@ -150,6 +180,12 @@ namespace SugarRestSharp
         }
 
 
+        /// <summary>
+        /// Method checks if request is valid.
+        /// </summary>
+        /// <param name="request">The request object.</param>
+        /// <param name="response">The response object.</param>
+        /// <returns>True or false.</returns>
         private bool IsRequestValidate(ref SugarRestRequest request, ref SugarRestResponse response)
         {
             if (request == null)

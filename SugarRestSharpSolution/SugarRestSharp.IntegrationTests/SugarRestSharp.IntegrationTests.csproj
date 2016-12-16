@@ -69,6 +69,7 @@
     <Compile Include="Helpers\LinkedModules.cs" />
     <Compile Include="LinkedModulesTests.cs" />
     <Compile Include="CustomModels\CustomAcccount1.cs" />
+    <Compile Include="QueryTests.cs" />
     <Compile Include="TestAccount.cs" />
     <Compile Include="Helpers\AccountsModule.cs" />
     <Compile Include="Helpers\ContactsModule.cs" />

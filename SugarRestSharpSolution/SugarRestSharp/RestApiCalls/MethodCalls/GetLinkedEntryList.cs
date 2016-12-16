@@ -27,9 +27,10 @@ namespace SugarRestSharp.MethodCalls
         /// <param name="moduleName">SugarCrm module name</param>
         /// <param name="selectFields">Selected field list</param>
         /// <param name="linkedSelectFields">Linked field info.</param>
+        /// <param name="queryString">Formatted query string.</param>
         /// <param name="maxCountResult">Maxium number of entries to return</param>
         /// <returns>ReadLinkedEntryListResponse object</returns>
-        public static ReadLinkedEntryListResponse Run(string sessionId, string url, string moduleName, List<string> selectFields, Dictionary<string, List<string>> linkedSelectFields, int maxCountResult)
+        public static ReadLinkedEntryListResponse Run(string sessionId, string url, string moduleName, List<string> selectFields, Dictionary<string, List<string>> linkedSelectFields, string queryString, int maxCountResult)
         {
             var readLinkedEntryListResponse = new ReadLinkedEntryListResponse();
             var content = string.Empty;
@@ -40,7 +41,7 @@ namespace SugarRestSharp.MethodCalls
                 {
                     session = sessionId,
                     module_name = moduleName,
-                    query = string.Empty,
+                    query = queryString,
                     order_by = string.Empty,
                     offset = 0,
                     select_fields = selectFields,

@@ -65,7 +65,7 @@ namespace SugarRestSharp
                             if (jsonProperty != null)
                             {
                                 modelProperty.Name = prop.Name;
-                                modelProperty.Type = prop.PropertyType;
+                                modelProperty.Type = Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType;
                                 modelProperty.JsonName = jsonProperty.PropertyName;
                                 modelInfo.ModelProperties.Add(modelProperty);
                             }
@@ -111,7 +111,7 @@ namespace SugarRestSharp
                                 if (jsonProperty != null)
                                 {
                                     modelProperty.Name = prop.Name;
-                                    modelProperty.Type = prop.PropertyType;
+                                    modelProperty.Type = Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType;
                                     modelProperty.JsonName = jsonProperty.PropertyName;
                                     modelInfo.ModelProperties.Add(modelProperty);
                                 }

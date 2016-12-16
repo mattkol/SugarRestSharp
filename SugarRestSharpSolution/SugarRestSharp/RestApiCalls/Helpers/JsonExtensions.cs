@@ -7,13 +7,9 @@
 namespace SugarRestSharp.Helpers
 {
     using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.Data;
-    using System.Linq;
-    using Newtonsoft.Json.Linq;
-    using Newtonsoft.Json;
     using System.Collections;
+    using System.Collections.Generic;
+    using Newtonsoft.Json.Linq;
 
     /// <summary>
     /// This class represents JsonExtensions class.

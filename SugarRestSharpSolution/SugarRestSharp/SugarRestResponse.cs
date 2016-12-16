@@ -6,7 +6,6 @@
 
 namespace SugarRestSharp
 {
-    using System.Collections.Generic;
     using System.Net;
     using Responses;
   
@@ -25,16 +24,6 @@ namespace SugarRestSharp
             this.JsonRawResponse = string.Empty;
             this.JData = string.Empty;
         }
-
-        /// <summary>
-        /// Gets or sets entity identifier returned.
-        /// </summary>
-        public string Id { get; set; }
-
-        /// <summary>
-        /// Gets or sets entity identifier returned.
-        /// </summary>
-        public List<string> Ids { get; set; }
 
         /// <summary>
         /// Gets or sets the raw json request sent by SugarCrm Rest API.

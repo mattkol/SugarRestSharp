@@ -26,9 +26,10 @@ namespace SugarRestSharp.MethodCalls
         /// <param name="url">REST API Url</param>
         /// <param name="moduleName">SugarCrm module name</param>
         /// <param name="selectFields">Selected field list</param>
+        /// <param name="queryString">Formatted query string.</param>
         /// <param name="maxCountResult">Maxium number of entries to return</param>
         /// <returns>ReadEntryListResponse object</returns>
-        public static ReadEntryListResponse Run(string sessionId, string url, string moduleName, List<string> selectFields, int maxCountResult)
+        public static ReadEntryListResponse Run(string sessionId, string url, string moduleName, List<string> selectFields, string queryString, int maxCountResult)
         {
             var readEntryListResponse = new ReadEntryListResponse();
             var content = string.Empty;
@@ -39,7 +40,7 @@ namespace SugarRestSharp.MethodCalls
                 {
                     session = sessionId,
                     module_name = moduleName,
-                    query = string.Empty,
+                    query = queryString,
                     order_by = string.Empty,
                     offset = 0,
                     select_fields = selectFields,

@@ -14,7 +14,7 @@ namespace SugarRestSharp.IntegrationTests.Helpers
         public static SugarRestResponse ReadAccountLinkContact(SugarRestClient client, string accountId)
         {
             var request = new SugarRestRequest(RequestType.LinkedReadById);
-            request.Id = accountId;
+            request.Parameter = accountId;
 
             List<string> selectedFields = new List<string>();
 
@@ -37,7 +37,7 @@ namespace SugarRestSharp.IntegrationTests.Helpers
 
             linkedListInfo[typeof(Contact)] = selectContactFields;
 
-            request.Options.LinkedFields = linkedListInfo;
+            request.Options.LinkedModules = linkedListInfo;
 
             return client.Execute<Account>(request);
         }
@@ -45,7 +45,7 @@ namespace SugarRestSharp.IntegrationTests.Helpers
         public static SugarRestResponse ReadAccountLinkItems(SugarRestClient client, string accountId)
         {
             var request = new SugarRestRequest(RequestType.LinkedReadById);
-            request.Id = accountId;
+            request.Parameter = accountId;
 
             List<string> selectedFields = new List<string>();
 
@@ -62,7 +62,7 @@ namespace SugarRestSharp.IntegrationTests.Helpers
             linkedListInfo["Leads"] = null;
             linkedListInfo[typeof(Case)] = null;
 
-            request.Options.LinkedFields = linkedListInfo;
+            request.Options.LinkedModules = linkedListInfo;
 
             return client.Execute<Account>(request);
         }
@@ -93,7 +93,7 @@ namespace SugarRestSharp.IntegrationTests.Helpers
 
             linkedListInfo[typeof(Contact)] = selectContactFields;
 
-            request.Options.LinkedFields = linkedListInfo;
+            request.Options.LinkedModules = linkedListInfo;
 
             return client.Execute<Account>(request);
         }
@@ -118,7 +118,7 @@ namespace SugarRestSharp.IntegrationTests.Helpers
             linkedListInfo["Leads"] = null;
             linkedListInfo[typeof(Case)] = null;
 
-            request.Options.LinkedFields = linkedListInfo;
+            request.Options.LinkedModules = linkedListInfo;
 
             return client.Execute<Account>(request);
         }

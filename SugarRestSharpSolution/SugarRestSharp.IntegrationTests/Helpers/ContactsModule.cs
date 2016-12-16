@@ -16,7 +16,7 @@ namespace SugarRestSharp.IntegrationTests.Helpers
         public static SugarRestResponse CreateContact(SugarRestClient client, Contact contact)
         {
             var request = new SugarRestRequest("Contacts", RequestType.Create);
-            request.Data = contact;
+            request.Parameter = contact;
 
             request.Options.SelectFields = GetSelectedField();
 
@@ -26,7 +26,7 @@ namespace SugarRestSharp.IntegrationTests.Helpers
         public static SugarRestResponse CreateContactByType(SugarRestClient client, Contact contact)
         {
             var request = new SugarRestRequest(RequestType.Create);
-            request.Data = contact;
+            request.Parameter = contact;
 
             request.Options.SelectFields = GetSelectedField();
 
@@ -36,7 +36,7 @@ namespace SugarRestSharp.IntegrationTests.Helpers
         public static async Task<SugarRestResponse> CreateContactAsync(SugarRestClient client, Contact contact)
         {
             var request = new SugarRestRequest(RequestType.Create);
-            request.Data = contact;
+            request.Parameter = contact;
 
             request.Options.SelectFields = GetSelectedField();
 
@@ -47,7 +47,7 @@ namespace SugarRestSharp.IntegrationTests.Helpers
         public static SugarRestResponse BulkCreateContact(SugarRestClient client, List<Contact> contacts)
         {
             var request = new SugarRestRequest("Contacts", RequestType.BulkCreate);
-            request.Data = contacts;
+            request.Parameter = contacts;
 
             request.Options.SelectFields = GetSelectedField();
 
@@ -57,7 +57,7 @@ namespace SugarRestSharp.IntegrationTests.Helpers
         public static SugarRestResponse ReadContact(SugarRestClient client, string contactId)
         {
             var request = new SugarRestRequest("Contacts", RequestType.ReadById);
-            request.Id = contactId;
+            request.Parameter = contactId;
 
             request.Options.SelectFields = GetSelectedField();
             request.Options.SelectFields.Add(nameof(Contact.Id));
@@ -68,7 +68,7 @@ namespace SugarRestSharp.IntegrationTests.Helpers
         public static SugarRestResponse ReadContactByType(SugarRestClient client, string contactId)
         {
             var request = new SugarRestRequest(RequestType.ReadById);
-            request.Id = contactId;
+            request.Parameter = contactId;
 
             request.Options.SelectFields = GetSelectedField();
             request.Options.SelectFields.Add(nameof(Contact.Id));
@@ -79,7 +79,7 @@ namespace SugarRestSharp.IntegrationTests.Helpers
         public static async Task<SugarRestResponse> ReadContactAsync(SugarRestClient client, string contactId)
         {
             var request = new SugarRestRequest(RequestType.ReadById);
-            request.Id = contactId;
+            request.Parameter = contactId;
 
             request.Options.SelectFields = GetSelectedField();
             request.Options.SelectFields.Add(nameof(Contact.Id));
@@ -123,7 +123,7 @@ namespace SugarRestSharp.IntegrationTests.Helpers
 
             foreach (var id in contactIds)
             {
-                request.Id = id;
+                request.Parameter = id;
                 SugarRestResponse response = client.Execute(request);
 
                 contacts.Add((Contact) response.Data);
@@ -142,7 +142,7 @@ namespace SugarRestSharp.IntegrationTests.Helpers
             contact.Title = "Vice President of Programming";
 
             var request = new SugarRestRequest("Contacts", RequestType.Update);
-            request.Data = contact;
+            request.Parameter = contact;
 
             request.Options.SelectFields = new List<string>();
             request.Options.SelectFields.Add(nameof(Contact.Title));
@@ -159,7 +159,7 @@ namespace SugarRestSharp.IntegrationTests.Helpers
             }
 
             var request = new SugarRestRequest("Contacts", RequestType.BulkUpdate);
-            request.Data = contacts;
+            request.Parameter = contacts;
 
             request.Options.SelectFields = new List<string>();
             request.Options.SelectFields.Add(nameof(Contact.PrimaryAddressPostalcode));
@@ -170,7 +170,7 @@ namespace SugarRestSharp.IntegrationTests.Helpers
         public static SugarRestResponse DeleteContact(SugarRestClient client, string contactId)
         {
             var request = new SugarRestRequest("Contacts", RequestType.Delete);
-            request.Id = contactId;
+            request.Parameter = contactId;
 
             return client.Execute(request);
         }
@@ -178,7 +178,7 @@ namespace SugarRestSharp.IntegrationTests.Helpers
         public static SugarRestResponse DeleteContactByType(SugarRestClient client, string contactId)
         {
             var request = new SugarRestRequest(RequestType.Delete);
-            request.Id = contactId;
+            request.Parameter = contactId;
 
             return client.Execute<Contact>(request);
         }
@@ -186,7 +186,7 @@ namespace SugarRestSharp.IntegrationTests.Helpers
         public static async Task<SugarRestResponse> DeleteContactAsync(SugarRestClient client, string contactId)
         {
             var request = new SugarRestRequest("Contacts", RequestType.Delete);
-            request.Id = contactId;
+            request.Parameter = contactId;
 
             return await client.ExecuteAsync(request);
         }
@@ -198,9 +198,10 @@ namespace SugarRestSharp.IntegrationTests.Helpers
             List<string> listId = new List<string>();
             foreach (var id in contactIds)
             {
-                request.Id = id;
+                request.Parameter = id;
                 SugarRestResponse response = client.Execute(request);
-                listId.Add(response.Id);
+                string identifier = (response.Data == null) ? string.Empty : response.Data.ToString();
+                listId.Add(identifier);
             }
 
             return listId;

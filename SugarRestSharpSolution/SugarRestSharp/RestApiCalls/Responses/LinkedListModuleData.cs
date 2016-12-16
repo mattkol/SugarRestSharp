@@ -10,7 +10,6 @@ namespace SugarRestSharp.Responses
     using Newtonsoft.Json.Linq;
     using RestApiCalls.Responses;
     using System.Collections.Generic;
-    using System.Linq;
 
     /// <summary>
     /// Represents LinkedListModuleData class
