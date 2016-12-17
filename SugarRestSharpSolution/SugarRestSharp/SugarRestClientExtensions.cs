@@ -9,24 +9,24 @@ namespace SugarRestSharp
     using System;
     using System.Collections.Generic;
     using System.Net;
-    using Newtonsoft.Json.Linq;
-    using Responses;
-    using MethodCalls;
-    using Requests;
     using Helpers;
+    using MethodCalls;
+    using Newtonsoft.Json.Linq;
+    using Requests;
+    using Responses;
 
     /// <summary>
-    /// 
+    /// Represent SugarRestClientExtensions class.
     /// </summary>
     internal static class SugarRestClientExtensions
     {
         /// <summary>
-        /// Gets enity by id
+        /// Gets entity by id.
         /// </summary>
-        /// <param name="client">SugarRestClient object</param>
-        /// <param name="request">The request object</param>
+        /// <param name="client">SugarRestClient object.</param>
+        /// <param name="request">The request object.</param>
         /// <param name="modelInfo">The entity model info.</param>
-        /// <returns>SugarRestResponse object</returns>
+        /// <returns>SugarRestResponse object.</returns>
         public static SugarRestResponse ExecuteGetById(this SugarRestClient client, SugarRestRequest request, ModelInfo modelInfo)
         {
             var sugarRestResponse = new SugarRestResponse();
@@ -82,12 +82,12 @@ namespace SugarRestSharp
         }
 
         /// <summary>
-        /// Gets enity by id - returned data with linked modules data.
+        /// Gets entity by id - returned data with linked modules data.
         /// </summary>
-        /// <param name="client">SugarRestClient object</param>
-        /// <param name="request">The request object</param>
+        /// <param name="client">SugarRestClient object.</param>
+        /// <param name="request">The request object.</param>
         /// <param name="modelInfo">The entity model info.</param>
-        /// <returns>SugarRestResponse object</returns>
+        /// <returns>SugarRestResponse object.</returns>
         public static SugarRestResponse ExecuteLinkedGetById(this SugarRestClient client, SugarRestRequest request, ModelInfo modelInfo)
         {
             var sugarRestResponse = new SugarRestResponse();
@@ -145,12 +145,12 @@ namespace SugarRestSharp
         }
 
         /// <summary>
-        /// Gets all entities limited by MaxResultCount sets in request options
+        /// Gets all entities limited by MaxResultCount sets in request options.
         /// </summary>
-        /// <param name="client">SugarRestClient object</param>
-        /// <param name="request">The request object</param>
+        /// <param name="client">SugarRestClient object.</param>
+        /// <param name="request">The request object.</param>
         /// <param name="modelInfo">The entity model info.</param>
-        /// <returns>SugarRestResponse object</returns>
+        /// <returns>SugarRestResponse object.</returns>
         public static SugarRestResponse ExecuteGetAll(this SugarRestClient client, SugarRestRequest request, ModelInfo modelInfo)
         {
             var sugarRestResponse = new SugarRestResponse();
@@ -206,12 +206,12 @@ namespace SugarRestSharp
         }
 
         /// <summary>
-        /// Gets all entities limited by MaxResultCount sets in request options
+        /// Gets all entities limited by MaxResultCount sets in request options.
         /// </summary>
-        /// <param name="client">SugarRestClient object</param>
-        /// <param name="request">The request object</param>
+        /// <param name="client">SugarRestClient object.</param>
+        /// <param name="request">The request object.</param>
         /// <param name="modelInfo">The entity model info.</param>
-        /// <returns>SugarRestResponse object</returns>
+        /// <returns>SugarRestResponse object.</returns>
         public static SugarRestResponse ExecuteLinkedGetAll(this SugarRestClient client, SugarRestRequest request, ModelInfo modelInfo)
         {
             var sugarRestResponse = new SugarRestResponse();
@@ -271,12 +271,12 @@ namespace SugarRestSharp
         }
 
         /// <summary>
-        /// Gets all entities by poge. Page options set in request options
+        /// Gets all entities by page. Page options set in request options.
         /// </summary>
-        /// <param name="client">SugarRestClient object</param>
-        /// <param name="request">The request object</param>
+        /// <param name="client">SugarRestClient object.</param>
+        /// <param name="request">The request object.</param>
         /// <param name="modelInfo">The entity model info.</param>
-        /// <returns>SugarRestResponse object</returns>
+        /// <returns>SugarRestResponse object.</returns>
         public static SugarRestResponse ExecuteGetPaged(this SugarRestClient client, SugarRestRequest request, ModelInfo modelInfo)
         {
             var sugarRestResponse = new SugarRestResponse();
@@ -331,12 +331,12 @@ namespace SugarRestSharp
         }
 
         /// <summary>
-        /// Insert entity
+        /// Insert entity.
         /// </summary>
-        /// <param name="client">SugarRestClient object</param>
-        /// <param name="request">The request object</param>
+        /// <param name="client">SugarRestClient object.</param>
+        /// <param name="request">The request object.</param>
         /// <param name="modelInfo">The entity model info.</param>
-        /// <returns>SugarRestResponse object</returns>
+        /// <returns>SugarRestResponse object.</returns>
         public static SugarRestResponse ExecuteInsert(this SugarRestClient client, SugarRestRequest request, ModelInfo modelInfo)
         {
             var sugarRestResponse = new SugarRestResponse();
@@ -391,12 +391,12 @@ namespace SugarRestSharp
         }
 
         /// <summary>
-        /// Insert entities
+        /// Insert entities.
         /// </summary>
-        /// <param name="client">SugarRestClient object</param>
-        /// <param name="request">The request object</param>
+        /// <param name="client">SugarRestClient object.</param>
+        /// <param name="request">The request object.</param>
         /// <param name="modelInfo">The entity model info.</param>
-        /// <returns>SugarRestResponse object</returns>
+        /// <returns>SugarRestResponse object.</returns>
         public static SugarRestResponse ExecuteInserts(this SugarRestClient client, SugarRestRequest request, ModelInfo modelInfo)
         {
             var sugarRestResponse = new SugarRestResponse();
@@ -451,12 +451,12 @@ namespace SugarRestSharp
         }
 
         /// <summary>
-        /// Update entity
+        /// Update entity.
         /// </summary>
-        /// <param name="client">SugarRestClient object</param>
-        /// <param name="request">The request object</param>
+        /// <param name="client">SugarRestClient object.</param>
+        /// <param name="request">The request object.</param>
         /// <param name="modelInfo">The entity model info.</param>
-        /// <returns>SugarRestResponse object</returns>
+        /// <returns>SugarRestResponse object.</returns>
         public static SugarRestResponse ExecuteUpdate(this SugarRestClient client, SugarRestRequest request, ModelInfo modelInfo) 
         {
             var sugarRestResponse = new SugarRestResponse();
@@ -511,12 +511,12 @@ namespace SugarRestSharp
         }
 
         /// <summary>
-        /// Update entities
+        /// Update entities.
         /// </summary>
-        /// <param name="client">SugarRestClient object</param>
-        /// <param name="request">The request object</param>
+        /// <param name="client">SugarRestClient object.</param>
+        /// <param name="request">The request object.</param>
         /// <param name="modelInfo">The entity model info.</param>
-        /// <returns>SugarRestResponse object</returns>
+        /// <returns>SugarRestResponse object.</returns>
         public static SugarRestResponse ExecuteUpdates(this SugarRestClient client, SugarRestRequest request, ModelInfo modelInfo)
         {
             var sugarRestResponse = new SugarRestResponse();
@@ -571,12 +571,12 @@ namespace SugarRestSharp
         }
 
         /// <summary>
-        /// Delete entity
+        /// Delete entity.
         /// </summary>
-        /// <param name="client">SugarRestClient object</param>
-        /// <param name="request">The request object</param>
+        /// <param name="client">SugarRestClient object.</param>
+        /// <param name="request">The request object.</param>
         /// <param name="modelInfo">The entity model info.</param>
-        /// <returns>SugarRestResponse object</returns>
+        /// <returns>SugarRestResponse object.</returns>
         public static SugarRestResponse ExecuteDelete(this SugarRestClient client, SugarRestRequest request, ModelInfo modelInfo) 
         {
             var sugarRestResponse = new SugarRestResponse();

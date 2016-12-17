@@ -7,8 +7,8 @@
 namespace SugarRestSharp
 {
     using System;
-    using System.Threading.Tasks;
     using System.Net;
+    using System.Threading.Tasks;
     using Responses;
 
     /// <summary>
@@ -30,7 +30,7 @@ namespace SugarRestSharp
         /// <summary>
         /// Initializes a new instance of the SugarRestClient class.
         /// </summary>
-        /// <param name="url">SugarCRM REST API url.</param>
+        /// <param name="url">SugarCrm REST API url.</param>
         public SugarRestClient(string url)
         {
             this.url = url;
@@ -39,9 +39,9 @@ namespace SugarRestSharp
         /// <summary>
         /// Initializes a new instance of the SugarRestClient class.
         /// </summary>
-        /// <param name="url">SugarCRM REST API Url.</param>
-        /// <param name="username">SugarCRM REST API Username.</param>
-        /// <param name="password">SugarCRM REST API Password.</param>
+        /// <param name="url">SugarCrm REST API Url.</param>
+        /// <param name="username">SugarCrm REST API Username.</param>
+        /// <param name="password">SugarCrm REST API Password.</param>
         public SugarRestClient(string url, string username, string password)
         {
             this.url = url;
@@ -57,13 +57,13 @@ namespace SugarRestSharp
         public SugarRestResponse Execute(SugarRestRequest request)
         {
             SugarRestResponse response = new SugarRestResponse();
-            if (!IsRequestValidate(ref request,  ref response))
+            if (!this.IsRequestValidate(ref request,  ref response))
             {
                 return response;
             }
 
             ModelInfo modelInfo = ModelInfo.ReadByName(request.ModuleName);
-            return InternalExceute(request, modelInfo);
+            return this.InternalExceute(request, modelInfo);
         }
 
         /// <summary>
@@ -78,36 +78,36 @@ namespace SugarRestSharp
             request.ModuleName = modelInfo.ModelName;
 
             SugarRestResponse response = new SugarRestResponse();
-            if (!IsRequestValidate(ref request, ref response))
+            if (!this.IsRequestValidate(ref request, ref response))
             {
                 return response;
             }
 
-            return InternalExceute(request, modelInfo);
+            return this.InternalExceute(request, modelInfo);
         }
 
         /// <summary>
-        /// Execute request asynchronously using SugarCRM module name.
+        /// Execute request asynchronously using SugarCrm module name.
         /// </summary>
         /// <param name="request">The request object.</param>
         /// <returns>SugarRestResponse object.</returns>
         public async Task<SugarRestResponse> ExecuteAsync(SugarRestRequest request)
         {
             SugarRestResponse response = new SugarRestResponse();
-            if (!IsRequestValidate(ref request, ref response))
+            if (!this.IsRequestValidate(ref request, ref response))
             {
                 return response;
             }
 
             ModelInfo modelInfo = ModelInfo.ReadByName(request.ModuleName);
-            return await Task.Run(() => { return InternalExceute(request, modelInfo); });
+            return await Task.Run(() => { return this.InternalExceute(request, modelInfo); });
         }
 
 
         /// <summary>
-        /// Execute request asynchronously using the C# SugarCRM model type.
+        /// Execute request asynchronously using the C# SugarCrm model type.
         /// </summary>
-        /// <typeparam name="TEntity"></typeparam>
+        /// <typeparam name="TEntity">The template parameter.</typeparam>
         /// <param name="request">The request object.</param>
         /// <returns>SugarRestResponse object.</returns>
         public async Task<SugarRestResponse> ExecuteAsync<TEntity>(SugarRestRequest request) where TEntity : EntityBase 
@@ -116,19 +116,19 @@ namespace SugarRestSharp
             request.ModuleName = modelInfo.ModelName;
 
             SugarRestResponse response = new SugarRestResponse();
-            if (!IsRequestValidate(ref request, ref response))
+            if (!this.IsRequestValidate(ref request, ref response))
             {
                 return response;
             }
           
-            return await Task.Run(() => { return InternalExceute(request, modelInfo); });
+            return await Task.Run(() => { return this.InternalExceute(request, modelInfo); });
         }
 
         /// <summary>
-        /// Excuet request.
+        /// Execute request.
         /// </summary>
         /// <param name="request">The request object.</param>
-        /// <param name="modelInfo">The model info for the referenced SugarCRM module.</param>
+        /// <param name="modelInfo">The model info for the referenced SugarCrm module.</param>
         /// <returns>SugarRestResponse object.</returns>
         private SugarRestResponse InternalExceute(SugarRestRequest request, ModelInfo modelInfo)
         {
@@ -138,38 +138,47 @@ namespace SugarRestSharp
                 {
                     return this.ExecuteGetById(request, modelInfo);
                 }
+
                 case RequestType.BulkRead:
                 {
                     return this.ExecuteGetAll(request, modelInfo);
                 }
+
                 case RequestType.PagedRead:
                 {
                     return this.ExecuteGetPaged(request, modelInfo);
                 }
+
                 case RequestType.Create:
                 {
                     return this.ExecuteInsert(request, modelInfo);
                 }
+
                 case RequestType.BulkCreate:
                 {
                     return this.ExecuteInserts(request, modelInfo);
                 }
+
                 case RequestType.Update:
                 {
                     return this.ExecuteUpdate(request, modelInfo);
                 }
+
                 case RequestType.BulkUpdate:
                 {
                     return this.ExecuteUpdates(request, modelInfo);
                 }
+
                 case RequestType.Delete:
                 {
                     return this.ExecuteDelete(request, modelInfo);
                 }
+
                 case RequestType.LinkedReadById:
                 {
                     return this.ExecuteLinkedGetById(request, modelInfo);
                 }
+
                 case RequestType.LinkedBulkRead:
                 {
                     return this.ExecuteLinkedGetAll(request, modelInfo);
@@ -178,7 +187,6 @@ namespace SugarRestSharp
 
             throw new Exception("Request type is invalid!");
         }
-
 
         /// <summary>
         /// Method checks if request is valid.
@@ -195,9 +203,9 @@ namespace SugarRestSharp
                 return false;
             }
 
-            request.Url = string.IsNullOrEmpty(request.Url) ? url : request.Url;
-            request.Username = string.IsNullOrEmpty(request.Username) ? username : request.Username;
-            request.Password = string.IsNullOrEmpty(request.Password) ? password : request.Password;
+            request.Url = string.IsNullOrEmpty(request.Url) ? this.url : request.Url;
+            request.Username = string.IsNullOrEmpty(request.Username) ? this.username : request.Username;
+            request.Password = string.IsNullOrEmpty(request.Password) ? this.password : request.Password;
 
             if (!request.IsValid)
             {

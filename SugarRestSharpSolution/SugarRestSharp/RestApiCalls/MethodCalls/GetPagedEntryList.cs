@@ -4,11 +4,10 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-using System.Collections.Generic;
-
 namespace SugarRestSharp.MethodCalls
 {
     using System;
+    using System.Collections.Generic;
     using System.Net;
     using Helpers;
     using Newtonsoft.Json;
@@ -27,7 +26,6 @@ namespace SugarRestSharp.MethodCalls
         /// <param name="url">REST API Url</param>
         /// <param name="moduleName">SugarCrm module name</param>
         /// <param name="selectFields">Selected field list</param>
-        /// <param name="linkedSelectFields">Linked field info.</param>
         /// <param name="queryString">Formatted query string.</param>
         /// <param name="currentPage">The current page number</param>
         /// <param name="numberPerPage">The number of pages per page</param>

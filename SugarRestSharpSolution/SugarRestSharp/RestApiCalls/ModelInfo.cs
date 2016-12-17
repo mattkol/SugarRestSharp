@@ -6,11 +6,11 @@
 
 namespace SugarRestSharp
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Reflection;
+    using Newtonsoft.Json;
 
     /// <summary>
     /// This class represents ModelInfo class.
@@ -18,12 +18,12 @@ namespace SugarRestSharp
     internal class ModelInfo
     {
         /// <summary>
-        /// Gets or sets the SugarCRM model name.
+        /// Gets or sets the SugarCrm model name.
         /// </summary>
         public string ModelName { get; set; }
 
         /// <summary>
-        /// Gets or sets the SugarCRM json model name.
+        /// Gets or sets the SugarCrm json model name.
         /// This maps to the tablename in model attibute.
         /// </summary>
         public string JsonModelName { get; set; }
@@ -38,6 +38,11 @@ namespace SugarRestSharp
         /// </summary>
         public List<ModelProperty> ModelProperties { get; set; }
 
+        /// <summary>
+        /// Gets the module model info object.
+        /// </summary>
+        /// <param name="type">The module model type.</param>
+        /// <returns>The model info object.</returns>
         public static ModelInfo ReadByType(Type type)
         {
             var modelInfo = new ModelInfo();
@@ -77,6 +82,11 @@ namespace SugarRestSharp
             return modelInfo;
         }
 
+        /// <summary>
+        /// Gets the module model info object.
+        /// </summary>
+        /// <param name="modelName">The module model name.</param>
+        /// <returns>The model info object.</returns>
         public static ModelInfo ReadByName(string modelName)
         {
             var modelInfo = new ModelInfo();

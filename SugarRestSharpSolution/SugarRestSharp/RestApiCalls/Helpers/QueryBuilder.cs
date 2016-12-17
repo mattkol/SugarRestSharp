@@ -12,12 +12,12 @@ namespace SugarRestSharp.RestApiCalls.Helpers
 
     /// <summary>
     /// This class represents QueryBuilder class.
-    /// SugarCRM request query option builder.
+    /// SugarCrm request query option builder.
     /// </summary>
     internal static class QueryBuilder
     {
         /// <summary>
-        /// Build the where clause part of a SugarCRM query.
+        /// Build the where clause part of a SugarCrm query.
         /// </summary>
         /// <param name="predicates">The json predicates.</param>
         /// <returns>The formatted query.</returns>
@@ -40,31 +40,37 @@ namespace SugarRestSharp.RestApiCalls.Helpers
                         subQuery = predicate.IsNumeric ? string.Format("{0} = {1}", predicate.PropertyName, predicate.Value) : string.Format("{0} = '{1}'", predicate.PropertyName, predicate.Value);
                         break;
                     }
+
                     case QueryOperator.GreaterThan:
                     {
                         subQuery = predicate.IsNumeric ? string.Format("{0} > {1}", predicate.PropertyName, predicate.Value) : string.Format("{0} > '{1}'", predicate.PropertyName, predicate.Value);
                         break;
                     }
+
                     case QueryOperator.GreaterThanOrEqualTo:
                     {
                         subQuery = predicate.IsNumeric ? string.Format("{0} >= {1}", predicate.PropertyName, predicate.Value) : string.Format("{0} >= '{1}'", predicate.PropertyName, predicate.Value);
                         break;
                     }
+
                     case QueryOperator.LessThan:
                     {
                         subQuery = predicate.IsNumeric ? string.Format("{0} < {1}", predicate.PropertyName, predicate.Value) : string.Format("{0} < '{1}'", predicate.PropertyName, predicate.Value);
                         break;
                     }
+
                     case QueryOperator.LessThanOrEqualTo:
                     {
                         subQuery = predicate.IsNumeric ? string.Format("{0} <= {1}", predicate.PropertyName, predicate.Value) : string.Format("{0} <= '{1}'", predicate.PropertyName, predicate.Value);
                         break;
                     }
+
                     case QueryOperator.Contains:
                     {
                         subQuery = string.Format("{0} LIKE '%{1}%'", predicate.PropertyName, predicate.Value);
                         break;
                     }
+
                     case QueryOperator.StartsWith:
                     {
                         subQuery = string.Format("{0} LIKE '{1}%'", predicate.PropertyName, predicate.Value);
@@ -75,11 +81,13 @@ namespace SugarRestSharp.RestApiCalls.Helpers
                         subQuery = string.Format("{0} LIKE '%{1}'", predicate.PropertyName, predicate.Value);
                         break;
                     }
+
                     case QueryOperator.Between:
                     {
                         subQuery = predicate.IsNumeric ? string.Format("{0} BETWEEN {1} AND {2}", predicate.PropertyName,  predicate.FromValue, predicate.ToValue) : string.Format("{0} BETWEEN '{1}' AND '{2}'", predicate.PropertyName, predicate.FromValue, predicate.ToValue);
                         break;
                     }
+
                     case QueryOperator.WhereIn:
                     {
                         subQuery = string.Format("{0} IN ({1})", predicate.PropertyName, predicate.Value);

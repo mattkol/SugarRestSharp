@@ -123,7 +123,6 @@ namespace SugarRestSharp.MethodCalls
                 entityObjectList.Add(entityObject);
             }
 
-
             return entityObjectList;
         }
     }

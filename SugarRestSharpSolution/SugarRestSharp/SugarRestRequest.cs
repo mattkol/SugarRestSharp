@@ -17,74 +17,90 @@ namespace SugarRestSharp
         /// <summary>
         /// The validation message
         /// </summary>
-        private string _validationMessage;
+        private string validationMessage;
 
         /// <summary>
-        /// Initializes a new instance of the SugarRestRequest class
+        /// Initializes a new instance of the SugarRestRequest class.
         /// </summary>
         public SugarRestRequest()
         {
             this.Options = new Options();
-            this._validationMessage = string.Empty;
+            this.validationMessage = string.Empty;
         }
 
         /// <summary>
-        /// Initializes a new instance of the SugarRestRequest class
+        /// Initializes a new instance of the SugarRestRequest class.
         /// </summary>
+        /// <param name="moduleName">The SugarCrm module name.</param>
         public SugarRestRequest(string moduleName)
         {
             this.ModuleName = moduleName;
             this.Options = new Options();
-            this._validationMessage = string.Empty;
+            this.validationMessage = string.Empty;
         }
 
         /// <summary>
-        /// Initializes a new instance of the SugarRestRequest class
+        /// Initializes a new instance of the SugarRestRequest class.
         /// </summary>
+        /// <param name="requestType">The request type.</param>
         public SugarRestRequest(RequestType requestType)
         {
             this.RequestType = requestType;
             this.Options = new Options();
-            this._validationMessage = string.Empty;
+            this.validationMessage = string.Empty;
         }
 
         /// <summary>
-        /// Initializes a new instance of the SugarRestRequest class
+        /// Initializes a new instance of the SugarRestRequest class.
         /// </summary>
+        /// <param name="moduleName">The SugarCrm module name.</param>
+        /// <param name="requestType">The request type.</param>
         public SugarRestRequest(string moduleName, RequestType requestType)
         {
             this.ModuleName = moduleName;
             this.RequestType = requestType;
             this.Options = new Options();
-            this._validationMessage = string.Empty;
+            this.validationMessage = string.Empty;
         }
+
         /// <summary>
-        /// Gets or sets SugarCRM REST API Url.
+        /// Gets or sets SugarCrm REST API Url.
         /// </summary>
         public string Url { get; set; }
 
         /// <summary>
-        /// Gets or sets REST API Username
+        /// Gets or sets REST API Username.
         /// </summary>
         public string Username { get; set; }
 
         /// <summary>
-        /// Gets or sets REST API Password
+        /// Gets or sets REST API Password.
         /// </summary>
         public string Password { get; set; }
 
         /// <summary>
-        /// Gets or sets Sugar Crm module name
+        /// Gets or sets SugarCrm module name
         /// </summary>
         public string ModuleName { get; set; }
 
         /// <summary>
-        /// Gets or sets Sugar Crm module name
+        /// Gets or sets SugarCrm module name.
         /// </summary>
         public RequestType RequestType { get; set; }
 
         /// <summary>
         /// Gets or sets request parameter - can be identifier, entity or entities data.
+        /// Parameter type set for the following request type:
+        /// ReadById - Identifier (Id)
+        /// BulkRead - null (Set options if needed.)
+        /// PagedRead - null (Set options if needed.)
+        /// Create - Entity
+        /// BulkCreate - Entity collection
+        /// Update - Entity
+        /// BulkUpdate - Entity collection
+        /// Delete - Identifier (Id)
+        /// LinkedReadById - Identifier (Id) (Linked option value must be set.) 
+        /// LinkedBulkRead - null (Linked option value must be set.)
         /// </summary>
         public object Parameter { get; set; }
 
@@ -98,11 +114,11 @@ namespace SugarRestSharp
         /// </summary>
         public string ValidationMessage 
         {
-            get { return this._validationMessage; }
+            get { return this.validationMessage; }
         }
 
         /// <summary>
-        /// Checks whether the request is valid.
+        /// Gets a value indicating whether the request is valid.
         /// </summary>
         /// <param name="type">Request type</param>
         /// <returns>True or false</returns>
@@ -111,9 +127,9 @@ namespace SugarRestSharp
             get
             {
                 var builder = new StringBuilder();
+
                 try
                 {
-
                     if (string.IsNullOrEmpty(this.Url))
                     {
                         builder.AppendLine(ErrorCodes.UrlInvalid);
@@ -129,7 +145,7 @@ namespace SugarRestSharp
                         builder.AppendLine(ErrorCodes.PasswordInvalid);
                     }
 
-                    if (string.IsNullOrEmpty(ModuleName))
+                    if (string.IsNullOrEmpty(this.ModuleName))
                     {
                         builder.AppendLine(ErrorCodes.ModulenameInvalid);
                     }
@@ -138,49 +154,51 @@ namespace SugarRestSharp
                     {
                         case RequestType.ReadById:
                         case RequestType.Delete:
-                            if (this.Parameter == null)
-                            {
-                                builder.AppendLine(ErrorCodes.IdInvalid);
-                            }
+                        if (this.Parameter == null)
+                        {
+                            builder.AppendLine(ErrorCodes.IdInvalid);
+                        }
 
-                            break;
+                        break;
 
                         case RequestType.Create:
                         case RequestType.BulkCreate:
                         case RequestType.BulkUpdate:
-                            if (this.Parameter == null)
-                            {
-                                builder.AppendLine(ErrorCodes.DataInvalid);
-                            }
+                        if (this.Parameter == null)
+                        {
+                            builder.AppendLine(ErrorCodes.DataInvalid);
+                        }
 
-                            break;
+                        break;
 
                         case RequestType.LinkedReadById:
-                            if (this.Parameter == null)
-                            {
-                                builder.AppendLine(ErrorCodes.IdInvalid);
-                            }
+                        if (this.Parameter == null)
+                        {
+                            builder.AppendLine(ErrorCodes.IdInvalid);
+                        }
 
-                            if ((Options.LinkedModules == null) || (Options.LinkedModules.Count ==0))
-                            {
-                                builder.AppendLine(ErrorCodes.LinkedFieldsInfoMissing);
-                            }
-                            break;
+                        if ((Options.LinkedModules == null) || (Options.LinkedModules.Count == 0))
+                        {
+                            builder.AppendLine(ErrorCodes.LinkedFieldsInfoMissing);
+                        }
+
+                        break;
 
                         case RequestType.LinkedBulkRead:
-                            if ((Options.LinkedModules == null) || (Options.LinkedModules.Count == 0))
-                            {
-                                builder.AppendLine(ErrorCodes.LinkedFieldsInfoMissing);
-                            }
-                            break;
+                        if ((Options.LinkedModules == null) || (Options.LinkedModules.Count == 0))
+                        {
+                            builder.AppendLine(ErrorCodes.LinkedFieldsInfoMissing);
+                        }
+
+                        break;
                     }
                 }
                 catch (Exception)
                 {
                 }
 
-                this._validationMessage = builder.ToString();
-                return string.IsNullOrEmpty(this._validationMessage);
+                this.validationMessage = builder.ToString();
+                return string.IsNullOrEmpty(this.validationMessage);
             }
         }
     }

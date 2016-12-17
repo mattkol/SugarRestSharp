@@ -6,55 +6,58 @@
 
 namespace SugarRestSharp
 {
+    /// <summary>
+    /// Represents the QueryOperator enum class.
+    /// </summary>
     public enum QueryOperator
     {
         /// <summary>
-        /// Gets the equal.
+        /// The "equal" operator.
         /// </summary>
         Equal,
 
         /// <summary>
-        /// Gets the greater than.
+        /// The "greater than" operator.
         /// </summary>
         GreaterThan,
 
         /// <summary>
-        /// Gets the greater than or equal to.
+        /// The "greater than or equal to" operator.
         /// </summary>
         GreaterThanOrEqualTo,
 
         /// <summary>
-        /// Gets the less than.
+        /// The "less than" operator.
         /// </summary>
         LessThan,
 
         /// <summary>
-        /// Gets the less than or equal to.
+        /// The "less than or equal to" operator.
         /// </summary>
         LessThanOrEqualTo,
 
         /// <summary>
-        /// Gets the contains.
+        /// The "contains" operator.
         /// </summary>
         Contains,
 
         /// <summary>
-        /// Gets the starts with.
+        /// Gets the starts with operator.
         /// </summary>
         StartsWith,
 
         /// <summary>
-        /// Gets the ends with.
+        /// The "ends with" operator.
         /// </summary>
         EndsWith,
 
         /// <summary>
-        /// Gets the between.
+        /// The "between" operator.
         /// </summary>
         Between,
 
         /// <summary>
-        /// The where in.
+        /// The "where in" operator.
         /// </summary>
         WhereIn
     }

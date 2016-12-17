@@ -34,9 +34,9 @@ namespace SugarRestSharp.Responses
                 JObject jobject = new JObject();
                 if (entityList.Count > 0)
                 {
-                    jobject =  entityList[0];
+                    jobject = entityList[0];
 
-                    foreach (List<LinkedModuleData> linkedModuleData in RelationshipList)
+                    foreach (List<LinkedModuleData> linkedModuleData in this.RelationshipList)
                     {
                         if (linkedModuleData != null)
                         {

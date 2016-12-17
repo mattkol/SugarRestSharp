@@ -30,11 +30,11 @@ namespace SugarRestSharp.Responses
                 }
 
                 var entityList = new JArray();
-                int count = EntryList.Count;
+                int count = this.EntryList.Count;
                 for (int i = 0; i < count; i++)
                 {
-                    JObject entity = EntryList[i].Entity;
-                    entity.SetModuleLinkedList(RelationshipList[i]);
+                    JObject entity = this.EntryList[i].Entity;
+                    entity.SetModuleLinkedList(this.RelationshipList[i]);
                     entityList.Add(entity);
                 }
 

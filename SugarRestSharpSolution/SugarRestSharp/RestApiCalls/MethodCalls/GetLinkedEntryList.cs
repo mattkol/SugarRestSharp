@@ -28,7 +28,7 @@ namespace SugarRestSharp.MethodCalls
         /// <param name="selectFields">Selected field list</param>
         /// <param name="linkedSelectFields">Linked field info.</param>
         /// <param name="queryString">Formatted query string.</param>
-        /// <param name="maxCountResult">Maxium number of entries to return</param>
+        /// <param name="maxCountResult">Maximum number of entries to return</param>
         /// <returns>ReadLinkedEntryListResponse object</returns>
         public static ReadLinkedEntryListResponse Run(string sessionId, string url, string moduleName, List<string> selectFields, Dictionary<string, List<string>> linkedSelectFields, string queryString, int maxCountResult)
         {

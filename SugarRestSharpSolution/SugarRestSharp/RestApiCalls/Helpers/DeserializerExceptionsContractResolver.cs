@@ -21,11 +21,6 @@ namespace SugarRestSharp.Helpers
     internal class DeserializerExceptionsContractResolver : DefaultContractResolver
     {
         /// <summary>
-        /// Initializes a new instance of the DeserializerExceptionsContractResolver class.
-        /// </summary>
-        protected DeserializerExceptionsContractResolver() : base() { }
-
-        /// <summary>
         /// As of 7.0.1, Json.NET suggests using a static instance for "stateless" contract resolvers, for performance reasons.
         /// http://www.newtonsoft.com/json/help/html/ContractResolver.htm
         /// http://www.newtonsoft.com/json/help/html/M_Newtonsoft_Json_Serialization_DefaultContractResolver__ctor_1.htm
@@ -34,7 +29,12 @@ namespace SugarRestSharp.Helpers
         static DeserializerExceptionsContractResolver instance;
 
         /// <summary>
-        /// // Using an explicit static constructor enables lazy initialization.
+        /// Initializes static members of the <see cref="DeserializerExceptionsContractResolver" /> class.
+        /// </summary>
+        protected DeserializerExceptionsContractResolver() : base() { }
+
+        /// <summary>
+        /// Initializes static members of the <see cref="DeserializerExceptionsContractResolver" /> class.
         /// </summary>
         static DeserializerExceptionsContractResolver()
         {
@@ -53,17 +53,17 @@ namespace SugarRestSharp.Helpers
         }
 
         /// <summary>
-        /// The json JObject to deserialize.
+        /// Gets or sets the json JObject to deserialize.
         /// </summary>
         public JObject JsonObjectToDeserialize { private get; set; }
 
         /// <summary>
-        /// The json string to deserialize.
+        /// Gets or sets the json string to deserialize.
         /// </summary>
         public string JsonToDeserialize { private get; set; }
 
         /// <summary>
-        /// The json JObject to deserialize.
+        /// Gets the json JObject to deserialize.
         /// </summary>
         private JObject JsonObject 
         {
@@ -71,14 +71,14 @@ namespace SugarRestSharp.Helpers
             {
                 try
                 {
-                    if (JsonObjectToDeserialize != null)
+                    if (this.JsonObjectToDeserialize != null)
                     {
-                        return JsonObjectToDeserialize;
+                        return this.JsonObjectToDeserialize;
                     }
 
-                    if (!string.IsNullOrEmpty(JsonToDeserialize))
+                    if (!string.IsNullOrEmpty(this.JsonToDeserialize))
                     {
-                        return JObject.Parse(JsonToDeserialize);
+                        return JObject.Parse(this.JsonToDeserialize);
                     }
                 }
                 catch (Exception)
@@ -100,7 +100,7 @@ namespace SugarRestSharp.Helpers
         {
             JsonProperty property = base.CreateProperty(member, memberSerialization);
 
-            if (JsonObject == null)
+            if (this.JsonObject == null)
             {
                 return property;
             }

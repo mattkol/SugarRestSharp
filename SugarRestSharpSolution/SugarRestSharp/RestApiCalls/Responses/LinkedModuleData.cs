@@ -6,10 +6,10 @@
 
 namespace SugarRestSharp.Responses
 {
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Linq;
     using System.Collections.Generic;
     using System.Linq;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
 
     /// <summary>
     /// Represents LinkedModuleData class
@@ -33,19 +33,19 @@ namespace SugarRestSharp.Responses
             get
             {
                 var entities = new List<JObject>();
-                if (Records == null)
+                if (this.Records == null)
                 {
                     return new List<JObject>();
                 }
 
-                foreach (JObject item in Records)
+                foreach (JObject item in this.Records)
                 {
                     JObject jentity = new JObject();
                     IList<string> keys = item.Properties().Select(p => p.Name).ToList();
                     foreach (var key in keys)
                     {
-                        var newKey = (string) item[key]["name"];
-                        var newValue = (string) item[key]["value"];
+                        var newKey = (string)item[key]["name"];
+                        var newValue = (string)item[key]["value"];
                         jentity.Add(new JProperty(newKey, newValue));
                     }
 

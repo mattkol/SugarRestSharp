@@ -36,12 +36,34 @@ namespace SugarRestSharp
         public string JsonRawResponse { get; set; }
 
         /// <summary>
-        /// Gets or sets entity/entities data returned in json.
+        /// Gets or sets identity, identifiers, entity or entities data returned in json.
+        /// Data type returned for the following request type:
+        /// ReadById - Entity
+        /// BulkRead - Entity collection
+        /// PagedRead - Entity collection
+        /// Create - Identifier (Id)
+        /// BulkCreate - Identifiers (Ids)
+        /// Update - Identifier (Id)
+        /// BulkUpdate - Identifiers (Ids)
+        /// Delete - Identifier (Id)
+        /// LinkedReadById - Entity 
+        /// LinkedBulkRead - Entity collection
         /// </summary>
         public string JData { get; set; }
 
         /// <summary>
-        /// Gets or sets entity/entities data returned. 
+        /// Gets or sets identity, identifiers, entity or entities data returned. 
+        /// Data type returned for the following request type:
+        /// ReadById - Entity
+        /// BulkRead - Entity collection
+        /// PagedRead - Entity collection
+        /// Create - Identifier (Id)
+        /// BulkCreate - Identifiers (Ids)
+        /// Update - Identifier (Id)
+        /// BulkUpdate - Identifiers (Ids)
+        /// Delete - Identifier (Id)
+        /// LinkedReadById - Entity 
+        /// LinkedBulkRead - Entity collection
         /// </summary>
         public object Data { get; set; }
 

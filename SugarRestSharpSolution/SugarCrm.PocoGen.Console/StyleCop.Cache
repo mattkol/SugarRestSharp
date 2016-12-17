@@ -10,7 +10,7 @@
     <timestamps>
       <styleCop>2016-05-14 16:40:24.000</styleCop>
       <settingsFile>2016-05-15 08:41:55.764</settingsFile>
-      <sourceFile>2016-05-14 17:39:23.048</sourceFile>
+      <sourceFile>2016-12-17 08:15:50.418</sourceFile>
       <parser>2016-05-14 16:40:24.000</parser>
       <StyleCop.CSharp.DocumentationRules>2016-05-14 16:40:24.000</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1234054458</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -48,26 +48,16 @@
         <line>51</line>
         <warning>False</warning>
       </violation>
-      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ClosingCurlyBracketsMustNotBePrecededByBlankLine" ruleCheckId="SA1508">
-        <context>A closing curly bracket must not be preceded by a blank line.</context>
-        <line>59</line>
-        <warning>False</warning>
-      </violation>
       <violation namespace="StyleCop.CSharp.MaintainabilityRules" rule="AccessModifierMustBeDeclared" ruleCheckId="SA1400">
         <context>The method must have an access modifier.</context>
         <line>20</line>
         <warning>False</warning>
       </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="CodeMustNotContainEmptyStatements" ruleCheckId="SA1106">
-        <context>The code contains an extra semicolon.</context>
-        <line>24</line>
-        <warning>False</warning>
-      </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
         <line>27</line>
-        <index>1149</index>
-        <endIndex>1186</endIndex>
+        <index>1148</index>
+        <endIndex>1185</endIndex>
         <startLine>27</startLine>
         <startColumn>23</startColumn>
         <endLine>27</endLine>
@@ -80,7 +70,7 @@
     <timestamps>
       <styleCop>2016-05-14 16:40:24.000</styleCop>
       <settingsFile>2016-05-15 08:41:55.764</settingsFile>
-      <sourceFile>2016-05-15 17:58:07.549</sourceFile>
+      <sourceFile>2016-12-17 07:13:58.546</sourceFile>
       <parser>2016-05-14 16:40:24.000</parser>
       <StyleCop.CSharp.DocumentationRules>2016-05-14 16:40:24.000</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1234054458</StyleCop.CSharp.DocumentationRules.FilesHashCode>

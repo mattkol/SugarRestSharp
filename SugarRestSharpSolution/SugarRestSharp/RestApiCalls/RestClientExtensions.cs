@@ -11,10 +11,13 @@ namespace SugarRestSharp
     using Newtonsoft.Json;
     using RestSharp;
 
+    /// <summary>
+    /// Represents  RestClientExtensions class.
+    /// </summary>
     internal static class RestClientExtensions
     {
         /// <summary>
-        /// Gets enity by id
+        /// Execute request.
         /// </summary>
         /// <param name="client">SugarRestClient object</param>
         /// <param name="request">The request object</param>
@@ -29,7 +32,7 @@ namespace SugarRestSharp
                 response = client.Execute(request);
                 sugarApiRestResponse.RestResponse = response;
             }
-            catch (Exception e)
+            catch (Exception)
             {
             }
             finally
@@ -40,11 +43,19 @@ namespace SugarRestSharp
             return sugarApiRestResponse;
         }
 
+        /// <summary>
+        /// Gets raw json request data.
+        /// </summary>
+        /// <param name="client">SugarRestClient object.</param>
+        /// <param name="sugarApiRestResponse">Response object returned by RestSharp.</param>
+        /// <param name="request">The request object.</param>
+        /// <param name="response">The response object.</param>
         private static void GetRawRequest(IRestClient client, SugarApiRestResponse sugarApiRestResponse, IRestRequest request, IRestResponse response)
         {
             var requestJson = new
             {
                 resource = request.Resource,
+
                 // Parameters are custom anonymous objects in order to have the parameter type as a nice string
                 // otherwise it will just show the enum value
                 parameters = request.Parameters.Select(parameter => new
@@ -72,13 +83,11 @@ namespace SugarRestSharp
                 errorMessage = response.ErrorMessage,
             };
 
-
             string jsonRawRequest = JsonConvert.SerializeObject(requestJson);
             string jsonRawResponse = JsonConvert.SerializeObject(responseJson);
 
             sugarApiRestResponse.JsonRawRequest = jsonRawRequest; 
             sugarApiRestResponse.JsonRawResponse = jsonRawResponse;
-
         }
     }
 }

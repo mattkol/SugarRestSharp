@@ -18,9 +18,9 @@ namespace SugarRestSharp.Helpers
         /// <summary>
         /// Deserialize json string to C# type.
         /// </summary>
-        /// <typeparam name="T">SugarCRM C# model template type.</typeparam>
+        /// <typeparam name="T">SugarCrm C# model template type.</typeparam>
         /// <param name="content">Json data to deserialize.</param>
-        /// <returns>Object instance of type SugarCRM C# model type..</returns>
+        /// <returns>Object instance of type SugarCrm C# model type..</returns>
         public static T Deserialize<T>(string content)
         {
             var settings = new JsonSerializerSettings();
@@ -35,7 +35,7 @@ namespace SugarRestSharp.Helpers
         /// Deserialize json string to C# object instance based on C# type.
         /// </summary>
         /// <param name="content">Json data to deserialize.</param>
-        /// <param name="type">SugarCRM C# model type.</param>
+        /// <param name="type">SugarCrm C# model type.</param>
         /// <returns>Object instance.</returns>
         public static object Deserialize(string content, Type type)
         {
@@ -50,7 +50,7 @@ namespace SugarRestSharp.Helpers
         /// <summary>
         /// Deserialize json JObject to C# object instance.
         /// </summary>
-        /// <typeparam name="T">SugarCRM C# model template type.</typeparam>
+        /// <typeparam name="T">SugarCrm C# model template type.</typeparam>
         /// <param name="jobject">Json JObject data to deserialize.</param>
         /// <returns>Object instance of type T.</returns>
         public static T Deserialize<T>(JObject jobject)
@@ -67,7 +67,7 @@ namespace SugarRestSharp.Helpers
         /// Deserialize json JObject to C# object instance based on C# type.
         /// </summary>
         /// <param name="jobject">Json JObject data to deserialize.</param>
-        /// <param name="type">SugarCRM C# model type.</param>
+        /// <param name="type">SugarCrm C# model type.</param>
         /// <returns>Object instance.</returns>
         public static object Deserialize(JObject jobject, Type type)
         {
@@ -83,7 +83,7 @@ namespace SugarRestSharp.Helpers
         /// Serialize C# object list instance to json JArray instance.
         /// </summary>
         /// <param name="objects">Objects to serialize.</param>
-        /// <param name="type">SugarCRM C# model type.</param>
+        /// <param name="type">SugarCrm C# model type.</param>
         /// <returns>Json JArray instance.</returns>
         public static JArray SerializeList(object objects, Type type)
         {
@@ -95,8 +95,8 @@ namespace SugarRestSharp.Helpers
         /// Serialize C# object instance to json JObject instance.
         /// </summary>
         /// <param name="obj">Object to serialize.</param>
-        /// <param name="type">SugarCRM C# model type.</param>
-        /// <returns></returns>
+        /// <param name="type">SugarCrm C# model type.</param>
+        /// <returns>The serialized json object.</returns>
         public static JObject Serialize(object obj, Type type)
         {
             string json = JsonConvert.SerializeObject(obj, type, Formatting.Indented, null);

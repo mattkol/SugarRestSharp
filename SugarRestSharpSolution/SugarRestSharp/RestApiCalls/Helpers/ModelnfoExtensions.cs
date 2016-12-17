@@ -6,12 +6,12 @@
 
 namespace SugarRestSharp.Helpers
 {
-    using RestApiCalls.Helpers;
-    using RestApiCalls.Requests;
     using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
+    using RestApiCalls.Helpers;
+    using RestApiCalls.Requests;
 
     /// <summary>
     /// This class represents ModelnfoExtensions class.
@@ -23,7 +23,7 @@ namespace SugarRestSharp.Helpers
         /// The property name can be of json type or C# property name.
         /// And they can be mixed.
         /// </summary>
-        /// <param name="modelInfo">SugarCRM module info.</param>
+        /// <param name="modelInfo">SugarCrm module info.</param>
         /// <param name="selectedProperties">The selected property names.</param>
         /// <param name="makeSelectionOptional">Selection is optional. If no selection set, all properties returned if this value is true.</param>
         /// <returns>List of module json properties.</returns>
@@ -37,7 +37,7 @@ namespace SugarRestSharp.Helpers
             }
 
             List<ModelProperty> modelProperties = modelInfo.ModelProperties;
-            if ( ((selectedProperties == null) || (selectedProperties.Count == 0)) && makeSelectionOptional)
+            if (((selectedProperties == null) || (selectedProperties.Count == 0)) && makeSelectionOptional)
             {
                 return modelProperties.Select(x => x.JsonName).ToList();
             }
@@ -64,7 +64,7 @@ namespace SugarRestSharp.Helpers
         /// <summary>
         /// Gets modules linked information.
         /// </summary>
-        /// <param name="modelInfo">SugarCRM module info.</param>
+        /// <param name="modelInfo">SugarCrm module info.</param>
         /// <param name="linkedModuleInfoList">The module linked info list.</param>
         /// <returns>Dictionary map of linked modules.</returns>
         public static Dictionary<string, List<string>> GetJsonLinkedInfo(this ModelInfo modelInfo, Dictionary<object, List<string>> linkedModuleInfoList)
@@ -80,7 +80,7 @@ namespace SugarRestSharp.Helpers
             {
                 ModelInfo linkedModelInfo = null;
                 string moduleName = string.Empty;
-                if(item.Key is Type)
+                if (item.Key is Type)
                 {
                     linkedModelInfo = ModelInfo.ReadByType((Type)item.Key);
                 }
@@ -96,12 +96,12 @@ namespace SugarRestSharp.Helpers
         }
 
         /// <summary>
-        /// 
+        /// Gets query based on either query predicates or raw query.
         /// </summary>
-        /// <param name="modelInfo"></param>
-        /// <param name="queryPredicates"></param>
-        /// <param name="queryString"></param>
-        /// <returns></returns>
+        /// <param name="modelInfo">SugarCrm module info.</param>
+        /// <param name="queryPredicates">The query predicate collection.</param>
+        /// <param name="queryString">Formatted query string.</param>
+        /// <returns>The formatted query.</returns>
         public static string GetQuery(this ModelInfo modelInfo, List<QueryPredicate> queryPredicates, string queryString)
         {
             if (!string.IsNullOrEmpty(queryString))
@@ -115,11 +115,12 @@ namespace SugarRestSharp.Helpers
         }
 
         /// <summary>
-        /// 
+        /// Converts C# query predicate collection to json query predicate collection.
+        /// The C# query can have a mixture of both C# property name name json property name.
         /// </summary>
-        /// <param name="modelInfo"></param>
-        /// <param name="queryPredicates"></param>
-        /// <returns></returns>
+        /// <param name="modelInfo">SugarCrm module info.</param>
+        /// <param name="queryPredicates">The query predicate collection.</param>
+        /// <returns>The json predicate collection.</returns>
         private static List<JsonPredicate> GetJsonPredicates(this ModelInfo modelInfo, List<QueryPredicate> queryPredicates)
         {
             if ((queryPredicates == null) || (queryPredicates.Count == 0))
@@ -133,9 +134,8 @@ namespace SugarRestSharp.Helpers
 
             foreach (var item in queryPredicates)
             {
-
-                ModelProperty modelProperty = modelProperties.FirstOrDefault(x => ( (x.Name.ToLower() == item.PropertyName.ToLower()) ||
-                                                                                    (x.JsonName.ToLower() == item.PropertyName.ToLower()) ));
+                ModelProperty modelProperty = modelProperties.FirstOrDefault(x => ((x.Name.ToLower() == item.PropertyName.ToLower()) ||
+                                                                                   (x.JsonName.ToLower() == item.PropertyName.ToLower())));
 
                 if (modelProperty != null)
                 {
@@ -153,11 +153,11 @@ namespace SugarRestSharp.Helpers
         }
 
         /// <summary>
-        /// 
+        /// Gets the formatted query value considering whether it is a numeric value or not.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="isNumeric"></param>
-        /// <returns></returns>
+        /// <param name="value">The value to format.</param>
+        /// <param name="isNumeric">Boolean value to know if it is numeric or not.</param>
+        /// <returns>The formatted query value.</returns>
         private static string GetFormattedValue(object value, bool isNumeric)
         {
             if (value == null)
@@ -169,7 +169,7 @@ namespace SugarRestSharp.Helpers
             {
                 try
                 {
-                    IList valueList = (IList) value;
+                    IList valueList = (IList)value;
                     List<string> strValueList = new List<string>();
                     foreach (var item in valueList)
                     {
@@ -194,11 +194,11 @@ namespace SugarRestSharp.Helpers
         }
 
         /// <summary>
-        /// 
+        /// Checks if an object is a list.
         /// </summary>
-        /// <param name="obj"></param>
-        /// <returns></returns>
-        public static bool IsList(object obj)
+        /// <param name="obj">The object to check.</param>
+        /// <returns>True or false.</returns>
+        private static bool IsList(object obj)
         {
             if (obj == null)
             {

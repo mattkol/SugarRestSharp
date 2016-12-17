@@ -21,7 +21,7 @@ namespace SugarCrm.PocoGen.Console
         {
              using (var schemaReader = SchemaReaderProvider.GetReader(DbServerType.MySql))
                 {
-                    var connectionString = ConfigurationManager.ConnectionStrings["MySqlSugarCrmConnectionString"].ConnectionString;;
+                    var connectionString = ConfigurationManager.ConnectionStrings["MySqlSugarCrmConnectionString"].ConnectionString;
                     if (schemaReader == null || string.IsNullOrEmpty(connectionString))
                     {
                       //  return new GeneratePocoResponse();
@@ -55,7 +55,6 @@ namespace SugarCrm.PocoGen.Console
                         File.WriteAllText(Path.Combine(folder, fileName), pageContent);
                         fileNames.Add(fileName);
                     }
-
                 }
             }
     }

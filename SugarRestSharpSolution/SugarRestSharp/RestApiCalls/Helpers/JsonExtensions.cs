@@ -24,7 +24,7 @@ namespace SugarRestSharp.Helpers
         /// <returns>DataTable object</returns>
         public static IList ToObjects(this string json, Type type)
         {
-            IList data = (IList) Activator.CreateInstance(typeof(List<>).MakeGenericType(type));
+            IList data = (IList)Activator.CreateInstance(typeof(List<>).MakeGenericType(type));
             JArray jarr = JArray.Parse(json);
             foreach (JObject jobject in jarr.Children<JObject>())
             {

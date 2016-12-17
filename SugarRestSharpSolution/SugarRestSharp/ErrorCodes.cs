@@ -37,7 +37,7 @@ namespace SugarRestSharp
         public static string IdInvalid = "Identifier is not valid or not provided.";
 
         /// <summary>
-        /// Invalid enity or entities data error code
+        /// Invalid entity or entities data error code
         /// </summary>
         public static string DataInvalid = "Entity or entities data object provided is not valid.";
 

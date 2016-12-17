@@ -7,7 +7,7 @@
 namespace SugarRestSharp
 {
     /// <summary>
-    /// Base class for all sugar crm models
+    /// Base class for all SugarCrm models
     /// </summary>
     public class EntityBase
     {

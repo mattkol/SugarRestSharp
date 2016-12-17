@@ -9,7 +9,7 @@ namespace SugarRestSharp
     using System;
 
     /// <summary>
-    /// Sugar crm module attributes [ModuleName - name of module, Tablename - name of associated table]
+    /// SugarCrm module attributes [ModuleName - name of module, Tablename - name of associated table]
     /// </summary>
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
     internal class ModulePropertyAttribute : Attribute

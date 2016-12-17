@@ -9,10 +9,10 @@ namespace SugarRestSharp.MethodCalls
     using System;
     using System.Collections.Generic;
     using System.Net;
+    using Helpers;
     using Newtonsoft.Json;
     using Responses;
     using RestSharp;
-    using Helpers;
 
     /// <summary>
     /// Represents the GetEntry class
@@ -25,7 +25,7 @@ namespace SugarRestSharp.MethodCalls
         /// <param name="sessionId">Session identifier</param>
         /// <param name="url">REST API Url</param>
         /// <param name="moduleName">SugarCrm module name</param>
-        /// <param name="identifier">The entity identier</param>
+        /// <param name="identifier">The entity identifier</param>
         /// <param name="selectFields">Selected field list</param>
         /// <returns>ReadEntryResponse object</returns>
         public static ReadEntryResponse Run(string sessionId, string url, string moduleName, string identifier, List<string> selectFields)

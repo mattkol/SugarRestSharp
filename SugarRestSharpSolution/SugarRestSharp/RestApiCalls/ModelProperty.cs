@@ -28,6 +28,9 @@ namespace SugarRestSharp
         /// </summary>
         public Type Type { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether value is numeric or not.
+        /// </summary>
         public bool IsNumeric
         {
             get
