@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>SugarRestSharp</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>Kola Oyewumi</authors>
+    <owners>Kola Oyewumi</owners>
+    <licenseUrl>https://github.com/mattkol/SugarRestSharp/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/mattkol/SugarRestSharp</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Being RESTful with SugarCRM in .NET C#</description>
+    <releaseNotes>First release.</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>Wrapper SugarCRM REST API CRUD Client Restful RestSharp</tags>
+  </metadata>
+</package>
