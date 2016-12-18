@@ -133,5 +133,26 @@ namespace SugarRestSharp.IntegrationTests
 
             // -------------------End Account Link Contact-------------------
         }
+
+        [Fact]
+        public void BulkLinkedRead3Test()
+        {
+            var client = new SugarRestClient(TestAccount.Url, TestAccount.Username, TestAccount.Password);
+
+            // -------------------Read Account Link Contact-------------------
+            int count = 10;
+            SugarRestResponse response = LinkedModules.BulkReadAccountLinkItems2(client, count);
+
+            Assert.NotNull(response);
+            Assert.Equal(response.StatusCode, HttpStatusCode.OK);
+
+            // Deserialize json data to custom object
+            List<CustomAcccount3> customAccounts = JsonConvert.DeserializeObject<List<CustomAcccount3>>(response.JData);
+
+            Assert.NotNull(customAccounts);
+            Assert.True(customAccounts.Count <= count);
+
+            // -------------------End Account Link Contact-------------------
+        }
     }
 }

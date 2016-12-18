@@ -122,6 +122,39 @@ namespace SugarRestSharp.IntegrationTests.Helpers
 
             return client.Execute<Account>(request);
         }
+
+        public static SugarRestResponse BulkReadAccountLinkItems2(SugarRestClient client, int count)
+        {
+            var request = new SugarRestRequest(RequestType.LinkedBulkRead);
+            request.Options.MaxResult = count;
+
+            List<string> selectedFields = new List<string>();
+
+            selectedFields.Add("id");
+            selectedFields.Add("name");
+            selectedFields.Add("industry");
+            selectedFields.Add("website");
+
+            request.Options.SelectFields = selectedFields;
+
+            Dictionary<object, List<string>> linkedListInfo = new Dictionary<object, List<string>>();
+
+            List<string> selectContactFields = new List<string>();
+            selectContactFields.Add(nameof(Contact.FirstName));
+            selectContactFields.Add(nameof(Contact.LastName));
+            selectContactFields.Add(nameof(Contact.Title));
+            selectContactFields.Add(nameof(Contact.Description));
+            selectContactFields.Add(nameof(Contact.PrimaryAddressPostalcode));
+
+            linkedListInfo[typeof(Contact)] = selectContactFields;
+
+            // Get all fields for Bug
+            linkedListInfo["Bugs"] = null;
+
+            request.Options.LinkedModules = linkedListInfo;
+
+            return client.Execute<Account>(request);
+        }
     }
 }
 

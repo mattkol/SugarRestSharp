@@ -234,24 +234,24 @@ namespace SugarRestSharp
                 Dictionary<string, List<string>> linkedSelectFields = modelInfo.GetJsonLinkedInfo(linkedFields);
                 string query = modelInfo.GetQuery(request.Options.QueryPredicates, request.Options.Query);
 
-                var readEntryListResponse = GetLinkedEntryList.Run(loginResponse.SessionId, request.Url, request.ModuleName, selectFields, linkedSelectFields, query, request.Options.MaxResult);
+                var readLinkedEntryListResponse = GetLinkedEntryList.Run(loginResponse.SessionId, request.Url, request.ModuleName, selectFields, linkedSelectFields, query, request.Options.MaxResult);
 
-                if (readEntryListResponse != null)
+                if (readLinkedEntryListResponse != null)
                 {
-                    sugarRestResponse.JsonRawRequest = readEntryListResponse.JsonRawRequest;
-                    sugarRestResponse.JsonRawResponse = readEntryListResponse.JsonRawResponse;
+                    sugarRestResponse.JsonRawRequest = readLinkedEntryListResponse.JsonRawRequest;
+                    sugarRestResponse.JsonRawResponse = readLinkedEntryListResponse.JsonRawResponse;
 
-                    var jsonEnityList = readEntryListResponse.EntityList;
+                    var jsonEnityList = readLinkedEntryListResponse.EntityList;
                     if (jsonEnityList != null)
                     {
-                        sugarRestResponse.JData = readEntryListResponse.EntityList.ToString();
-                        sugarRestResponse.StatusCode = readEntryListResponse.StatusCode;
+                        sugarRestResponse.JData = readLinkedEntryListResponse.EntityList.ToString();
+                        sugarRestResponse.StatusCode = readLinkedEntryListResponse.StatusCode;
                         sugarRestResponse.Data = null;
                     }
                     else
                     {
-                        sugarRestResponse.Error = readEntryListResponse.Error;
-                        sugarRestResponse.StatusCode = readEntryListResponse.StatusCode;
+                        sugarRestResponse.Error = readLinkedEntryListResponse.Error;
+                        sugarRestResponse.StatusCode = readLinkedEntryListResponse.StatusCode;
                     }
                 }
 
