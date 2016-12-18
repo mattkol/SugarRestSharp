@@ -1,7 +1,9 @@
-# .NET C# SugarCRM REST API (v4_1) Client
-SugarRestSharp is a .NET C# SugarCRM CE 6.5 API client. It is a Restful CRUD client that implements the SugarCRM module Create, Read, Update and Delete functionalities.
+# Being RESTful with SugarCRM in .NET C# 
+SugarRestSharp is a .NET C# SugarCRM CE 6.5 API client. SugarCRM RestSharp is a RestSharp implementation. It is a Restful CRUD client that implements the SugarCRM module Create, Read, Update and Delete functionalities.
 
 SugarRestSharp implements following SugarCRM REST API method calls: **_oauth_access, get_entry, get_entry_list, set_entry, set_entries._**
+
+For more info, please check [SugarRestSharp wiki](https://github.com/mattkol/SugarRestSharp/wiki)
 
 ### Sample Usages
 ```cs
