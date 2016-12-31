@@ -47,10 +47,10 @@ For more info/documentation, please check [SugarRestSharp wiki](https://github.c
 
 
 
-<pre>
+<br>
 
 
-</pre>
+</br>
 
 ### Advanced Sample Usage - Linked Module
 This sample usage shows how to read "Accounts" module entity data with linked modules (link "Contacts" module). For more request options make changes to the [Options parameter](Request Options).
