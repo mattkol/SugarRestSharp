@@ -48,8 +48,6 @@ For more info/documentation, please check [SugarRestSharp wiki](https://github.c
 
 
 <br>
-
-
 </br>
 
 ### Advanced Sample Usage - Linked Module
