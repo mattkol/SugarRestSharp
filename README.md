@@ -7,7 +7,7 @@ SugarRestSharp is available on [Nuget](https://www.nuget.org/packages/SugarRestS
 
 For more info/documentation, please check [SugarRestSharp wiki](https://github.com/mattkol/SugarRestSharp/wiki)
 
-### Sample Usages
+### Basic Sample Usages
 ```cs
             string sugarCrmUrl = "http://191.101.224.189/sugar/service/v4_1/rest.php";
             string sugarCrmUsername = "will";
@@ -46,7 +46,7 @@ For more info/documentation, please check [SugarRestSharp wiki](https://github.c
 ```
 
 
-### Linked Module Sample Usage
+### Advanced Sample Usage - Linked Module
 This sample usage shows how to read "Accounts" module entity data with linked modules (link "Contacts" module). For more request options make changes to the [Options parameter](Request Options).
 
 This implements the **_get_entry_** SugarCRM REST API method setting the **_link_name_to_fields_array_** parameter.
