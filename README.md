@@ -44,9 +44,6 @@ For more info/documentation, please check [SugarRestSharp wiki](https://github.c
             SugarRestResponse leadResponse = await client.ExecuteAsync(leadRequest);
             Lead lead = (Lead)leadResponse.Data;
 ```
-
-
-
 <br>
 </br>
 
