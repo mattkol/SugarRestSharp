@@ -44,9 +44,7 @@ For more info/documentation, please check [SugarRestSharp wiki](https://github.c
             SugarRestResponse leadResponse = await client.ExecuteAsync(leadRequest);
             Lead lead = (Lead)leadResponse.Data;
 ```
-<br>
-</br>
-
+<br />
 ### Advanced Sample Usage - Linked Module
 This sample usage shows how to read "Accounts" module entity data with linked modules (link "Contacts" module). For more request options make changes to the [Options parameter](Request Options).
 
