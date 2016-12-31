@@ -46,7 +46,7 @@ Lead lead = (Lead)leadResponse.Data;
 ```
 <br />
 ### Advanced Sample Usage - Linked Module
-This sample usage shows how to read "Accounts" module entity data with linked modules (link "Contacts" module). For more request options make changes to the [Options parameter](Request Options).
+This sample usage shows how to read "Accounts" module entity data with linked modules (link "Contacts" module). For more request options make changes to the [Options parameter](https://github.com/mattkol/SugarRestSharp/wiki/Request%20Options).
 
 This implements the **_get_entry_** SugarCRM REST API method setting the **_link_name_to_fields_array_** parameter.
 
