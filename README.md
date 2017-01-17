@@ -5,7 +5,9 @@ SugarRestSharp implements following SugarCRM REST API method calls: **_oauth_acc
 
 SugarRestSharp is available on [Nuget](https://www.nuget.org/packages/SugarRestSharp/1.0.0).
 
-For more info/documentation, please check [SugarRestSharp wiki](https://github.com/mattkol/SugarRestSharp/wiki)
+For more info/documentation, please check [SugarRestSharp wiki](https://github.com/mattkol/SugarRestSharp/wiki).
+
+For Java port, please check [SugarOnRest](https://github.com/mattkol/SugarOnRest).
 
 ### Basic Sample Usages
 ```cs
