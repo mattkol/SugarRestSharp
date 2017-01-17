@@ -21,28 +21,28 @@ var client = new SugarRestClient(sugarCrmUrl, sugarCrmUsername, sugarCrmPassword
 var accountRequest = new SugarRestRequest(RequestType.ReadById);
 
 // set the account id to read.
-accountRequest.Id = "1f2d3240-0d8a-ca09-2e11-5777c29a4193";
+accountRequest.Parameter = "1f2d3240-0d8a-ca09-2e11-5777c29a4193";
 SugarRestResponse accountResponse = client.Execute<Account>(accountRequest);
 Account account = (Account)accountResponse.Data;
 
 
 // Option 2 - Read by known SugarCRM module name - "Contacts".
 var contactRequest = new SugarRestRequest("Contacts", RequestType.ReadById);
-contactRequest.Id = contactid;
+contactRequest.Parameter = contactid;
 SugarRestResponse contactRresponse = client.Execute(contactRequest);
 Contact contact = (Contact)contactRresponse.Data;
 
 
 // Option 3 - Read async by known type typeof(Case).
 var caseRequest = new SugarRestRequest(RequestType.ReadById);
-caseRequest.Id = caseId;
+caseRequest.Parameter = caseId;
 SugarRestResponse caseResponse = await client.ExecuteAsync<Case>(caseRequest);
 Case case = (Case)caseResponse.Data;
 
 
 // Option 4 - Read async by known SugarCRM module name - "Leads".
 var leadRequest = new SugarRestRequest("Leads", RequestType.ReadById);
-leadRequest.Id = leadId;
+leadRequest.Parameter = leadId;
 SugarRestResponse leadResponse = await client.ExecuteAsync(leadRequest);
 Lead lead = (Lead)leadResponse.Data;
 ```
