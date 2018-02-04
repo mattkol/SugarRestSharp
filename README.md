@@ -3,7 +3,7 @@ SugarRestSharp is a .NET C# SugarCRM CE 6.x/SuiteCRM 7.x API client. SugarCRM Re
 
 SugarRestSharp implements following SugarCRM REST API method calls: **_oauth_access, get_entry, get_entry_list, set_entry, set_entries._**
 
-SugarRestSharp is available on [Nuget](https://www.nuget.org/packages/SugarRestSharp/1.0.0).
+[![SugarRestSharp](http://img.shields.io/nuget/v/SugarRestSharp.svg)](https://www.nuget.org/packages/SugarRestSharp/)
 
 For more info/documentation, please check [SugarRestSharp wiki](https://github.com/mattkol/SugarRestSharp/wiki).
 
